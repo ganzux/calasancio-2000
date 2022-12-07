@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+void main()
+{
+int num_aleat;
+char car;
+do{
+    randomize();
+	num_aleat=rand();
+	num_aleat%=7;
+	 if(num_aleat!=0){
+	    printf("\nValor del dado: %d",num_aleat);
+	    printf("\n¿Otro lanzamiento? (s/n)\?: ");
+	    car=getche();
+	 }
+}while(car=='s');
+}

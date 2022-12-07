@@ -1,0 +1,18 @@
+#include <stdio.h>
+void main()
+{
+float n1,media;
+int   cont=0;
+
+printf("Introduce los 15 numeros: ");
+
+do{
+   scanf("%f",&n1);
+   media=media+n1;
+   cont++;
+  }
+
+while (cont<15);
+
+printf("La media es: %f",media/15);
+}

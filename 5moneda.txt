@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+void main()
+{
+int cc,pepolo=1;
+	   randomize();
+do{
+
+	cc=random(2);
+	switch(cc){
+	case 0: printf("\n%d: CARA",pepolo);      break;
+	case 1: printf("\n%d: CRUZ",pepolo); break;
+		   }
+	pepolo++;
+  }
+while(pepolo<=5);
+}
+

@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <conio.h>
+int main(void)
+{
+     int a,b,c,d,e,f;
+     float nomx,nomy,den,y,x;
+     char car='s';
+
+     while (car=='s') {
+
+	clrscr();
+
+     printf("\n\t\t     © 2000 Álvaro Alcedo Moreno®");
+     printf("\n\t\talvaro@alcedo.net®  www.alvaro.alcedo.net®\n\n\n");
+
+     printf(  "Ax+By=C");
+     printf("\nDx+Ey=F\n\n");
+
+     printf("¿A? ");scanf("%d",&a);
+     printf("¿B? ");scanf("%d",&b);
+     printf("¿C? ");scanf("%d",&c);
+     printf("¿D? ");scanf("%d",&d);
+     printf("¿E? ");scanf("%d",&e);
+     printf("¿F? ");scanf("%d",&f);
+
+	nomx=(c*e)-(b*f);
+	nomy=(a*f)-(d*c);
+	den= (a*e)-(d*b);
+
+
+     printf("\n\n%dx+%dy=%d",a,b,c);
+     printf("\n%dx+%dy=%d\n",d,e,f);
+
+     x=nomx/den;
+     y=nomy/den;
+
+     printf("\n\nPulse cualquier tecla para calcular los valores de \"X\" y de \"Y\"...");
+     getch();clrscr();
+
+ printf("\n\n\n   |%d %d|",c,b);
+     printf("\n   |%d %d|    (%d·%d)-(%d·%d)",f,e,c,e,b,f);
+     printf("\nX= ------- = ----------------- = %f",x);
+     printf("\n   |%d %d|    (%d·%d)-(%d·%d)",a,b,a,e,b,d);
+     printf("\n   |%d %d|\n",d,e);
+
+     printf("\n   |%d %d|",a,c);
+     printf("\n   |%d %d|    (%d·%d)-(%d·%d)",d,f,a,f,c,d);
+     printf("\nY= ------- = ----------------- = %f",y);
+     printf("\n   |%d %d|    (%d·%d)-(%d·%d)",a,b,a,e,b,d);
+     printf("\n   |%d %d|\n\n",d,e);
+
+
+     printf("\n\n\t\tX=%f",x);
+     printf("\n\t\tY=%f",y);
+
+     printf("\n\n\n\nDeseas saber los valores de \"X\" y de \"Y\" para otra ecuación (s/n)?");
+     car=getche();
+
+ }
+
+
+}
+

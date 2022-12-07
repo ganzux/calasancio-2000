@@ -1,0 +1,954 @@
+<html>
+
+<head>
+<script>
+ function click() { if (event.button==2) {alert("¡¡NO EN MI PÁGINA!!") } }document.onmousedown=click
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="es">
+<title>FTP Básico usando el WS_FTP</title>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="animate.js">
+</script>
+</head>
+
+<body bgcolor="#000000" text="#00FFFF" bgproperties="fixed" onload="dynAnimation()" background="fondotitulo.gif">
+
+<div class="Section1">
+
+<p align="center"><font size="3"><a href="inter.htm" onmouseover="document['fpAnimswapImgFP5'].imgRolln=document['fpAnimswapImgFP5'].src;document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].lowsrc;" onmouseout="document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].imgRolln"><img border="0" src="itoint0.gif" id="fpAnimswapImgFP5" name="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="itoint4.gif" width="120" height="24"></a>
+<a href="navegadores.htm" onmouseover="document['fpAnimswapImgFP6'].imgRolln=document['fpAnimswapImgFP6'].src;document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].lowsrc;" onmouseout="document['fpAnimswapImgFP6'].src=document['fpAnimswapImgFP6'].imgRolln"><img border="0" src="itoint1.gif" id="fpAnimswapImgFP6" name="fpAnimswapImgFP6" dynamicanimation="fpAnimswapImgFP6" lowsrc="itoint5.gif" width="153" height="24"></a>
+<a href="dicciona.htm" onmouseover="document['fpAnimswapImgFP7'].imgRolln=document['fpAnimswapImgFP7'].src;document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].lowsrc;" onmouseout="document['fpAnimswapImgFP7'].src=document['fpAnimswapImgFP7'].imgRolln"><img border="0" src="itoint2.gif" id="fpAnimswapImgFP7" name="fpAnimswapImgFP7" dynamicanimation="fpAnimswapImgFP7" lowsrc="itoint6.gif" width="120" height="24"></a>
+<a href="ftp.htm" onmouseover="document['fpAnimswapImgFP8'].imgRolln=document['fpAnimswapImgFP8'].src;document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].lowsrc;" onmouseout="document['fpAnimswapImgFP8'].src=document['fpAnimswapImgFP8'].imgRolln"><img border="0" src="itoint3.gif" id="fpAnimswapImgFP8" name="fpAnimswapImgFP8" dynamicanimation="fpAnimswapImgFP8" lowsrc="itoint7.gif" width="73" height="24"></a></font></p>
+
+  <p class="MsoNormal" align="center" style="text-align: center">&nbsp;</p>
+  <p align="center" style="text-align: center; position: relative !important; visibility: hidden" dynamicanimation="fpAnimspiralFP1" id="fpAnimspiralFP1" language="Javascript1.2"><b><span style="font-family: Arial"><font color="#FF0000" size="5">FTP
+  Básico usando el <span style="mso-bidi-font-size: 12.0pt; font-family: Arial">WS_FTP</span><o:p>
+  </o:p>
+  </font></span></b></p>
+  <p style="text-align:justify"><b><font color="#000000" size="3"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="margin-left:18.0pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l2 level1 lfo2;tab-stops:list 18.0pt" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-family: Arial; font-style: italic; font-weight: bold" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2"><b><font size="4" color="#008000">
+  <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-bidi-font-family:Arial">¨</span></font><font color="#000000" size="3"><![if !supportLists]></font><font size="4" color="#008000">
+  <span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>
+  <span style="mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-weight: bold">Introducción<o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="margin-left:18.0pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l2 level1 lfo2;tab-stops:list 18.0pt" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-family: Arial; font-style: italic; font-weight: bold" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2"><b><font size="4" color="#008000"><![if !supportLists]>
+  <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-bidi-font-family:Arial">¨</span> <span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>
+  <span style="mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-weight: bold">Algunas definiciones <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="margin-left:18.0pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l2 level1 lfo2;tab-stops:list 18.0pt" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-family: Arial; font-style: italic; font-weight: bold" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2"><b><font size="4" color="#008000"><![if !supportLists]>
+  <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-bidi-font-family:Arial">¨</span>&nbsp;<span style="font:7.0pt &quot;Times New Roman&quot;">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>
+  <span style="mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-weight: bold">FTP Básico <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="margin-left:18.0pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l2 level1 lfo2;tab-stops:list 18.0pt" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-family: Arial; font-style: italic; font-weight: bold" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2"><b><font size="4" color="#008000"><![if !supportLists]>
+  <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-bidi-font-family:Arial">¨</span> <span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>
+  <span style="mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-weight: bold">Conetándose <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="margin-left:18.0pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l2 level1 lfo2;tab-stops:list 18.0pt" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-family: Arial; font-style: italic; font-weight: bold" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2"><b><font size="4" color="#008000"><![if !supportLists]>
+  <span style="font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;
+mso-bidi-font-family:Arial">¨</span><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]> <span style="mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-weight: bold">Una
+  vez que está conectado</span></font><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><b style="mso-bidi-font-weight:normal"><font size="4" color="#008000"></o:p>
+  </font></b>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><span style="mso-spacerun:
+yes"><font size="3" color="#008000">&nbsp;</font></span><font size="3" color="#008000"><o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font size="3" color="#008000"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p align="center"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-style: normal; mso-bidi-font-weight: normal"><b style="mso-bidi-font-weight: normal; mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-style: normal"><i style="mso-bidi-font-style: normal; mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-weight: normal"><span><font size="4" color="#008000">Introducción a File
+  Transfer Protocol (FTP):<o:p>
+  </o:p>
+  </font></span></i></b>
+  </span></p>
+  <p style="text-align:justify"><b><font color="#000000" size="3"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify;text-indent:35.4pt"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Existe
+  en la actualidad, dentro de lo que es Internet, un 'servicio' que permite
+  trabajar con archivos (copiar, modificar, borrar) desde una PC hacia un
+  servidor remoto. En dichos servidores remotos se alojan grandes cantidades de
+  shareware y freeware, que están a disposición del público para que haga un
+  download a su computadora. Generalmente estos servidores permiten el acceso a
+  cualquier usuario (servidores llamados &quot;anonymous&quot;) pero también
+  existen los servidores que tienen acceso restringido por medio de passwords.<o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><span style="mso-spacerun: yes"><font color="#000000" size="3">&nbsp;</font></span><font color="#000000" size="3"><o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Estas transferencias
+  de archivos se hace por medio de un software conocido como FTP (del inglés,
+  File Transfer Protocol). Existen hoy en día muchos programas de este tipo,
+  con diferentes prestaciones, pero nos referiremos puntualmente al WS_FTP® <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p align="center"><font color="#008000"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font size="3"><i style="mso-bidi-font-style:normal"><b style="mso-bidi-font-weight:
+normal">Algunas def</b></i><i style="mso-bidi-font-style: normal; mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-weight: normal"><b style="mso-bidi-font-weight: normal; mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-style: normal">i</b></i><i style="mso-bidi-font-style: normal; mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-weight: normal"><b style="mso-bidi-font-weight: normal; mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-style: normal">n</b></i><b style="mso-bidi-font-weight: normal; mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-style: normal"><i style="mso-bidi-font-style: normal; mso-bidi-font-size: 12.0pt; font-family: Arial; mso-bidi-font-weight: normal">i</i></b></font></span><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font size="3"><b style="mso-bidi-font-weight:
+normal"><i style="mso-bidi-font-style:normal">ciones:<o:p>
+  </o:p>
+  </i></b></font></span></font></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Abajo encontrará una
+  lista con los términos más comunes en el uso del FTP: <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="margin-left:18.0pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l0 level1 lfo4;tab-stops:list 18.0pt"><b><font color="#000000" size="3"><![if !supportLists]>
+  <span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-bidi-font-family:
+Arial;color:#CCFFFF">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]> <span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><i style="mso-bidi-font-style: normal; mso-bidi-font-size: 12.0pt; font-family: Arial">Down</i><i style="mso-bidi-font-style:normal">load:</i>
+  Copiar un archivo desde una computadora remota (FTP site, server)a su computadora. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="margin-left:18.0pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l0 level1 lfo4;tab-stops:list 18.0pt"><b><font color="#000000" size="3"><![if !supportLists]>
+  <span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-bidi-font-family:
+Arial;color:#CCFFFF">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]>
+  <i style="mso-bidi-font-style:normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial">Upload:</span></i><span style="mso-bidi-font-size: 12.0pt; font-family: Arial">
+  Copiar un archivo desde su computadora a una computadora remota (FTP site,
+  server).</span></font></b></p>
+  <p style="margin-left:18.0pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l0 level1 lfo4;tab-stops:list 18.0pt"><b><font color="#000000" size="3"><span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-bidi-font-family:
+Arial;color:#CCFFFF">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>
+  <i style="mso-bidi-font-style:normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial">Server:</span></i><span style="mso-bidi-font-size: 12.0pt; font-family: Arial">
+  Es como se llama comúnmente a un FTP site. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="margin-left:18.0pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l0 level1 lfo4;tab-stops:list 18.0pt"><b><font color="#000000" size="3"><![if !supportLists]>
+  <span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-bidi-font-family:
+Arial;color:#CCFFFF">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]>
+  <i style="mso-bidi-font-style:normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial">Session
+  Profile:</span></i><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"> Es el conjunto de información necesaria para
+  conectarse a un server. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify;text-indent:18.0pt"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Hay
+  tres datos importantes que Usted debe saber para conectarse a un server FTP y
+  bajar un programa a su computadora: <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="margin-left:18.0pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l1 level1 lfo6;tab-stops:list 18.0pt"><b><font color="#000000" size="3"><![if !supportLists]>
+  <span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-bidi-font-family:
+Arial;color:#CCFFFF">·<span style="font-style: normal; font-variant: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]>
+  <i style="mso-bidi-font-style:normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial">El
+  nombre del Host</span></i><span style="font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Arial;color:#CCFFFF"> 
+  </span></font><font color="#008000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> (Ej.:
+  <a href="http://www.geocities.com/">www.geocities.com</a>), <o:p>
+  </span></font><span style="font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Arial;color:#CCFFFF"> <font color="#000000" size="3">
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="margin-left:18.0pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l1 level1 lfo6;tab-stops:list 18.0pt"><b><font color="#000000" size="3"><![if !supportLists]>
+  <span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-bidi-font-family:
+Arial;color:#CCFFFF">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]>
+  <i style="mso-bidi-font-style:normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial">La
+  ubicación del archivo</span></i><span style="mso-bidi-font-size: 12.0pt; font-family: Arial">, dentro de que directorio se encuentra
+  (ej.: /colegiocalasancio), <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="margin-left:18.0pt;text-align:justify;text-indent:
+-18.0pt;mso-list:l1 level1 lfo6;tab-stops:list 18.0pt"><b><font color="#000000" size="3"><![if !supportLists]>
+  <span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-bidi-font-family:
+Arial;color:#CCFFFF">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]>
+  <i style="mso-bidi-font-style:normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial">El
+  nombre del archivo</span></i><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"> (ej.: index.htm) <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p><b><span style="mso-bidi-font-size: 10.0pt; mso-bidi-font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p><b style="mso-bidi-font-weight:normal"><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></i></b></p>
+  <p align="center"><b style="mso-bidi-font-weight:normal"><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font size="3" color="#008000">FTP Básico:<o:p>
+  </o:p>
+  </font>
+  </span></i></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify;text-indent:35.4pt"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Algunos
+  servicios permiten &quot;anonymous login&quot;, esto significa que cualquier
+  persona con acceso a Internet puede acceder a ellos ingresando como nombre de
+  usuario &quot;anonymous&quot;. <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Ingresando a un
+  server como anonymous, cuando se le pregunta su password debe ingresar su
+  dirección de e-mail (ej.: <a href="mailto:alvaro@alcedo.net">alvaro@alcedo.net</a>).
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Muchos de los nombres
+  de los servers de FTP comienzan con la palabra ftp. Este es un camino fácil
+  para diferenciar los servers FTP de otra clase de sitios. Tenga en cuenta que
+  no todos los servers de FTP comienzan con esa palabra, algunos son simplemente
+  una lista de números 200.26.39.2. <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Si Usted va a bajar
+  un archivo que no es solo texto debe usar el comando &quot;binary&quot;, para
+  asegurarse que el archivo va a ser enviado en el formato correcto. <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Existe la posibilidad
+  de que el server al que Usted quiere acceder este lleno de gente. Algunos
+  servers solo soportan 30 o 100 usuarios al mismo tiempo. Si trata de acceder a
+  un server que esta completo de gente, va a recibir un mensaje parecido a este
+  &quot;there are too many users logged on right now, please try again
+  later&quot;. Puede ver este mensage en la parte inferior del programa de FTP
+  utilizando las flechas que se encuentran abajo, a la derecha de la pantalla. <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p align="center"><b style="mso-bidi-font-weight:
+normal"><i style="mso-bidi-font-style:normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font size="3" color="#008000">Conectándose:<o:p>
+  </o:p>
+  </font>
+  </span></i></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify;text-indent:35.4pt"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">La
+  primera vez que ejecute WS_FTP le va a preguntar por un password, simplemente
+  teclee su dirección de e-mail. Luego va a estar frente a la pantalla de
+  session profile. Usted puede seleccionar una configuración (session profile)
+  desde el menú desplegable que se encuentra en la parte superior de la
+  pantalla o puede teclear un nuevo Host Name (ej.: ftp.geocities.com) y luego
+  presione OK. Abajo tiene una descripción detallada de las opciones de esta
+  pantalla. <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Profile Name:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Es un nombre
+  arbitrario para identificar una configuración. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Save:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para guardar toda la
+  información de la pantalla de Session Profile. Si Usted cambio el Profile
+  Name y selecciona Save creará una nueva opción dentro del menú desplegable.
+  <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Delete:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para
+  borrar la Session Profile presente de la lista desplegable. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">New:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para crear una nueva Session
+  Profile. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Host Name:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Esta es la
+  dirección del server FTP al que se va a conectar. Es tanto un nombre (ftp.geocities.com)
+  como una dirección IP (200.26.39.2). <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Host Type:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Si Usted conoce que
+  tipo de servidor es al que se va a conectar selecciónelo de la lista, sino
+  simplemente seleccione &quot;auto detect&quot;. Seleccionando &quot;auto
+  detect&quot; el servidor se configura automáticamente. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">User ID:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> En los casos que
+  ingrese como &quot;anonymous&quot; puede seleccionar la opción Anonymous
+  Login que se encuentra a la derecha de la pantalla. De lo contrario ingrese
+  simplemente su nombre de usuario. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Password:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Cuando ingrese como
+  anonymous deberá ingresar como password su dirección de e-mail. De lo
+  contrario ingrese su password actual. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Account:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Solo se utiliza en
+  algunos casos de no anonymous login. En anonymous login debe estar en blanco. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Remote Host:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Acá se especifica
+  el directorio al que quiere acceder cuando se conecte. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Local PC:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Este es el
+  directorio de su PC en cual se va iniciar la sesión de FTP. Aquí es donde
+  van a ir lo archivos que Usted baje del Remote host. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">OK:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Haga click aquí cuando este listo para
+  conectarse al FTP site. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Cancel:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para
+  cancelar la información de la Session Profile y volver a la pantalla
+  principal. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Advanced:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Este botón no
+  cumple ninguna función en el acceso discado. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Help:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para acceder a la ayuda en
+  línea. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Anonymous Login:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Tenga seleccionada
+  esta opción si va a ingresar como anonymous. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Save Password:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Seleccione esta
+  opción si quiere grabar el password junto con la información de la session
+  Profile. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Auto Save Config:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Seleccione esta
+  opción si quiere que se guarden automáticamente los cambios que haga en la
+  Session Profile. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">La diferencia entre
+  anonymous FTP y el normal, es que a anonymous FTP puede acceder cualquier
+  persona y bajar archivos, es como una librería pública. En el FTP normal
+  Usted debe tener un Username y un Password para poder acceder. Esto significa
+  que debe tener una cuenta con ese sitio. Por lo tanto todos los usuarios de
+  Argentina On-Line pueden acceder con su cuenta a nuestro servidor FTP
+  configurando la Session Profile de la siguiente forma: <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span lang="EN-US" style="mso-bidi-font-size: 12.0pt; font-family: Arial; mso-ansi-language: EN-US"><font color="#000000" size="3">Host Name:</font></span></i><font color="#000000" size="3"><span lang="EN-US" style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial; mso-ansi-language: EN-US"> ftp.geocities.com <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span lang="EN-US" style="mso-bidi-font-size: 12.0pt; font-family: Arial; mso-ansi-language: EN-US"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span lang="EN-US" style="mso-bidi-font-size: 12.0pt; font-family: Arial; mso-ansi-language: EN-US"><font color="#000000" size="3">Host Type:</font></span></i><font color="#000000" size="3"><span lang="EN-US" style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial; mso-ansi-language: EN-US"> auto detect <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span lang="EN-US" style="mso-bidi-font-size: 12.0pt; font-family: Arial; mso-ansi-language: EN-US"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">User ID:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> su nombre de usuario
+  <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Password:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> su password <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Account:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> su nombre de usuario
+  <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Remote Host:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> el directorio al que
+  quiere acceder. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Anonymous Login:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> No debe estar
+  seleccionado. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><span style="mso-spacerun: yes"><font color="#000000" size="3">&nbsp;&nbsp;
+  </font>
+  </span><font color="#000000" size="3"><o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p align="center"><b style="mso-bidi-font-weight:
+normal"><i style="mso-bidi-font-style:normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font size="3" color="#008000">Una vez que está
+  conectado:<o:p>
+  </o:p>
+  </font>
+  </span></i></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-indent:35.4pt"><b><span style="mso-bidi-font-size: 10.0pt; mso-bidi-font-family: Arial"><font color="#000000" size="3">Una vez que
+  se conecta a un Server FTP va a estar frente a la pantalla de sesión. A la
+  izquierda de la pantalla va a estar su disco rígido (local) y a la derecha de
+  la pantalla va a estar la máquina a la que se conecto (Remote host). Cada
+  ventana esta dividida en dos partes, en la parte superior se encuentra la
+  lista de directorios mientras que en la inferior se encuentran los archivos. <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">ChgDir:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para
+  cambiar de directorios. Si tiene seleccionado un directorio, al hacer click
+  sobre este botón el sistema va a posicionarse en ese directorio. Si ningún
+  nombre esta seleccionado, va a tener que escribir el nombre del directorio al
+  que quiere ir, en la ventana de ChgDir. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">MkDir:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para crear un nuevo
+  directorio. Si usted ingresa a un servidor como anonymous no va a poder crear
+  o borrar directorios en ese servidor, pero siempre va a poder crear o borrar
+  directorios de su maquina. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">RmDir:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para borrar directorios. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">View:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para ver un archivo de texto
+  por medio del Notepad (solo se pueden ver archivos de texto). <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Exec:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para ejecutar un archivo.
+  Solo puede ejecutar archivos con las extensiones .com, .exe o .bat. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Rename:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para
+  cambiar el nombre de un archivo. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Delete:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para
+  borrar un archivo. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Refresh:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para leer
+  nuevamente un directorio, para ver si algún archivo ha cambiado. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">DirInfo: Se utiliza
+  para recibir información detallada del directorio actual, nombres de los
+  archivos, tamaños y fechas. <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Close/Connect:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para
+  cerrar la sesión actual o iniciar una nueva. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Cancel:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para
+  cancelar una transferencia. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Logwnd:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Muestra todos los
+  detalles de la de la sesión de FTP actual. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Help:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para leer la ayuda On-Line
+  de WS_FTP. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Options:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para
+  acceder a una gran variedad de opciones como cambiar el tamaño de las letras,
+  el lugar de los botones. Para mas información sobre esto haga click en Help. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">About:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Informa sobre la versión del programa
+  y muestra una foto del Autor. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Exit:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para salir del programa. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p><b><span style="mso-bidi-font-size: 10.0pt; mso-bidi-font-family: Arial"><font color="#000000" size="3">--&gt; : Se utiliza para transferir un
+  archivo de la ventana de la izquierda a la de la derecha (de su computadora al
+  Server). <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">&lt;--: A la inversa
+  de la opción anterior se utiliza para transferir un archivo de la ventana de
+  la derecha a la de la izquierda (del Server a su computadora). <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">ASCII:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para transferir archivos de
+  texto. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">Binary:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para
+  transferir archivos binarios (programas, imágenes, sonidos, vídeo, todo lo
+  que no sea texto). haga click sobre este botón antes de transferir un archivo
+  binario. <o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p style="text-align:justify"><b><i style="mso-bidi-font-style:
+normal"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3">L8:</font></span></i><font color="#000000" size="3"><span style="font-size: 11.0pt; mso-bidi-font-size: 12.0pt; font-family: Arial"> Se utiliza para transferir un archivo
+  VMS. No es muy usado.<o:p>
+  </o:p>
+  </span></font></b></p>
+  <p style="text-align:justify"><b><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><font color="#000000" size="3"><![if !supportEmptyParas]>
+  &nbsp;<![endif]>
+  <o:p>
+  </o:p>
+  </font>
+  </span></b></p>
+  <p align="center"><span lang="EN-US"><b><font size="5" color="#008000">Al</font><font size="5" color="#0000FF">va</font><font size="5" color="#FF0000">ri</font><font size="5" color="#00FF00">t</font><font size="5" color="#FF0000">o '</font><font size="5" color="#0000FF">
+  20</font><font size="5" color="#008000">01</font></b></span></p>
+</div>
+
+</body>
+
+</html>

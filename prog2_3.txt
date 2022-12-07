@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <conio.h>
+void main ()
+{
+int numero;
+
+printf("Dame el numero distinto de cero ");
+	scanf("%d",&numero);
+
+    clrscr();
+
+if (numero>0)     printf("%d al cubo es %d",numero,numero*numero*numero);
+else              printf("|%d|=%d",numero,numero*(-1));
+}

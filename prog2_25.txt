@@ -1,0 +1,10 @@
+#include <stdio.h>
+void main()
+{
+int ito;
+for(ito=0;ito<=10;ito=ito+1)
+	{
+	 printf("\n12 + %d = %d",ito,12*ito);
+	}
+}
+

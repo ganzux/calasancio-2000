@@ -1,0 +1,17 @@
+#include <stdio.h>
+void main()
+{
+int ls,suma=0,ito;
+printf("Limite superior: "); scanf("%d",&ls);
+if (ls>=0){
+	      for(ito=0;ito<=ls;ito++)
+		   {
+		    suma=suma+ito;
+		   }
+
+	      printf("La suma de los %d primeros numeros es: %d",ls,suma);
+	   }
+
+else printf("El numero introducido es negativo...");
+}
+

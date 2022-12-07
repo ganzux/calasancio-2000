@@ -1,0 +1,21 @@
+#include <stdio.h>
+void main()
+{
+int ls,suma=0,cont=0;
+
+printf("Limite superior: "); scanf("%d",&ls);
+
+if (ls>0)
+	  {
+	      while(cont<ls+1)
+		     {suma=suma+cont;
+		      cont++;
+		     }
+	      printf("La suma de los %d primeros numeros es %d",ls,suma);
+
+	  }
+
+else
+	 printf("EL NUMERO ES MENOR O IGUAL A CERO");
+
+}

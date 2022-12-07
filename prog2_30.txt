@@ -1,0 +1,29 @@
+#include <stdio.h>
+void main()
+{
+int n1,n2,cont=0,num=0;
+
+printf("Dame el primero numero: "); scanf("%d",&n1);
+printf("Dame el segundo numero: "); scanf("%d",&n2);
+
+if (n1!=n2){
+		if (n1>n2){
+				    num=n1;
+			   for(cont=n1;cont>=n2;cont--)
+				     {
+				      printf("%d ",cont);
+				     }
+			  }
+		if (n2>n1){
+				    num=n2;
+			   for(cont=n2;cont>=n1;cont--)
+				     {
+				      printf("%d ",cont);
+				     }
+			  }
+	   }
+else printf("%d y %d son iguales",n1,n2);
+}
+
+
+

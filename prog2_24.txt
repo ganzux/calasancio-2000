@@ -1,0 +1,18 @@
+#include <stdio.h>
+void main()
+{
+int ito,tabla;
+
+printf("Dame el numero de la tabla de sumar: "); scanf("%d",&tabla);
+
+if (tabla>=10 && tabla<=150)
+       {
+
+	 for(ito=0;ito<=10;ito=ito+1)
+		{
+		 printf("\n%d + %d = %d",tabla,ito,tabla+ito);
+		}
+       }
+else printf("ERroe");
+}
+

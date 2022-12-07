@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+void main()
+{
+int ito;
+char tecla;
+randomize();
+
+do{
+   ito=random(10);
+   printf("%d ",ito);
+   tecla=getch();
+  }
+while(tecla!='f');
+printf("\nFIN");
+}

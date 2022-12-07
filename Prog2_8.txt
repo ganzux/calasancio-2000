@@ -1,0 +1,19 @@
+#include <stdio.h>
+void main()
+{
+
+int ls,li,num;
+
+printf("Limite inferior: ");
+      scanf("%d",&li);
+
+		 num=li+1;
+
+printf("Limite superior: ");
+      scanf("%d",&ls);
+
+while (num<ls){
+	printf("%d ",num);
+	num++;
+	      }
+}

@@ -1,0 +1,20 @@
+#include <stdio.h>
+void main()
+{
+float n1,media;
+int   cont,hasta;
+
+printf("¿Cuantos numeros? ");
+scanf("%d",&hasta);
+cont=0;media=0;
+printf("\n INTRODUCE LOS NUMEROS: \n");
+do{
+   scanf("%f",&n1);
+   media=media+n1;
+   cont++;
+  }
+
+while (cont<hasta);
+
+printf("La media es: %f",media/hasta);
+}

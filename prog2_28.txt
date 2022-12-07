@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int numero,numero1,ito;
+
+ printf("Dame el numero: ");
+	scanf("%d",&numero);
+ printf("Dame el numero \"divisible\": ");
+	scanf("%d",&ito);
+				clrscr();
+numero1=numero%ito;
+
+if (numero>0 && ito>0)
+		      {
+			 if (numero1==0) printf("divisible por %d",ito);
+			 else {printf("Indivisible por %d",ito);}
+		      }
+
+}

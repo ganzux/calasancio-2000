@@ -1,0 +1,16 @@
+#include <stdio.h>
+void main()
+{
+int ls,li,suma,num;
+
+printf("Limite inferior: "); scanf("%d",&li);
+printf("Limite superior: "); scanf("%d",&ls);
+
+suma=0;num=li;
+do
+  { num++;
+    suma=suma+num;
+  }
+while(num<ls);
+printf("La suma es %d",suma);
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <conio.h>
+void main ()
+{
+int numero;
+
+printf("Dame el numero: ");
+	scanf("%d",&numero);
+
+    clrscr();
+
+if (numero<=50)   printf("El numero %d es menor o igual a 50",numero);
+else              printf("El numero %d es mayor que 50",numero);
+}

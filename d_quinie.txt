@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+void main()
+{
+int cc,pepo=1;
+char pepolo;
+	   randomize();
+do{
+
+	cc=random(3);
+	switch(cc){
+	case 0: printf("\n%d: X",pepo); break;
+	case 1: printf("\n%d: 1",pepo); break;
+	case 2: printf("\n%d: 2",pepo); break;
+		   }     pepo++;
+	pepolo=getche();
+  }
+while(pepolo!='f');
+}
+

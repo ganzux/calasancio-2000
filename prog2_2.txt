@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <conio.h>
+void main ()
+{
+int numero;
+
+printf("Dame el numero: ");
+	scanf("%d",&numero);
+
+    clrscr();
+
+if (numero==0)    printf("El numero %d se escribe: CERO",numero);
+else              printf("%d al cuadrado es %d ",numero,numero*numero);
+}

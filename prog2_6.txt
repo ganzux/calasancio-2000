@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int numero,numero1;
+
+ printf("Dame el numero: ");
+	scanf("%d",&numero);
+				clrscr();
+numero1=numero%2;
+if (numero1==0) printf("divisible por 2");
+else {printf("Indivisible por 2");}
+
+printf("\n");
+
+numero1=numero%3;
+if (numero1==0) printf("divisible por 3");
+else {printf("Indivisible por 3");}
+
+printf("\n");
+
+numero1=numero%5;
+if (numero1==0) printf("divisible por 5");
+else {printf("Indivisible por 5");}
+
+printf("\n");
+
+numero1=numero%7;
+if (numero1==0) printf("divisible por 7");
+else {printf("Indivisible por 7");}
+
+printf("\n");
+
+numero1=numero%10;
+if (numero1==0) printf("divisible por 10");
+else {printf("Indivisible por 10");}
+
+printf("\n");
+
+numero1=numero%11;
+if (numero1==0) printf("divisible por 11");
+else {printf("Indivisible por 11");}
+
+}

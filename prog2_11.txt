@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <conio.h>
+void main ()
+{
+int numero1,numero2,num;
+
+printf("Dame el numero primero: ");
+	scanf("%d",&numero1);
+printf("Dame el numero segundo: ");
+	scanf("%d",&numero2);
+    clrscr();   num=numero1;
+	printf("%d ",numero1);
+    do{
+	num++;
+	printf("%d ",num);
+      }
+    while (num<numero2);
+}

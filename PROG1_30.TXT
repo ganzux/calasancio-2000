@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main(void)
+{
+	float ep,m,g,h;
+
+		printf("Masa: ");
+			scanf("%f",&m);
+		printf("\nAltura: ");
+			scanf("%f",&h);
+
+			g=9.8;
+			ep=m*g*h;
+
+		printf("\n\n\n\nEp=m·g·h");
+		printf("\nEp=%f·%f·%f\n\n",m,g,h);
+		printf("_______________________  ");
+		printf("\n| Ep=%f|",ep);
+		printf("\n¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯  ");
+
+}
+

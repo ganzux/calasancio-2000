@@ -1,0 +1,11 @@
+#include <stdio.h>
+void main()
+{
+int suma=0,ito;
+for(ito=0;ito<=100;ito++)
+	   {
+	    suma=suma+ito;
+	   }
+     printf("La suma de los 100 primeros numeros es: %d",suma);
+}
+

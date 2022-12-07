@@ -1,0 +1,21 @@
+#include <stdio.h>
+void main()
+{
+int ls,li,suma=0,ito;
+printf("Limite superior: "); scanf("%d",&ls);
+printf("Limite inferior: "); scanf("%d",&li);
+
+if (ls>=0 && li>=0 && ls!=li && ls>li){
+
+		       ito=li;
+	      for(ito=li;ito<=ls;ito++)
+		   {
+		    suma=suma+ito;
+		   }
+
+	      printf("La suma de los numeros entre %d y %d es %d",ls,li,suma);
+			     }
+
+else printf("ERROR");
+}
+

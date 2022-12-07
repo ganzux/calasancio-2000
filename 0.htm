@@ -1,0 +1,59 @@
+<html>
+
+<head>
+<title>Alvarito...</title>
+<script language="JavaScript">
+
+<!-- Hide the JavaScript from older browsers
+(window.alert("                 Página creada por Álvaro Alcedo Moreno y Alberto Aguilar García.                                                                                                                                                                  No nos hacemos responsables del contenido de la misma; los contenidos aquí expuestos son para uso científico y/o didáctico."))      
+// End hiding of script -->
+
+</script>
+<bgsound src="larry.mid" loop="1">
+<bgsound src="maonkey2.mid" loop="-1">
+<script language="javascript">
+msg = "alvaro@alcedo.net                   ALVARITO 2001";
+timeID = 10;
+stcnt = 16;
+wmsg = new Array(33);
+wmsg[0] = msg;
+blnk = "                                                               ";
+for (i=1; i<32; i++)
+{
+b = blnk.substring(0,i);	
+wmsg[i] = "";
+for (j=0; j<msg.length; j++)	
+wmsg[i] = wmsg[i] + msg.charAt(j) + b;
+}
+function wiper()
+{
+if (stcnt > -1)			
+str = wmsg[stcnt];
+else				
+str = wmsg[0];
+if (stcnt-- < -40)		
+stcnt=31;
+status = str;			
+clearTimeout(timeID);
+timeID = setTimeout("wiper()",100);
+}
+
+wiper()
+
+</script>
+
+</head>
+
+<frameset cols="230,*">
+  <noframes>
+
+<body bgsound=
+>
+
+  <p>Esta página usa marcos, pero su explorador no los admite.</p>
+  </body>
+  </noframes>
+  <frame name="contenido" target="principal" src="indice.htm" frameBorder=0>
+  <frame name="principal" target="_self"     src="intro.htm" scrolling="auto" frameBorder=0>
+</frameset>
+</html>

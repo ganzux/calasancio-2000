@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <conio.h>
+void main ()
+{
+int numero1,numero2;
+
+printf("Dame el numero primero: ");
+	scanf("%d",&numero1);
+printf("Dame el numero segundo: ");
+	scanf("%d",&numero2);
+    clrscr();
+
+if (numero1==numero2) printf("%d y %d son iguales",numero1,numero2);
+else  {
+
+
+if (numero1>numero2) printf("%d es mayor que %d",numero1,numero2);
+if (numero2>numero1) printf("%d es mayor que %d",numero2,numero1);
+}
+}
