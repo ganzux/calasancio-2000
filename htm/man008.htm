@@ -1,0 +1,159 @@
+<HTML>
+<HEAD>
+<TITLE>Hyperenlaces</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man007.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man009.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+
+        <HR>
+<CENTER><B><U><FONT size=+3>Hyperenlaces.</U></CENTER></B></FONT><P>
+
+	La caracter&iacute;stica principal de una p&aacute;gina Web es que podemos incluir Hyperenlaces. Un Hyperenlace es un elemento de la p&aacute;gina que hace que el navegador acceda a otro recurso, otra p&aacute;gina Web, un archivo, etc...<P>
+
+	Para incluir un Hyperenlace se utiliza la directiva <B>&lt;A&gt;&lt;/A&gt;</B>. 
+El texto o imagen que se encuentre dentro de los l&iacute;mites de esta directiva ser&aacute; 
+sensible, esto quiere decir que si pulsamos con el raton sobre el, se realzar&aacute; la 
+funcion de hyperenlace indicada por la directiva <B>&lt;A&gt;&lt;/A&gt;</B>. 
+Si el Hyperenlace esta indicado por un texto, este aparecer&aacute; subrayado y en distinto 
+color, si se trata de una imagen, esta aparecer&aacute; con un borde rode&aacute;ndola. 
+Esta directiva tiene el par&aacute;metro <B>href</B> que indica el lugar a donde nos 
+llevar&aacute; el Hyperenlace si lo pulsamos.<P>
+
+<CENTER>
+<TABLE BORDER=2 cellpadding=2 cellspacing=2>
+<TH>Ejemplo<TH>Se veria como<TR>
+<TD><B>&lt;A href =</B> "http://www.microsoft.com/"<B>&gt;</B>
+Pulse para ir a la p&aacute;gina de Microsoft<B>&lt;/A&gt;</B>
+<TD>
+<A href="http://www.microsoft.com" target=_blank>Pulse para ir a la p&aacute;gina de Microsoft</A>
+<TR>
+</TABLE>
+</CENTER>
+<P>
+
+	Si situamos el rat&oacute;n encima de la frase y pulsamos, el navegador 
+acceder&aacute; a la p&aacute;gina Web indicada por el par&aacute;metro 
+<B>href</B>, es decir, acceder&aacute; a la p&aacute;gina situada en 
+<I>http://www.microsoft.com/</I><P>
+
+Lo mismo podr&iacute;amos hacer con un gr&aacute;fico.<P>
+<CENTER>
+<TABLE BORDER=2 cellpadding=2 cellspacing=2>
+<TH>Ejemplo<TH>Se veria como<TR>
+<TD>
+Para buscar en Internet : <br><B>&lt;A href =</B> "http://www.yahoo.com/"<B>
+&gt;<br>&lt;IMG</B> <B>src =</B> "yahoo.gif"<B>&gt;&lt;/A&gt;</B>
+<TD>
+Para buscar en Internet : <A href="http://www.yahoo.com" target=_blank>
+<IMG src="yahoo.gif"></A>
+<TR>
+</TABLE>
+</CENTER>
+
+<P>
+
+Pulsando sobre la imagen se acceder&iacute;a a la pagina situada en 
+<I>http://www.yahoo.com/.</I>
+<P>
+
+Un Hyperenlace tambien puede llevarnos a una zona de nuestra p&aacute;gina. Para ello debemos marcar en nuestra pagina las diferentes secciones en las que se divide. 
+Lo haremos con el parametro <B>name</B>.<P>
+<CENTER>
+<TABLE border=2>
+<TH>Ejemplo:<TR>
+<TD>
+<B>&lt;A name =</B> "seccion1"<B>&gt;&lt;/A&gt;</B>
+<TR>
+</TABLE>
+</CENTER>
+<P>
+
+Esta instrucci&oacute;n marca el inicio de una secci&oacute;n dentro de nuestra p&aacute;gina. 
+La seccion se llamar&aacute; <I>seccion1</I>. 
+Para hacer un enlace a esta secci&oacute;n dentro de nuestra p&aacute;gina lo 
+har&iacute;amos de la siguiente forma :<P>
+<CENTER>
+<TABLE border=2>
+<TD>
+<B>&lt;A href =</B> "#seccion1"<B>&gt;</B>Primera Parte<B>&lt;/A&gt;</B>
+</TABLE>
+</CENTER>
+O tambien :
+<CENTER>
+<TABLE border=2>
+<TD>
+<B>&lt;A href =</B> "http://www.jet.es/mipagina.htm#seccion1"<B>&gt;</B>Primera Parte<B>&lt;/A&gt;</B>
+</TABLE>
+</CENTER>
+<P>
+
+Un Hyperenlace puede hacerse a cualquier tipo de fichero. Con las directivas anteriores 
+hemos visto como hacer enlaces a p&aacute;ginas Web o secciones dentro de una 
+p&aacute;gina web, pero podr&iacute;amos hacer un Hyperenlace a un grupo de noticias, 
+o a otro servicio de Internet.<P>
+
+<CENTER>
+<TABLE border=2>
+<TH>Ejemplo:<TR>
+<TD>
+<B>&lt;A href =</B> "news://news.actualidad.es/"<B>&gt;</B>Noticias de actualidad<B>&lt;/A&gt;</B>
+</TABLE>
+</CENTER>
+<P>
+Asimismo podemos hacer que el Hyperenlace de como resultado el env&iacute;o de un 
+correo electr&oacute;nico a una direcci&oacute;n de correo determinada.<P>
+
+<CENTER>
+<TABLE border=2>
+<TH>Ejemplo:<TR>
+<TD>
+<B>&lt;A href =</B> "mailto: luisfd@jet.es"<B>&gt;</B>Env&iacute;ame tus sugerencias<B>&lt;/A&gt;</B>
+</TABLE>
+</CENTER>
+<P>
+Tambi&eacute;n podemos realizar un Hyperenlace a un fichero cualquiera. En este caso 
+el navegador intentar&aacute; "ejecutar" el fichero, y si no puede hacerlo nos 
+preguntar&aacute; si deseamos grabarlo en nuestro ordenador. Esta es una forma 
+sencilla de permitir a los visitantes de nuestra p&aacute;gina copiar ficheros a su ordenador.<P>
+
+<CENTER>
+<TABLE border=2>
+<TH>Ejemplo:<TR>
+<TD>
+<B>&lt;A href =</B> "manual.zip"<B>&gt;</B>Pulsa aqui para llevarte una copia del manual.<B>&lt;/A&gt;</B>
+<tr>
+<td><A href="manual.zip">Pulsa aqui para llevarte una copia del manual.</A>
+</TABLE>
+</CENTER>
+<p>
+El parámetro <b>onMouseOver</b> permite que se muestre en la barra inferior del navegador un texto explicativo 
+sobre el Hyperenlace, en vez de mostrar su direccion. Este parametro no funciona en todos los navegadores.<p>
+<CENTER>
+<TABLE border=2>
+<TH>Ejemplo:<TR>
+<TD>
+<B>&lt;A href =</B> "manual.zip" <b>onMouseOver="window.status=</B>'Este link copia el manual a tu disco duro'<b> ; return true;</b>"<B>&gt;</B>Pulsa aqui para llevarte una copia del manual.<B>&lt;/A&gt;</B>
+</TABLE>
+<p>
+<A href ="onmouse.htm">Pulsa aqui para ver varios ejemplos de <b>onMouseOver</b>. </A>
+</CENTER>
+<P>
+<HR>
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man007.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man009.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+</BODY>
+</HTML>
+

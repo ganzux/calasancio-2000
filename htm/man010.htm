@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+<TITLE>Mapas</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man009.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man011.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+        <HR>
+
+<CENTER><B><U><FONT size=+3>Mapas</B></U></FONT></CENTER><P>
+
+Un Mapa es una imagen que permite realizar diferentes Hyperenlaces en funci&oacute;n de la "zona" de la imagen que se pulse. 
+Las directivas para crear mapas son <B>&lt;MAP&gt;&lt;/MAP&gt;</B> y <B>&lt;AREA&gt;</B>.<P>
+La directiva <B>&lt;MAP&gt;</B> identifica al mapa y tiene el par&aacute;metro <B>name</B> 
+para indicar el nombre del mapa.<P>
+La directiva <B>&lt;AREA&gt;</B> define las areas sensibles de la imagen. Tiene los 
+siguientes par&aacute;metros obligatorios :<P>
+
+<DL>
+<DT><B>shape =</B> "tipo"
+<DD>Indica el tipo de area a definir.<P>
+<DT><B>coords =</B> "coordenadas"
+<DD>Indica las coordenadas de la figura indicada con shape.<p>
+<DT><B>href =</B> "URL"
+<DD>Indica la direcci&oacute;n a la que se accede si se pulsa en la zona delimitada por el area indicada.<P>
+</DL>
+<P>
+Los tipos de area pueden ser los siguientes :<P>
+<DL>
+<DT><B>rect</B>
+<DD>Area rectangular. Se deben especificar las coordenadas de la esquina superior izquierda y las de la esquina inferior derecha.<P>
+<DT><B>poly</B>	
+<DD>Pol&iacute;gono. Se deben especificar las coordenadas de todos los v&eacute;rtices del pol&iacute;gono. El visor se encarga de "cerrar" la figura.<P>
+<DT><B>circle</B>	
+<DD>Circulo. Se debe especificar en primer lugar las coordenadas del centro del c&iacute;rculo y a continuaci&oacute;n el valor del radio (en puntos).<P>
+</DL>
+<P>
+
+Si dos areas se superponen, se ejecutar&aacute; la que se encuentre en primer lugar en la definici&oacute;n del mapa. Es importante definir una &uacute;ltima area que abarque la totalidad del gr&aacute;fico para direccionar a una URL "por defecto", con el objeto de contemplar el caso de que no se pulse sobre un area definida.<P>
+Veamos un ejemplo completo.<P>
+
+<CENTER>
+<TABLE Border=2>
+<TD>
+<B>&lt;MAP name =</B> "casa"<B>&gt;</B><br>
+<B>&lt;AREA shape =</B> "poly" <B>coords =</B> "2,62,57,62,28,1" 
+<B>href=</B> "tejado.htm"<B>&gt;</B><br>
+<B>&lt;AREA shape =</B> "rect" <B>coords =</B> "21,101,35,138" 
+<B>href=</B> "puerta.htm"<B>&gt;</B><br>
+<B>&lt;AREA shape =</B> "rect" <B>coords =</B> "2,64,57,138" 
+<B>href=</B> "casa.htm"<B>&gt;</B><br>
+<B>&lt;AREA shape =</B> "circle" <B>coords =</B> "80,76,21" 
+<B>href=</B> "arbol.htm"<B>&gt;</B><br>
+<B>&lt;AREA shape =</B> "rect" <B>coords =</B> "78,98,85,138" 
+<B>href=</B> "tronco.htm"<B>&gt;</B><br>
+<B>&lt;AREA shape =</B> "rect" <B>coords =</B> "0,0,96,138" 
+<B>href=</B> "dibujo.htm"<B>&gt;</B><br>
+<B>&lt;/MAP&gt;</B>
+<TR>
+</TABLE>
+</CENTER>
+<P>
+Para activar el mapa debemos indicar la imagen a mostrar, indicando que dicha imagen es tratada por un mapa. Para ello escribir&iacute;amos la siguiente directiva :<P>
+<CENTER>
+<TABLE Border=2>
+<TD>
+<B>&lt;IMG src =</B> "grafico.gif" <B>usemap =</B> "#casa"<B>&gt;</B>
+<TR>
+</TABLE>
+</CENTER>
+<P>
+<A name="mapita"></A>
+
+Si tu visor tiene la capacidad de gestionar mapas (Netscape 2.x o Ms-Explorer 2.x o superiores), 
+prueba a pulsar sobre alguna parte del mapa que hemos definido y que te aparecer&aacute; a continuaci&oacute;n:<p>
+
+<MAP name = "casa">
+<AREA shape = "poly" coords = "2,62,57,62,28,1" href= "tejado.htm">
+<AREA shape = "rect" coords = "21,101,35,138" href= "puerta.htm">
+<AREA shape = "rect" coords = "2,64,57,138" href= "casa.htm">
+<AREA shape = "circle" coords = "80,76,18" href= "arbol.htm">
+<AREA shape = "rect" coords = "78,98,85,138" href= "tronco.htm">
+<AREA shape = "rect" coords = "0,0,96,138" href= "dibujo.htm">
+</MAP>
+<CENTER>
+<IMG src = "casa.gif" usemap = "#casa">
+</CENTER>
+<P>
+<hr>
+Como podemos observar, el proceso mas laborioso es el de determinar las coordenadas. Existen programas como <a href="ftp://ftp.winsite.com/pub/pc/win95/netutil/mpths120.zip"><B><I>MAPTHIS</B></I></A> 
+que permiten realizar este proceso de una manera sencilla, simplemente definiendo las zonas con el raton. El programa 
+MAPTHIS permite abrir una imagen tipo .GIF y marcar las zonas sensibles. Este programa creara un fichero con extension <b>.map</b> que contendra en su interior las coordenadas de cada area. Con esta información 
+nos sera mucho mas facil escribir nuestro mapa. Puedes buscar este programa en <a href="http://www.shareware.com" target=_blank>Shareware.com</a> buscando por <b>mpths</b>.
+<HR>
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man009.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man011.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+</BODY>

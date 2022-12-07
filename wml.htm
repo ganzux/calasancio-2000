@@ -1,0 +1,202 @@
+<html>
+<head>
+<script>
+ function click() { if (event.button==2) {alert("¡¡NO EN MI PÁGINA!!") } }document.onmousedown=click
+</script>
+
+<title>WML</title>
+<base target="_self">
+<STYLE TYPE="text/css">
+<!--
+BODY {OVERFLOW:scroll;OVERFLOW-X:hidden}
+.DEK {POSITION:absolute;VISIBILITY:hidden;Z-INDEX:200;}
+//-->
+</STYLE>
+
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="animate.js">
+</script>
+
+</head>
+
+<body bgcolor="#00FF00" text="#000000" background="fondotitulo.gif" bgproperties="fixed" onload="dynAnimation()">
+<DIV ID=dek CLASS=dek></DIV>
+
+<SCRIPT TYPE="text/javascript">
+<!--
+
+Xoffset=-60;
+Yoffset= 20;
+
+var nav,old,iex=(document.all),yyy=-1000;
+if(navigator.appName=="Netscape"){(document.layers)?nav=true:old=true;}
+
+if(!old){
+var skn=(nav)?document.dek:dek.style;
+if(nav)document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove=get_mouse;
+}
+
+function popup(msg,bak){
+var content="<TABLE  WIDTH=200 BORDER=1 BORDERCOLOR=black CELLPADDING=2 CELLSPACING=0 "+"BGCOLOR="+bak+"><TD ALIGN=center><FONT COLOR=white SIZE=2 face=arial>"+msg+"</FONT></TD></TABLE>";
+if(old){alert(msg);return;} 
+else{yyy=Yoffset;
+ if(nav){skn.document.write(content);skn.document.close();skn.visibility="visible"}
+ if(iex){document.all("dek").innerHTML=content;skn.visibility="visible"}
+ }
+}
+function get_mouse(e){
+        stringa=/MSIE 4.0/;
+        substringa=stringa.test(navigator.appVersion);
+
+        if(substringa==true){
+         var x=(nav)?e.pageX:event.x;skn.left=x+Xoffset;
+         var y=(nav)?e.pageY:event.y;skn.top=y+yyy;
+        }
+        else {
+         var x=(nav)?e.pageX:event.x+document.body.scrollLeft;skn.left=x+Xoffset;
+         var y=(nav)?e.pageY:event.y+document.body.scrollTop;skn.top=y+yyy;  
+        }
+}
+
+function kill(){
+if(!old){yyy=-1000;skn.visibility="hidden";}
+}
+
+//-->
+</SCRIPT>
+<!-- Include Stats -->
+
+
+<h2 align="center"><a href="leng.htm" ONMOUSEOVER="popup('LENGUAJES<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="lenguajes.gif" align="absmiddle" width="75" height="55"></a>
+</h2>
+
+<h2 align="center"><a href="c.htm"  ONMOUSEOVER="popup('LENGUAJE C<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="ce.gif" align="absmiddle" width="75" height="75"></a><a href="html.htm"  ONMOUSEOVER="popup('LENGUAJE HTML<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="html.gif" align="absmiddle" width="75" height="75"></a><a href="wml.htm"  ONMOUSEOVER="popup('LENGUAJE WML<br>','#df0050')"         ONMOUSEOUT="kill()" ;><img border="0" src="wml.gif" align="absmiddle" width="150" height="112"></a><a href="pascal.htm"  ONMOUSEOVER="popup('LENGUAJE PASCAL<br>','#df0050')";     ONMOUSEOUT="kill()"><img border="0" src="pascal.gif" align="absmiddle" width="75" height="75"></a>
+</h2>
+
+
+<p align="center"><big><big><big><big><big><big><big><big><big><big><big><big><marquee align="middle"
+behavior="alternate" border="0" style="font-family: Verdana, Marlett; color: #FF0000" width="471" height="59">WML&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TEMA 1</marquee></big></big></big></big></big></big></big></big></big></big></big></big></p>
+
+<h3 align="center"><a href="wml.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln"><img border="0" src=cc3.gif align="absmiddle" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="cc4.gif" width="96" height="24"></a>
+<a href="wml2.htm" onmouseover="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;" onmouseout="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln"><img border="0" src="cc5.gif" align="absmiddle" id="fpAnimswapImgFP3" name="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="cc6.gif" width="96" height="24"></a></h3>
+<h3 align="center">Introducción al WAP</h3>
+<p align="center">&nbsp;</p>
+<h3>Índice</h3>
+<ol>
+  <li><font color="#008000">¿Qué es la tecnología WAP?</font>
+  <li><font color="#008000">Arquitectura básica</font>
+  <li><font color="#008000">El entorno de desarrollo de aplicaciones (WAE)</font>
+  <li><font color="#008000">Futuro del WAP</font></li>
+</ol>
+<p>&nbsp;</p>
+<h3><font color="#008000">1. <a name="punto1">¿Qué es la tecnología WAP?</a></font></h3>
+<p>WAP es el acrónimo de <i>Wireless Application Protocol</i>, que podríamos
+traducir como Protocolo de Aplicación Inalámbrico. La tecnología WAP es
+realmente un estándar impulsado por la industria del sector de las
+telecomunicaciones con el objetivo de proporcionar un sistema avanzado de
+servicios de Internet para dispositivos móviles.</p>
+<p>El WAP está siendo fuertemente impulsado desde el <a target="_blank" href="http://www.wapforum.org/">WAPForum</a>,
+la organización encargada de definir y desarrollar el estándar.</p>
+<p>La tecnología tiene como premisas iniciales el uso de estándares abiertos
+ya existentes (como los protocolos HTTP, o el XML), la independencia de la
+tecnología de comunicaciones móviles sobre la que se implemente (en principio,
+GSM, pero en el futuro podría ser GPRS o incluso UMTS) y la independencia del
+terminal móvil (desde un teléfono hasta un PDA).</p>
+<p>A partir de las premisas anteriores, el conjunto de protocolos incluidos en
+el estándar WAP debe adaptarse a las condiciones propias de un entorno
+totalmente nuevo, como es el de las comunicaciones móviles. En concreto, la red
+de comunicaciones presenta limitaciones de ancho de banda importantes, alta
+latencia y cobertura intermitente, y los terminales de acceso no tienen grandes
+capacidades de procesamiento, ni de memoria, además de utilizar pantallas que
+no permiten más de 4 o 5 líneas de texto.</p>
+<p>Todas estas particularidades se han tenido en cuenta a la hora de diseñar
+los protocolos y la arquitectura del sistema WAP.</p>
+<p>&nbsp;</p>
+<h3><font color="#008000">2. <a name="punto2">Arquitectura básica</a></font></h3>
+<p>La tecnología WAP se basa en 3 elementos:</p>
+<ul>
+  <li>Cliente: el cliente será el micro-navegador WML de un terminal móvil.
+    Este será el equivalente al navegador de un PC en el Internet
+    &quot;fijo&quot; que todos conocemos.</li>
+</ul>
+<ul>
+  <li>Pasarela: la pasarela constituye la interfaz entre la red inalámbrica y
+    la red física. Es lo que se conoce como el WAP <i>Gateway</i>.</li>
+</ul>
+<ul>
+  <li>Servidor Web: en toda arquitectura cliente / servidor tenemos un servidor
+    encargado de procesar las peticiones del cliente y enviar las páginas
+    solicitadas.</li>
+</ul>
+<p>La figura siguiente esquematiza la interconexión de los elementos
+anteriores:</p>
+<p><img src="arquitecturawap.gif" width="497" height="240"></p>
+<p>El cliente o dispositivo WAP está provisto de un micro-navegador que
+constituye la interfaz de usuario para realizar las funciones de navegación. El
+micro-navegador interpreta páginas WML. El WML sería el equivalente al HTML
+del Internet &quot;fijo&quot;.</p>
+<p>La pasarela realiza 2 funciones básicas: conversión de protocolos (de HTTP
+a WSP/WTP y viceversa) y codificación / decodificación de las páginas WML.
+Estos procesos permiten la adaptación a la red inalámbrica del protocolo y de
+los contenidos.</p>
+<p>Finalmente, en el servidor <i>web</i> residen las páginas, así como
+cualquier otra lógica basada en CGIs, acceso a bases de datos o lenguajes de <i>script</i>.
+WAP es compatible con servidores HTTP 1.1, lo que facilita la adopción del estándar
+por parte de los proveedores de contenidos <i>web</i> ya existentes.</p>
+<p>&nbsp;</p>
+<h3><font color="#008000">3. <a name="punto3">El entorno de desarrollo de
+aplicaciones (WAE)</a></font></h3>
+<p>El estándar WAP incluye la definición de un entorno de desarrollo de
+aplicaciones llamado WAE (Wireless Application Environment). El WAE está
+formado por un micro-navegador WML, una máquina virtual para WMLScript y unas
+librerías estándar, entre otros componentes.</p>
+<p>El WAE es el punto de partida para desarrolladores que quieran iniciarse en
+la creación de páginas WML para terminales móviles WAP. Este entorno define
+el concepto de agente de usuario (<i>user agent</i>) como todo dispositivo (o <i>software</i>)
+capaz de interpretar contenidos específicos para WAP. Aunque vamos a centrarnos
+en los agentes de usuario para WML, éstos no son los únicos, ya que el estándar
+WAP define también agentes de usuario para WTA (Wireless Telephony
+Application). WTA permite la interacción entre los dispositivos móviles y la
+red de telefonía fija, para soportar servicios como tratamiento de llamadas
+entrantes, notificación de mensajes en el buzón de voz, etc.. La interfaz
+utilizada recibe el nombre de WTAI.</p>
+<p>&nbsp;</p>
+<h3><font color="#008000">4. <a name="punto4">Futuro del WAP</a></font></h3>
+<p>Las multinacionales del sector de las telecomunicaciones han apostado con
+fuerza por estas tecnologías. Sin embargo la respuesta de los usuarios está
+siendo algo fría. Las razones que han llevado a esta situación podría
+resumirse en:</p>
+<ul>
+  <li>Una red (la de telefonía móvil) que ofrece, hoy por hoy, conexiones
+    lentas, con frecuente saturación de líneas.</li>
+</ul>
+<ul>
+  <li>Escasa difusión de los terminales WAP, unido a las pocas facilidades de
+    uso que ofrecen (pantallas pequeñas, teclado inapropiado para escribir
+    textos,..).</li>
+</ul>
+<ul>
+  <li>Coste por tiempo de conexión, en lugar de por <i>bytes</i> de información
+    recibidos.</li>
+</ul>
+<ul>
+  <li>Escasez de servicios disponibles, y falta de estabilidad en la mayoría de
+    los mismos.</li>
+</ul>
+<p>Muchas de estas dificultades se irán subsanando con el tiempo. La tecnología
+WAP tiene su principal baza en la posibilidad de coexistir con las futuras
+generaciones de móviles (GPRS y UMTS). Esto la convierte en la tecnología
+perfecta para la transición, además de haber alcanzado para entonces una
+madurez de la que carecerán las futuras tecnologías de banda ancha.</p>
+<p>El lenguaje WML, sin embargo, tiene ya un futuro competidor, que acabará
+sustituyéndolo. Se trata del XHTML (HTML extendido). Este futuro HTML estará
+organizado en módulos, proporcionando un estándar para cada entorno tecnológico.
+El estándar para comunicaciones móviles se basará, con toda probabilidad, en
+el lenguaje WML del WAP.</p>

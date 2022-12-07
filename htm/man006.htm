@@ -1,0 +1,204 @@
+<HTML>
+<HEAD>
+<TITLE>Listas</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man005.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man007.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+        <HR>
+
+<CENTER><B><U><FONT size=+3>Listas de elementos</B></U></FONT></CENTER><P>
+
+	Existen tres tipos de listas, numeradas, sin numerar y de definici&oacute;n. Las listas numeradas representar&aacute;n los elementos de la lista numerando cada uno de ellos segun el lugar que ocupan en la lista. Para este tipo de lista se utiliza la directiva <B>
+&lt;OL&gt;&lt;/OL&gt;</B>. Cada uno de los elementos de la lista ir&aacute; precedido de la directiva <B>
+&lt;LI&gt;</B>. La directiva <B>&lt;OL&gt;</B> puede llevar los siguientes par&aacute;metros :<P>
+
+<DL>
+<DT><B>start =</B> num
+<DD>Indica que n&uacute;mero ser&aacute; el primero de la lista. Si no se indica se entiende que empezar&aacute; por el n&uacute;mero 1.<P>
+<DT><B>type =</B> tipo
+<DD>Indica el tipo de numeraci&oacute;n utilizada. Si no se indica se entiende que ser&aacute; una lista ordenada num&eacute;ricamente. <P>
+</DL>
+Los tipos posibles son :<P>
+<B>1</B> = Num&eacute;ricamente. (1,2,3,4,... etc.)<br>
+<B>a</B> = Letras min&uacute;sculas. (a,b,c,d,... etc.)<br>
+<B>A</B> = Letras may&uacute;sculas. (A,B,C,D,... etc.)<br>
+<B>i</B>  = Numeros romanos en min&uacute;sculas. (i.ii,iii,iv,v,... etc.)<br>
+<B>I</B> =  N&uacute;meros romanos en may&uacute;sculas. (I,II,III,IV,V,... etc.)<br>
+<p>
+<CENTER>
+<TABLE border=2 cellpadding=2 cellspacing=2>
+<TH>Ejemplo<TH>Resultado<TR>
+<TD>
+<B>&lt;OL&gt;</B><br>
+<B>&lt;LI&gt;</B>Espa&ntilde;a<br>
+<B>&lt;LI&gt;</B>Francia<br>
+<B>&lt;LI&gt;</B>Italia<br>
+<B>&lt;LI&gt;</B>Portugal<br>
+<B>&lt;/OL&gt;</B><br>
+<TD>
+<ol>
+<li>Espa&ntilde;a
+<li>Francia
+<li>Italia
+<li>Portugal
+</ol>
+<TR>
+<TD>
+<B>&lt;OL type =</B> A <B>&gt;</B><br>
+<B>&lt;LI&gt;</B>Espa&ntilde;a<br>
+<B>&lt;LI&gt;</B>Francia<br>
+<B>&lt;LI&gt;</B>Italia<br>
+<B>&lt;LI&gt;</B>Portugal<br>
+<B>&lt;/OL&gt;</B><br>
+<TD>
+<ol type=A>
+<li>Espa&ntilde;a
+<li>Francia
+<li>Italia
+<li>Portugal
+</ol>
+<TR>
+</TABLE>
+</CENTER>
+
+<P>
+
+Las listas sin numerar representan los elementos de la lista con un "topo" o marca que antecede a cada uno de ellos. 
+Se utiliza la directiva <B>&lt;UL&gt;&lt;/UL&gt;</B> para delimitar la lista, y 
+<B>&lt;LI&gt;</B> para indicar cada uno de los elementos. 
+La directiva <B>&lt;UL&gt;</B> puede contener el par&aacute;metro <B>type</B> 
+que indica la forma del "topo" o marca que antecede a cada elemento de la lista. 
+Los valores de <B>type</B> pueden ser <B>disk</B>, <B>circle</B> o 
+<B>square</B>, con lo que el topo o marca puede ser un disco, un circulo o un cuadrado.<P>
+
+<CENTER>
+<TABLE border=2 cellpadding=2 cellspacing=2>
+<TH>Ejemplo<TH>Resultado<TR>
+<TD><B>&lt;UL type =</B> disk <B>&gt;</B><br>
+<B>&lt;LI&gt;</B>Espa&ntilde;a<br>
+<B>&lt;LI&gt;</B>Francia<br>
+<B>&lt;LI&gt;</B>Italia<br>
+<B>&lt;LI&gt;</B>Portugal<br>
+<B>&lt;/UL&gt;</B><br>
+<TD>
+<Ul type=disk>
+<li>Espa&ntilde;a
+<li>Francia
+<li>Italia
+<li>Portugal
+</Ul>
+<TR>
+<TD>
+<B>&lt;UL type =</B> square<B>&gt;</B><br>
+<B>&lt;LI&gt;</B>Espa&ntilde;a<br>
+<B>&lt;LI&gt;</B>Francia<br>
+<B>&lt;LI&gt;</B>Italia<br>
+<B>&lt;LI&gt;</B>Portugal<br>
+<B>&lt;/UL&gt;</B><br>
+<TD>
+<ul type=square>
+<li>Espa&ntilde;a
+<li>Francia
+<li>Italia
+<li>Portugal
+</ul>
+<TR>
+</TABLE>
+</CENTER>
+
+<P>
+	Las listas de definici&oacute;n muestran los elementos tipo Diccionario, o sea, t&eacute;rmino y definici&oacute;n. Se utiliza para ellas la directiva <B>
+&lt;DL&gt;&lt;/DL&gt;</B>. El elemento marcado como t&eacute;rmino se antecede de la directiva <B>
+&lt;DT&gt;</B>, el marcado como definici&oacute;n se antecede de la directiva <B>
+&lt;DD&gt;</B>.<P>
+
+<CENTER>
+<TABLE border=2 cellpadding=2 cellspacing=2>
+<TH>Ejemplo<TH>Resultado<TR>
+<TD><B>&lt;DL&gt;</B><br>
+<B>&lt;DT&gt;</B>WWW<br>
+<B>&lt;DD&gt;</B>Abreviatura de World Wide Web<br>
+<B>&lt;DT&gt;</B>FTP<br>
+<B>&lt;DD&gt;</B>Abreviatura de File Transfer Protocol<br>
+<B>&lt;DT&gt;</B>IRC<br>
+<B>&lt;DD&gt;</B>Abreviatura de Internet Relay Chat<br>
+<B>&lt;/DL&gt;</B>
+<TD>
+<DL>
+<DT>WWW
+<DD>Abreviatura de World Wide Web
+<DT>FTP
+<DD>Abreviatura de File Transfer Protocol
+<DT>IRC
+<DD>Abreviatura de Internet Relay Chat
+</DL>
+</TABLE>
+</CENTER>
+
+<P>
+
+	Existen otros dos tipos de listas menos comunes. Las listas de Men&uacute; o Directorio se comportan igual que las listas sin numerar. 
+La lista de Men&uacute; utiliza la directiva <B>&lt;MENU&gt;&lt;/MENU&gt;</B> y los 
+elementos se anteceden de <B>&lt;LI&gt;</B> El resultado es una lista sin numerar mas 
+"compacta" es decir, con menos espacio interlineal entre los elementos. La lista de Directorio 
+utiliza la directiva <B>&lt;DIR&gt;&lt;/DIR&gt;</B> y los elementos se anteceden de 
+<B>&lt;LI&gt;</B>. Los elementos tienen un limite de 20 caracteres.<P>
+
+	Todas las listas se pueden "anidar", es decir incluir una lista dentro de otra, con lo que se consigue una estructura tipo "indice de materias".<P>
+<CENTER>
+<TABLE border=2 cellpadding=2 cellspacing=2>
+<TH>Ejemplo<TH>Resultado<TR>
+<TD>
+<DL>
+<DT><B>&lt;UL type= </B>disk<B>&gt;</B>
+<DD><B>&lt;LI&gt;</B>Buscadores
+<DL>
+<DT><B>&lt;UL&gt;</B>
+<DD><B>&lt;LI&gt;</B>Yahoo
+<DD><B>&lt;LI&gt;</B>Ole
+<DD><B>&lt;LI&gt;</B>Lycos
+<DT><B>&lt;/UL&gt;</B>
+</DL>
+<DD><B>&lt;LI&gt;</B>Links
+<DL>
+<DT><B>&lt;UL&gt;</B>
+<DD><B>&lt;LI&gt;</B>Microsoft
+<DD><B>&lt;LI&gt;</B>IBM
+<DT><B>&lt;/UL&gt;</B>
+</DL>
+<DT><B>&lt;/UL&gt;</B>
+</DL>
+<TD>
+<UL type=disk>
+<LI>Buscadores
+<UL>
+<LI>Yahoo
+<LI>Ole
+<LI>Lycos
+</UL>
+<LI>Links
+<UL>
+<LI>Microsoft
+<LI>IBM
+</UL>
+</UL>
+<TR>
+</TABLE>
+</CENTER>
+<HR>
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man005.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man007.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+</BODY>

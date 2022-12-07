@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main(void)
+{
+	float ec,m,v;
+
+		printf("Masa: ");
+			scanf("%f",&m);
+		printf("Velocidad: ");
+			scanf("%f",&v);
+
+			ec=m/2*v*v;
+
+		printf("\n\n\n Ec=½m·V²");
+		printf("\n Ec=½%f·%f²",m,v);
+		printf("\n Ec=%f",ec);
+
+}
+

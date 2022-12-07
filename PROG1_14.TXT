@@ -1,0 +1,12 @@
+/* Programa que convierte metros en kilometros */
+
+#include <stdio.h>
+int main(void)
+{
+	float metros;
+
+		printf("Dame los metros: ");
+			scanf("%f",&metros);
+		printf("\n\n%f metro(s) son %f kilometro(s)",metros,metros/1000);
+}
+

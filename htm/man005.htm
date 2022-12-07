@@ -1,0 +1,152 @@
+<HTML>
+<HEAD>
+<TITLE>Atributos del texto</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man004.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man006.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+        <HR>
+<B><U><FONT size=+3><CENTER>Cabeceras</B></U></FONT></CENTER><P>
+
+	En un documento de HTML se pueden indicar seis tipos de cabeceras (tama&ntilde;os de letra) por medio de las directivas <B>
+&lt;H1&gt;&lt;H2&gt;&lt;H3&gt;&lt;H4&gt;&lt;H5&gt;</B> y <B>
+&lt;H6&gt;</B>. El texto que escribamos entre el inicio y el fin de la directiva ser&aacute; el afectado por las cabeceras. La cabecera <B>
+&lt;H1&gt;</B> ser&aacute; la que muestre el texto en mayor tama&ntilde;o.<P>
+
+<P>
+
+<CENTER>
+<TABLE border=2 cellspacing=4 cellpadding=4>
+<TH>Ejemplo<TH>Se veria como<TR>
+<TD><B>&lt;H1&gt;</B>Texto de Prueba<B>&lt;/H1&gt;</B>
+<TD><H1>Texto de prueba</H1><TR>
+<TD><B>&lt;H2&gt;</B>Texto de Prueba<B>&lt;/H2&gt;</B>
+<TD><H2>Texto de Prueba</H2><TR>
+<TD><B>&lt;H3&gt;</B>Texto de Prueba<B>&lt;/H3&gt;</B>
+<TD><H3>Texto de Prueba</H3><TR>
+<TD><B>&lt;H4&gt;</B>Texto de Prueba<B>&lt;/H4&gt;</B>
+<TD><H4>Texto de Prueba</H4><TR>
+<TD><B>&lt;H5&gt;</B>Texto de Prueba<B>&lt;/H5&gt;</B>
+<TD><H5>Texto de Prueba</H5><TR>
+<TD><B>&lt;H6&gt;</B>Texto de Prueba<B>&lt;/H6&gt;</B>
+<TD><H6>Texto de Prueba</H6><TR>
+</TABLE>
+</CENTER>
+
+<P>
+
+</B></U></FONT>	Los textos marcados como "cabeceras" provocan automaticamente un retorno de carro sin necesidad de incluir la directiva <B>
+&lt;BR&gt;</B>. Por ejemplo<P>
+
+<CENTER>
+<TABLE border=2 cellspacing=4 cellpadding=4>
+<TH>Ejemplo<TH>Se veria como<TR>
+<TD><B>&lt;H3&gt;</B>Pagina de Jose<B>&lt;/H3&gt;</B>Esta es mi pagina personal.
+<TD><H3>Pagina de Jose</H3>Esta es mi pagina personal<TR>
+</TABLE>
+</CENTER>
+<P>
+<HR>
+<CENTER><B><U><FONT size=+3>Atributos del Texto</B></U></FONT></CENTER><P>
+
+Para indicar atributos del texto (negrilla, subrayado, etc...) tenemos varias directivas. Algunas de ellas no son reconocidas por determinados visores de Internet,
+es por ello que segun el visor que este vd. utilizando, ver&aacute; el resultado correctamente o no.<P>
+
+<CENTER>
+<TABLE border=2 cellspacing=2 cellpadding=2>
+<TH>Atributo<TH>Directiva<TH>Ejemplo<TH>Resultado<TR>
+<TD>Negrita<TD><B>&lt;B&gt;&lt;/B&gt;</B>
+<TD><B>&lt;B&gt;</B>Texto de prueba<B>&lt;/B&gt;</B>
+<TD><B>Texto de prueba</B><TR>
+<TD>Cursiva<TD><B>&lt;I&gt;&lt;/I&gt;</B>
+<TD><B>&lt;I&gt;</B>Texto de prueba<B>&lt;/I&gt;</B>
+<TD><I>Texto de prueba</I><TR>
+<TD>Teletype<TD><B>&lt;TT&gt;&lt;/TT&gt;</B>
+<TD><B>&lt;TT&gt;</B>Texto de prueba<B>&lt;/TT&gt;</B>
+<TD><TT>Texto de prueba</TT><TR>
+<TD>Subrayado<TD><B>&lt;U&gt;&lt;/U&gt;</B>
+<TD><B>&lt;U&gt;</B>Texto de prueba<B>&lt;/U&gt;</B>
+<TD><U>Texto de prueba</U><TR>
+<TD>Tachado<TD><B>&lt;S&gt;&lt;/S&gt;</B>
+<TD><B>&lt;S&gt;</B>Texto de prueba<B>&lt;/S&gt;</B>
+<TD><S>Texto de prueba</S><TR>
+<TD>Parpadeo<TD><B>&lt;BLINK&gt;&lt;/BLINK&gt;</B>
+<TD><B>&lt;BLINK&gt;</B>Texto de prueba<B>&lt;/BLINK&gt;</B>
+<TD><BLINK>Texto de prueba</BLINK><TR>
+<TD>Superindice<TD><B>&lt;SUP&gt;&lt;/SUP&gt;</B>
+<TD><B>&lt;SUP&gt;</B>Texto de prueba<B>&lt;/SUP&gt;</B>
+<TD><SUP>Texto de prueba</SUP><TR>
+<TD>Subindice<TD><B>&lt;SUB&gt;&lt;/SUB&gt;</B>
+<TD><B>&lt;SUB&gt;</B>Texto de prueba<B>&lt;/SUB&gt;</B>
+<TD><SUB>Texto de prueba</SUB><TR>
+<TD>Centrado<TD><B>&lt;CENTER&gt;&lt;/CENTER&gt;</B>
+<TD><B>&lt;CENTER&gt;</B>Texto de prueba<B>&lt;/CENTER&gt;</B>
+<TD align=center>Texto de prueba<TR>
+</TABLE>
+</CENTER>
+<P>
+	Por otro lado la directiva <B>&lt;FONT&gt;&lt;/FONT&gt;</B> nos permite variar 
+el tama&ntilde;o, el color, y el tipo de letra de un texto determinado. Utiliza para ello los par&aacute;metros 
+<B>size</B>, <B>bgcolor</B> y <B>face</B>.<P>
+
+<DL>
+<DT><B>size =</B> valor
+<DD>Da al texto un tama&ntilde;o en puntos determinado.<P>
+<DT><B>size =</B> <B>+</B>/<B>-</B> valor
+<DD>Da al texto un tama&ntilde;o tantas veces superior (+) o inferior (-) como indique el valor.<P>
+<DT><B>color =</B> "codigo de color"
+<DD>Escribe el texto en el color cuyo codigo se especifica.<P>
+<DT><B>face =</B> "nombre de font"
+<DD>Escribe el texto en el tipo de letra especificado. Si este tipo de letra no existe en el ordenador que "lee" la pagina se usara el font predeterminado del navegador.<P>
+</DL>
+
+<CENTER>
+<TABLE border=2 cellspacing=4 cellpadding=4>
+<TH>Ejemplo<TH>Se veria como<TR>
+<TD><B>	&lt;FONT size = </B>+2<B> color = </B>"#FF0000 <B> face = </B>"Arial"<B>&gt; </B>Texto de prueba<B> &lt;/FONT&gt;</B>
+<TD><FONT size=+2 face="Arial" color="#FF0000">Texto de prueba</FONT>
+<TR>
+</TABLE>
+</CENTER>
+
+<P>
+Existen otras directivas que realizan las mismas operaciones que las antes vistas en los atributos del texto.<P>
+<CENTER>
+<TABLE border=2 cellspacing=4 cellpadding=4>
+<TH>Directiva<TH>Hace lo mismo que<TR>
+<TD><B>&lt;STRONG&gt;&lt;/STRONG&gt;</B>
+<TD><B>&lt;B&gt;&lt;/B&gt;</B>
+<TR>
+<TD><B>&lt;CITE&gt;&lt;/CITE&gt;</B>
+<TD><B>&lt;I&gt;&lt;/I&gt;</B>
+<TR>
+<TD><B>&lt;STRIKE&gt;&lt;/STRIKE&gt;</B>
+<TD><B>&lt;S&gt;&lt;/S&gt;</B>
+<TR>
+</TABLE>
+</CENTER>
+<p>
+
+Para incluir comentarios en la p&aacute;gina Web se utiliza la directiva &lt;!-- --&gt;.<P>
+<I>Ejemplo :</I><P>
+<B>&lt;!--</B> Esto es un comentario sobre mi pagina Web <B>--&gt;</B><P>
+Los comentarios no seran mostrados por el visor y son utiles para realizar anotaciones en el documento HTML que nos indiquen lo que estamos 
+haciendo en una determinada parte del documento. Asimismo veremos mas adelante que la directiva de comentario nos sera de utilidad para incluir 
+codigo JavaScript en nuestra pagina Web.
+<hr>
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man004.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man006.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+</BODY>
+</HTML>

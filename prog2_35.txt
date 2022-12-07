@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int  lim1,lim2,cont,ito;
+char tecla;
+
+printf("Dame el intervalo:");
+printf("\nLimite superior: ");  scanf("%d",&lim1);
+printf("\nLimite inferior: ");  scanf("%d",&lim2);
+			       cont=lim1;               clrscr();
+if (lim2<lim1 && lim1>0 &&lim2>0)
+		{
+		   do{
+			 for(ito=0;ito<11;ito++){
+				     printf("\n%d · %d = %d",cont,ito,cont*ito);
+						}
+			     cont--;
+				   tecla=getch();clrscr();
+		     }
+		   while(cont>=lim2);
+		}
+if (lim1<lim2) printf("\nERROR \"01\": %d es menor que %d",lim1,lim2);
+if (lim1<=0)   printf("\nERROR \"02\": %d es menor o igual a 0",lim1);
+if (lim2<=0)   printf("\nERROR \"03\": %d es menor o igual a 0",lim2);
+}

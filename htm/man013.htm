@@ -1,0 +1,171 @@
+<HTML>
+<HEAD>
+<TITLE>Trucos</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man012.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man000.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+        <HR>
+<CENTER><B><U><FONT size=+3>Otros trucos para las p&aacute;ginas HTML</B></U></FONT></CENTER><P>
+Existen diferentes trucos para hacer nuestras p&aacute;ginas Web m&aacute;s atractivas. 
+No se trata de directivas de HTML pero su uso permitir&aacute; conseguir mejores resultados 
+est&eacute;ticos en nuestras p&aacute;ginas Web.<P>
+<A name="sec1"></A>
+<B><FONT size=+2><CENTER><U>Gifs Animados.</B></U></FONT></CENTER><P>
+Un Gif animado es un gr&aacute;fico del tipo <B>GIF 89a</B> que da la impresi&oacute;n 
+de animaci&oacute;n. Para conseguir este efecto se deben crear por separado los 
+gr&aacute;ficos GIF que componen la secuencia de la animaci&oacute;n. Una vez hecho 
+esto utilizaremos un programa para "fundir" todos estos gr&aacute;ficos en uno solo. 
+Al mostrar este gr&aacute;fico en nuestra p&aacute;gina Web, el visor mostrar&aacute; la 
+secuencia de todos los graficos individuales de forma continua, con lo que dar&aacute; el 
+aspecto de animaci&oacute;n que buscamos. <P>
+
+Uno de los programas que permite crear Gifs animados es el <A href="http://www.mindworkshop.com/alchemy/gifcon.html" target="_blank"><B><I>GIF CONSTRUCTION 
+SET</B></I></A> desarrollado por <A href="http://www.mindworkshop.com/alchemy/alchemy.html" target="_blank">Alchemy MindWorks</A>.
+
+Asimismo existe una URL donde se pueden "submitir" la secuencia de gifs est&aacute;ticos 
+y nos devuelve el gif animado correspondiente. 	La URL es <A href="http://www.vrl.com/Imaging/index.html" target=_blank"><B><I>http://www.vrl.com/Imaging/index.html.</B></I></A><P>
+A continuaci&oacute;n podemos ver un gif animado. Si su visor no reconoce esta caracter&iacute;stica
+vera el gr&aacute;fico estatico.<p>
+
+<center><img src="animado.gif"></CENTER><p>
+
+<HR>
+<A name="sec2"></A>
+<CENTER><B><U><FONT size=+2>Gifs Transparentes</B></U></FONT></CENTER><P>
+
+Un Gif transparente es un grafico del tipo <B>GIF 89a</B> en el cual se define su color 
+de fondo como transparente. Con esto conseguimos el efecto de que el gr&aacute;fico se 
+encuentre como "flotando" en nuestra p&aacute;gina. Para crear Gifs con el fondo 
+transparente podemos utilizar un programa freeware llamado <A href="http://www.geocities.com/SiliconValley/2915/giftrans.zip"><B>GIFTRANS.EXE</B></A>. Este programa permite 
+cambiar uno de los colores del gr&aacute;fico a transparente. Para ello la instruccion a teclear 
+es :<P>
+<center>
+<B><I>giftrans -t</B> codigo_de_color fichero_gif <B>&gt;</B> nuevo_fichero</I></center><P>
+
+El codigo de color que queremos que se transforme a transparente hay que darlo en 
+formato <B><I>#RRVVAA</B></I> que fu&eacute; visto al principio de este manual. La 
+instrucci&oacute;n:<P>
+<center><B><I>giftrans -l</B> fichero_gif</I></center><P>
+muestra una lista de los colores incluidos en el gr&aacute;fico con su c&oacute;digo de color correspondiente.<P>
+De cualquier forma, los programas gr&aacute;ficos recientes, como <B><I>CorelDraw 6</B></I> 
+y <A href="http://www.world.std.com/~mmedia/lviewp.html" target=_blank><B><I>LviewPro</B></I></A>, permiten crear Gifs con colores transparentes de una manera muy sencilla.<P>
+
+Para ver la diferencia entre un grafico con fondo transparente y otro sin el, vea el ejemplo siguiente :<P>
+<table width=100%>
+<th width=50% align=center>
+Gif Normal
+<th width=50% align=center>
+Gif Transparente
+<TR>
+<td width=50% align=center>
+<img src="mailold.gif">
+<td align=center>
+<img src="mail.gif">
+<TR>
+</table>
+<p>
+<hr>
+<A name="sec3">
+<CENTER><B><U><FONT size=+2>Programas escritos en JavaScript.</B></U></FONT></CENTER><P>
+Ademas de leerse las especificaciones de JavaScript para realizar programas en Java, 
+existe una forma m&aacute;s facil de incluir estos scripts en nuestra p&aacute;gina. 
+Si estamos viendo una p&aacute;gina que tiene algun efecto especial que nos guste, 
+simplemente hemos de visualizar el c&oacute;digo fuente de la misma (en Netscape 
+opcion View - Document Source), marcar con el rat&oacute;n todo el bloque contenido 
+entre las directivas <B>&lt;SCRIPT&gt; &lt;/SCRIPT&gt;</B>, copiarlas al portapapeles con 
+CTRL+C y posteriormente incluir este bloque en nuestra p&aacute;gina modificando los 
+literales o frases animadas. Estas frases ser&aacute;n faciles de localizar porque 
+contendr&aacute;n la palabra <B><I>var xx= " ....."</B></I> antecedi&eacute;ndolas.<P>
+Sirva como ejemplo este c&oacute;digo completo de una funci&oacute;n JavaScript muy 
+utilizada, que muestra varios mensajes desplazandose por la barra inferior del visor de 
+p&aacute;ginas Web. Debemos modificar los literales indicados en <B><I>var m1</B>, 
+<B>var m2</B></I> y <B><I>var m3</B></I> para adecuarlos al texto que queramos mostrar. 
+Si se desea incluir mas mensajes hay que a&ntilde;adir mas lineas del tipo 
+<B><I>var mx = "texto "</B></I> y "sumar" dichas variables en el apartado <B><I>var msg =</B></I> .<P>
+
+<b>IMPORTANTE : </b>Notese que el codigo JAVASCRIPT se encuentra en la seccion de "cabecera" (&lt;HEAD&gt;), y que la directiva &lt;BODY&gt; incluye 
+el parametro <b>onload</b> para que se comienze a ejecutar el codigo JavaScript en el momento de cargar la pagina.<p>
+
+<center>
+<table border=1>
+<td>
+<PRE>
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;SCRIPT language=&quot;JavaScript&quot;&gt;
+&lt;!-- Ocultar el código para los viejos visores html --
+   // Desarrollo HTML, CGI y JAVASCRIPT por NETWEB,S.L., e-mail: 100445.2371@compuserve.com.
+   function scrollit(seed)
+   {
+      var m1  =  &quot; Texto 1 &quot;
+      var m2  =  &quot; Texto 2 &quot;
+      var m3  =  &quot; Texto 3 &quot;
+      var msg=m1+m2+m3;
+      var out = &quot; &quot;;
+      var c = 0;
+      if (seed &gt; 100)
+        {
+        seed--;
+        var cmd=&quot;scrollit(&quot; + seed + &quot;)&quot;;
+        timerTwo=window.setTimeout(cmd,7);
+        }
+      else
+        if (seed &lt;= 100 &amp;&amp; seed &gt; 0)
+          {
+          for (c=0 ; c &lt; seed ; c++)
+            {
+            out+=&quot; &quot;;
+            }
+          out+=msg;
+          seed--;
+          var cmd=&quot;scrollit(&quot; + seed + &quot;)&quot;;
+          window.status=out;
+          timerTwo=window.setTimeout(cmd,7);
+          }
+        else if (seed &lt;= 0)
+          {
+          if (-seed &lt; msg.length)
+            {
+            out+=msg.substring(-seed,msg.length);
+            seed--;
+            var cmd=&quot;scrollit(&quot; + seed + &quot;)&quot;;
+            window.status=out;
+            timerTwo=window.setTimeout(cmd,7);
+            }
+          else
+            {
+            window.status=&quot; &quot;;
+            timerTwo=window.setTimeout(&quot;scrollit(100)&quot;,75);
+            }
+          }
+   }
+   // --Final del codigo oculto --&gt;
+&lt;/SCRIPT&gt;
+&lt;TITLE&gt;&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY  onload=&quot;timerONE=window.setTimeout('scrollit(100)',500)&quot;&gt;</pre>
+<p>
+(..... instrucciones propias para presentar la pagina web.....)<p>
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+</PRE>
+</table>
+</center>
+<HR>
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man012.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man000.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+</BODY>
+</HTML>

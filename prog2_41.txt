@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int   consonantes=0,num=0,a=0,e=0,i=0,o=0,u=0;
+char  caracter;
+do{
+	if (caracter=='a')
+	  a++;
+	if (caracter=='e')
+	  e++;
+	if (caracter=='i')
+	  i++;
+	if (caracter=='o')
+	  o++;
+	if (caracter=='u')
+	  u++;
+
+	if (caracter=='b' || caracter=='c' || caracter=='d' || caracter=='g' || caracter=='h' ||caracter=='j' ||caracter=='k' ||caracter=='l' ||caracter=='m' ||caracter=='n' ||caracter=='ñ' ||caracter=='p' || caracter=='q' || caracter=='r' ||caracter=='s' ||caracter=='t' ||caracter=='v' ||caracter=='w' ||caracter=='x' ||caracter=='y' ||caracter=='z')
+	  consonantes++;
+
+	;
+		 num++;
+    caracter=getche();
+  }
+while(caracter!='f');
+
+
+
+
+
+
+printf("\n\n\nA: %d",a);
+printf("\nE: %d",e);
+printf("\nI: %d",i);
+printf("\nO: %d",o);
+printf("\nU: %d",u);
+printf("\nConsonantes: %d",consonantes-1);
+printf("\nTOTAL: %d",num);
+}

@@ -1,0 +1,369 @@
+<HTML>
+<HEAD>
+<TITLE>Extensiones del HTML</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man011.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man013.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+        <HR>
+<CENTER><B><U><FONT size=+3>Extensiones del HTML</B></U></FONT></CENTER><P>
+
+Netscape y Microsoft han a&ntilde;adido al estandar de HTML diversas directivas para hacer m&aacute;s atractiva la visualizaci&oacute;n de las p&aacute;ginas Web. Veremos aqu&iacute; las m&aacute;s interesantes y la forma de usarlas. <P>
+Estas directivas pueden no funcionar en alg&uacute;n visor de HTML, pero el uso de ellas por parte de los dos "grandes" del software para Internet hace preveer que ser&aacute;n inmediatamente incluidas en las nuevas versiones de el resto de los visores.<P>
+<HR>
+<A name="sec1"></A>
+<B><FONT size=+2><CENTER><U>Applet</B></U></FONT></CENTER><P>
+La directiva <B>&lt;APPLET&gt;&lt;/APPLET&gt;</B> indica la ejecuci&oacute;n de un 
+programa (applet) externo escrito en lenguaje <A href="http://java.sun.com" target="_blank"><B><I>JAVA</B></I></A>. 
+Java es un lenguaje creado por Sun Microsystems que permite realizar operaciones 
+multimedia sin incorporar nuevas directivas HTML. Los applets son muy variados, 
+y cada uno de ellos realiza una tarea distinta. Hay applets para hacer que el texto se 
+mueva dentro de la hoja, se contraiga y expanda, etc.... Esta directiva tiene los siguientes 
+par&aacute;metros :<P>
+
+<DL>
+<DT><B>codebase =</B> URL
+<DD>Direccion donde se encuentra el applet Java ( Por ejemplo <I>http://www.ucm.es/java</I>). Si el Applet se encuentra en el mismo lugar que la pagina Web este parametro no es necesario.<P>
+<DT><B>code =</B> programa
+<DD>Indica el nombre del programa (applet) Java a ejecutar.<P>
+<DT><B>width =</B> num.
+<DT><B>height =</B> num.
+<DD>Indican el espacio (ancho y alto) en puntos en el que el programa  realizar&aacute; su funci&oacute;n.
+</DL>
+<P>
+Dentro de la directiva <B>&lt;APPLET&gt;</B> se incluye la directiva <B>&lt;PARAM&gt;</B> que env&iacute;a al programa Java los par&aacute;metros necesarios para su funcionamiento. Esta directiva suele tener como m&iacute;nimo los par&aacute;metros :<P>
+<DL>
+<DT><B>name =</B> campo
+<DD>Nombre de la variable a enviar.<P>
+<DT><B>value =</B> valor
+<DD>Valor de la variable a enviar.
+</DL>
+<P>
+
+Veamos un ejemplo en el que se ejecuta un programa Java que permite que un texto se desplaze de un lado a otro de una zona de la pantalla:<P>
+<CENTER>
+<TABLE BORDER=2>
+<TD>
+<B>&lt;APPLET codebase=</B>"http://www.ucm.es/java" <B>code=</B>"Laufschrift.class" <B>width =</B> 350 <B>height =</B> 25 <B>&gt;</B><br>
+<B>&lt;PARAM name =</B> bg.color <B>value =</B> "0,255,0"<B>&gt;</B><BR>
+<B>&lt;PARAM name =</B> message <B>value =</B> "**Bienvenido a mi pagina WEB - Manual de HTML**"<B>&gt;</B><BR>
+<B>&lt;/APPLET&gt;</B>
+<TR>
+</TABLE>
+</CENTER>
+<P>
+Si tu visor permite el uso de APPLETS ver&aacute;s el efecto producido en el siguiente cuadro :<P>
+
+<CENTER>
+<applet code="Laufschrift.class" width=350 height=25>
+<param name=bg.color value="0,255,0">
+<param name=message value="**Bienvenido a mi pagina WEB - Manual de HTML**">
+</applet>
+
+</CENTER>
+<P>
+Para mas ejemplos visita mi pagina de <b><A HREF="http://web.jet.es/~luisfd/applets/applets.htm" TARGET="_blank">APPLETS JAVA</a></b>.
+<HR>
+<A name="sec2"></A>
+<CENTER><B><U><FONT size=+2>Marquee</B></U></FONT></CENTER><P>
+La directiva <B>&lt;MARQUEE&gt;&lt;/MARQUEE&gt;</B> crea una marquesina con un texto en su interior que se desplaza. 
+Funciona unicamente con Ms-Explorer. Sus par&aacute;metros son los siguientes :<P>
+<DL>
+<DT><B>align =</B> top / middle / bottom
+<DD>Indica si el texto del interior de la marquesina se alinea en la zona alta (top), en la baja (bottom) o en el centro (middle) de la misma.<P>
+<DT><B>bgcolor =</B> "codigo de color"
+<DD>Indica el color del fondo de la marquesina.<P>
+<DT><B>direction =</B> left / right
+<DD>Indica hacia que lugar se desplaza el texto, hacia la izquierda (left) o hacia la derecha (right)<P>
+<DT><B>height =</B> num o %
+<DD>Indica la altura de la marquesina en puntos o porcentaje en funci&oacute;n de la ventana del visor.<P>
+<DT><B>width =</B> num o %
+<DD>Indica la anchura de la marquesina en puntos o porcentaje en funci&oacute;n de la ventana del visor.<P>
+<DT><B>loop =</B> num / infinite
+<DD>Indica el numero de veces que se desplazar&aacute; el texto por la marquesina. Si se indica infinite, se desplazar&aacute; indefinidamente.<P>
+<DT><B>scrolldelay =</B> num.
+<DD>Indica el n&uacute;mero de milisegundos que tarda en reescribirse el texto por la marquesina, a mayor n&uacute;mero mas lentamente se desplazar&aacute; el texto.
+</DL>
+<P>
+Veamos un ejemplo de esta directiva :
+<P>
+<CENTER>
+<TABLE border=2>
+<TD>
+<B>&lt;MARQUEE bgcolor =</B> &quot;#FFFFFF&quot;  <B>width =</B> 50% <B>scrolldelay =</B> 0 <B>&gt;</B> Bienvenido a mi pagina personal en Internet.<BR>
+<B>&lt;/MARQUEE&gt;</B>
+<TR>
+</TABLE>
+</CENTER>
+Si estas utilizando Ms-Explorer veras el efecto producido a continuaci&oacute;n:<P>
+<CENTER>
+<MARQUEE bgcolor ="#FFFFFF" width =50% scrolldelay = 0 >Bienvenido a mi pagina personal en Internet.
+</MARQUEE>
+<p>
+</CENTER>
+<HR>
+<A name="sec3"></A>
+<CENTER><B><U><FONT size=+2>Sonido de fondo</B></U></FONT></CENTER><P>
+
+Nuestra p&aacute;gina Web puede tener un sonido que se active al entrar en la p&aacute;gina. 
+Esta caracter&iacute;stica de Ms Explorer utiliza la directiva <B>&lt;BGSOUND&gt;</B> 
+y tiene los siguientes par&aacute;metros :<P>
+<DL>
+<DT><B>src =</B> "fichero"
+<DD>Indica el nombre del fichero que contiene el sonido (.waw, .mid).<P>
+<DT><B>loop =</B> num / infinite
+<DD>Indica el n&uacute;mero de veces que se reproducir&aacute; el sonido. Si se indica infinite, el sonido se reproducir&aacute; de forma cont&iacute;nua hasta que abandonemos la p&aacute;gina.
+</DL>
+<P>
+Un ejemplo de esta directiva ser&iacute;a :<P>
+<CENTER>
+<TABLE border=2>
+<TD>
+<B>&lt;BGSOUND src=</B> &quot;yesterday.mid&quot; <B>loop=</B> infinite<B>&gt;</B>
+<TR>
+</TABLE>
+</CENTER>
+<P>
+Para utilizar esta funcion en Netscape se utiliza la directiva <B>&lt;EMBED&gt;</B>. 
+Esta directiva se utiliza realmente para "incrustar" un objeto en nuestra pagina Web. Dicho objeto puede ser un fichero de sonido, un video, un grafico BMP, etc...
+Tiene los siguientes par&aacute;metros :<P>
+<DL>
+<DT><B>src =</B> "fichero"
+<DD>Indica el nombre del fichero que contiene el sonido (.waw, .mid) o el video (.avi).<P>
+<DT><B>autostart =</B> true
+<DD>Incluirlo si deseamos que la reproduccion se inicie inmediatamente.
+<DT><B>loop =</B> true
+<DD>Incluirlo si deseamos que la reproduccion no se detenga. (al terminar, vuelve a comenzar automaticamente).
+<DT><B>volume =</B> numero
+<DD>Volumen al que se reproducen los ficheros de sonido.
+<DT><B>width =</B> numero
+<DT><b>height =</b> numero
+<DD>Anchura y Altura de la representacion del objeto. (Si es un sonido no es necesario este parametro).
+<DT><b>controls =</b> smallconsole
+<DD>Visualiza una serie de controles que nos permiten iniciar la reproduccion del fichero, asi como realizar una pausa o detenerlo.
+</DL>
+<P>
+Un ejemplo de esta directiva ser&iacute;a :<P>
+<CENTER>
+<TABLE border=2>
+<TD>
+<B>&lt;EMBED src=</B> &quot;yesterday.mid&quot; <B>loop=</B> true <B>autostart=</B> true <B>volume=</B>50 <B>width=</B>50 <B>height=</B>15 <B>controls=</B>smallconsole<B>&gt;</B>
+<TR>
+</TABLE>
+</CENTER>
+<P>
+
+<HR>
+<A name="sec4"></A>
+<B><FONT size=+2><CENTER><U>Frames</B></U></FONT></CENTER>
+<P>
+Las frames es una t&eacute;cnica para subdividir la pantalla del visor en diferentes ventanas. 
+Cada una de estas ventanas se podr&aacute; manipular por separado, permiti&eacute;ndonos 
+mostrar en cada una de ellas una p&aacute;gina Web diferente. Esto es muy util para, 
+por ejemplo, mostrar permanentemente en una ventana los diferentes contenidos de 
+nuestra p&aacute;gina, y en otra ventana mostrar el contenido seleccionado.<P>
+
+Para definir las diferentes subventanas o frames se utilizan las directivas 
+<B>&lt;FRAMESET&gt; &lt;/FRAMESET&gt;</B> y <B>&lt;FRAME&gt;</B>. La directiva 
+<B>&lt;FRAMESET&gt;</B> indica como se va a dividir la ventana principal. 
+Pueden incluirse varias directivas <B>&lt;FRAMESET&gt;</B> anidadas con el objeto de 
+subdividir una subdivisi&oacute;n. Los par&aacute;metros de <B>&lt;FRAMESET&gt;</B> 
+son <B>rows</B> y <B>cols</B> en funci&oacute;n de si la divisi&oacute;n de la pantalla 
+se realiza por filas (rows) o columnas (cols). Los par&aacute;metros <B>rows</B> 
+y <B>cols</B> se acompa&ntilde;an de un grupo de n&uacute;meros que indican en puntos 
+o en porcentaje el tama&ntilde;o de cada una de las subventanas. En caso de 
+utilizar <B>rows</B> los tama&ntilde;os de las subventanas se entienden indicados de 
+arriba a abajo, es decir, el primer valor ser&aacute; el asignado a la ventana superior, 
+el segundo a la ventana inmediatamente inferior, etc... En el caso de <B>cols</B> los 
+tama&ntilde;os se aplican de izquierda a derecha.<P>
+
+<CENTER>
+<TABLE border=2>
+<Th>Ejemplos<TH>Resultado<TR>
+<TD width=60%>
+<B>&lt;FRAMESET rows =</B> "25%,50%,25%"<B>&gt;</B>
+<TD>Crea tres subventanas horizontales, la primera ocupar&aacute; un 20% de la ventana principal, la segunda un 50% y la tercera un 25%.
+<TR>
+<TD width=60%>
+<B>&lt;FRAMESET cols =</B> "120,*,100"<B>&gt;</B>
+<TD>Crea tres subventanas verticales, la primera y la tercera tendr&aacute;n un "ancho" fijo de 120 y 100 puntos respectivamente. La segunda ocupar&aacute; el resto de la ventana principal (*).
+<TR>
+<TD>
+<DL width=60%>
+<DT><B>&lt;FRAMESET cols =</B> "15%,*"<B>&gt;</B>
+<DD><B>&lt;FRAMESET rows =</B> 20%,*"<B>&gt;</B>
+</DL>
+<TD>En este caso "anidamos" dos directivas. La primera divide la ventana principal en dos subventanas verticales, la primera ocupa un 15% de la ventana principal y la segunda el resto. La segunda directiva vuelve a subdividir la primera subventana creada anteriormente, pero esta vez en dos subventanas horizontales, la superior ocupar&aacute; un 20% de la subventana, y la inferior el resto.
+<TR>
+</TABLE>
+</CENTER>
+<P>
+La directiva <B>&lt;FRAME&gt;</B> indica las propiedades de cada subventana. Es necesario 
+indicar una directiva <B>&lt;FRAME&gt;</B> para cada subventana creada. 
+Los par&aacute;metros de <B>&lt;FRAME&gt;</B> son :<P>
+<DL>
+<DT><B>name =</B> "nombre"
+<DD>Indica el nombre por el que nos referiremos a esa subventana.<P>
+<DT><B>src =</B> "URL"
+<DD>La ventana mostrar&aacute; en principio el contenido del documento HTML que se indique.<P>
+<DT><B>marginwidth =</B> num.
+<DD>Indica el margen izquierdo y derecho de la subventana en puntos.<P>
+<DT><B>marginheight =</B> num
+<DD>Indica el margen superior e inferior de la subventana en puntos.<P>
+<DT><B>scrolling =</B> "yes / no / auto"
+<DD>Indica si se aplica una barra de desplazamiento a la subventana en el caso de 
+que la p&aacute;gina que se cargue en ella no quepa en los l&iacute;mites de la subventana. 
+el valor "<B>yes</B>" muestra siempre la barra de desplazamiento, "<B>no</B>" no la 
+muestra nunca (la zona de la p&aacute;gina que no quepa en la subventana no la veremos), 
+y "<B>auto</B>" la muestra solo en caso de que sea necesario para poder ver la p&aacute;gina.<P>
+<DT><B>noresize</B>
+<DD>Si se indica este par&aacute;metro, el usuario no podr&aacute; "redimensionar" las 
+subventanas con el visor. Un usuario que este viendo una pagina con frames puede 
+redimensionarlas seleccionando un borde de la subventana con el cursor y desplaz&aacute;ndolo.<P>
+<DT><B>border = </B>num.
+<DD>Indica el "borde" que separara esta frame de la siguiente. Si se indica cero (0) no se mostrara borde entre las 
+frames, consiguiendo un efecto muy elegante, siempre y cuando el "fondo" de todas las frames sea el mismo, o sean colores solidos.
+<P>
+</DL>
+<P>
+
+Los visores que no soportan la caracter&iacute;stica de subventanas, no mostrar&aacute;n nada 
+de lo indicado con estas directivas. Es por ello que existe una directiva llamada 
+<B>&lt;NOFRAMES&gt; &lt;/NOFRAMES&gt;</B>. Todo los indicado entre esta directiva 
+ser&aacute; lo que muestren los visores sin capacidad para visualizar Frames. Los 
+visores que soporten Frames obviaran las directivas incluidas entre <B>&lt;NOFRAMES&gt; &lt;/NOFRAMES&gt;</B>.<P>
+Si su visor puede visualizar Frames tendrá en estos momentos la pantalla dividida en dos zonas
+independientes, en la izquierda ver&aacute; el &iacute;ndice de materias de este manual, y en la
+derecha estar&aacute; viendo la secci&oacute;n del manual que haya selecionado. En otro caso 
+simplemente ver&aacute; la secci&oacute;n del manual.<P>
+La definici&oacute;n de las Frames debe ir antes de la definici&oacute;n del cuerpo de documento (<B>&lt;BODY&gt;</B>).<P>
+
+Veamos un ejemplo completo de Frames con comentarios :<P>
+
+<CENTER>
+<TABLE border=2>
+<TD>
+<Font size=-1>
+<DL>
+<DT><B>&lt;HTML&gt</B>
+<DT><B>&lt;HEAD&gt</B>
+<DT><B>&lt;TITLE&gt</B>Pagina con Frames<B>&lt;/TITLE&gt</B>
+<DT><B>&lt;/HEAD&gt</B><P>
+<DT><B>&lt;FRAMESET</B> <B>cols</B><I> <B></I>=</B><I> </I>&quot;15%,*&quot;<B>&gt;</B>
+<DT>&lt;!-- Creo dos subventanas verticales, la de la izquierad ocupa un 15% de la pantalla, la de la derecha el resto. --&gt;<p>
+<DL>
+<DT><B>&lt;FRAMESET rows =</B> &quot;35%,*&quot;<B>&gt;</B>
+<DT>&lt;!-- Creo dos subventanas horizontales dentro de la subventana izquierda. --&gt;<P>
+<DD><B>&lt;FRAME name =</B> &quot;upd&quot; <B>src =</B> &quot;update.htm&quot; <B>scrolling =</B> &quot;auto&quot;<B>&gt;</B>
+<DD>&lt;!-- Llamo a la subventana horizontal superior izquierda con el nombre "upd" y muestro el documento update.htm --&gt;<P>
+<DD><B>&lt;FRAME name =</B> &quot;menu&quot; <B>src =</B> &quot;menu1.htm&quot; <B>scrolling =</B> &quot;auto&quot;<B>&gt;</B>
+<DD>&lt;!-- Llamo a la subventana horizontal inferior izquierda con el nombre "menu" y muestro el documento menu1.htm --&gt;<P>
+<DT><B>&lt;/FRAMESET&gt;</B>
+<DT>&lt;!-- Cierro la definicion de las subventanas horizontales de la ventana de la izquierda --&gt;<P>
+</DL>
+<DD><B>&lt;FRAME name =</B> &quot;home&quot; <B>src =</B> &quot;home.htm&quot; <B>scrolling =</B> &quot;auto&quot;<B>&gt;</B>
+<DD>&lt;!-- Llamo a la subventana vertical derecha con el nombre "home" y muestro el documento home.htm --&gt;<P>
+<DD><B>&lt;NOFRAMES&gt;</B>
+<DD>&lt;!-- Indico las &oacute;rdenes para aquellos visores que no soporten Frames --&gt;
+<DD><B>&lt;BODY&gt</B>
+<DD>SU VISOR NO MUESTRA FRAMES. Pulse <B>&lt;A href=</B> "home.htm"<B>&gt;</B> AQUI <B>&lt;/A&gt;</B> para ir a la p&aacute;gina sin Frames.
+<DD><B>&lt;/BODY&gt</B>
+<DD><B>&lt;/NOFRAMES&gt;</B><P>
+<DT><B>&lt;/FRAMESET&gt;</B>
+<DT>&lt;!-- Cierro la definici&oacute;n de las subventanas verticales --&gt;<P>
+<DT><B>&lt;/HTML&gt</B>
+</DL>
+</FONT>
+</TABLE>
+</CENTER>
+<P>
+Al usar Frames, nos encontramos con un problema. Cuando queramos mostrar una p&aacute;gina 
+Web debemos indicarle al visor en que subventana queremos que se muestre. Por defecto se mostrar&aacute; en 
+la ventana donde se encuentre el enlace. Para poder escoger la subventana de destino del Hyperenlace se a&ntilde;ade 
+un nuevo par&aacute;metro a la directiva <B>&lt;A href= &gt; &lt;/A&gt;</B>. 
+Este par&aacute;metro se llama <B>target</B> y puede tener los siguientes valores :<P>
+<DL>
+<DT><B>target =</B> "nombre_ventana"
+<DD>Muestra el Hyperenlace en la ventana cuyo nombre se indica.<P>
+<DT><B>target =</B> "_blank"
+<DD>Abre una nueva copia del visor y muestra el Hyperenlace en ella. 
+(Si usamos Netscape esto provoca que tengamos funcionando dos copias del programa).<P>
+<DT><B>target =</B> "_self"
+<DD>Se muestra el Hyperenlace en la subventana activa.<P>
+<DT><B>target =</B> "_parent"
+<DD>El Hyperenlace se muestra en el &lt;FRAMESET&gt; definido anteriormente al actual. 
+Si no hay ning&uacute;n &lt;FRAMESET&gt; anterior se muestra a pantalla completa 
+suprimiendo todas las subventanas de la pantalla.<P>
+<DT><B>target =</B> "_top"
+<DD>Suprime todas las subventanas de la pantalla y muestra el Hyperenlace a pantalla completa.<P>
+</DL>
+<P>
+
+<CENTER>
+<TABLE border=2>
+<Th>Ejemplos<TH>Resultado<TR>
+
+<TD width=60%>
+<B>&lt;A href= </b>"http://www.microsoft.com/" <b>target =</B> "_blank"<B>&gt;</B>
+<TD>Muestra la pagina de Microsoft en una nueva copia del visor
+<TR>
+<TD width=60%>
+<B>&lt;A href= </b>"http://www.ibm.com/" <b>target =</B> "home"<B>&gt;</B>
+<TD>Muestra la pagina de Ibm en la subventanna llamada "home"
+<TR>
+<TD width=60%>
+<B>&lt;A href= </b>"http://www.yahoo.com/" <b>target =</B> "_top"<B>&gt;</B>
+<TD>Muestra la pagina del buscador Yahoo a pantalla completa
+<TR>
+
+</TABLE>
+</CENTER>
+
+<HR>
+<A name="sec5"></A>
+<CENTER><B><U><FONT size=+2>Scripts</B></U></FONT></CENTER><P>
+
+Un Script es un programa escrito en un lenguaje distinto al HTML que se puede incluir en una 
+p&aacute;gina Web "tal cual". Para incluir estos programas en una p&aacute;gina Web se 
+utiliza la directiva <B>&lt;SCRIPT&gt; &lt;/SCRIPT&gt;</B>. Esta directiva tiene el 
+par&aacute;metro <B>language</B> para indicar el lenguaje de programaci&oacute;n utilizado 
+para el Script. El c&oacute;digo del programa debe "ocultarse" con las directivas de 
+comentario de HTML <B>&lt;!-- --&gt;</B> con el objeto de que no sean mostradas por los 
+visores que no reconocen la directiva <B>&lt;SCRIPT&gt;</B>. 
+Los scripts m&aacute;s usados suelen estar escritos en lenguaje <A href="http://java.sun.com" target=_blank>JAVA</A>. Este lenguaje 
+desarrollado por Sun Microsystems permite realizar operaciones de animaci&oacute;n y 
+multimedia en una p&aacute;gina Web. Asimismo se podr&aacute;n incluir con esta 
+directiva programas escritos en C++, Perl o Visual Basic.<P>
+
+La inclusi&oacute;n de un Script en una p&aacute;gina Web se har&iacute;a de la siguiente 
+forma :<P>
+<CENTER>
+<TABLE border=2>
+<TD>
+<DL>
+<DT><B>&lt;SCRIPT language =</B> "JavaScript"<B>&gt;</B>
+<DD><B>&lt; !--</B>
+<DD>instrucciones del programa ......
+<DD><B>--&gt;
+<DT>&lt;/SCRIPT&gt;</B>
+</DL>
+</table>
+</CENTER>
+
+<HR>
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man011.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man013.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+</BODY>
+</HTML>

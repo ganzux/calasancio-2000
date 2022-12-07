@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+
+char cara;
+
+do{
+    cara=getche();
+
+  }
+
+while(cara!='f');
+printf("\n\n\n\nFIN");
+
+}
+

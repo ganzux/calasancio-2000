@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main(void)
+{
+	float p,w,t;
+
+		printf("Trabajo: ");
+			scanf("%f",&w);
+		printf("\nTiempo: ");
+			scanf("%f",&t);
+
+				p=w/t;
+
+		printf("\n\n\n    W");
+		printf("\nP= ---   ");
+		printf("\n    T\n");
+		printf("\nPotencia= %f",p);
+
+}
+

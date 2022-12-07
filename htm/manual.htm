@@ -1,0 +1,128 @@
+<HTML>
+<HEAD>    
+    <TITLE>Manual de HTML</TITLE>
+
+    <META Name="Manual de HTML" Content="Manual de HTML. Incluye extensiones para Netscape y Ms-Explorer">
+    <META Name="description" Content="Manual de HTML. Incluye extensiones para Netscape y Ms-Explorer">
+    <META Name="keywords" Content="Manual HTML htm netscape explorer Spain Curso Guia ITO ito Alvaro ALVARO alvaro Alcedo alcedo Moreno moreno Sousa sousa Cepeda cepeda colegio calasancio Colegio Calasancio COLEGIO CALASANCIO MARIA SEXO X MP3 MUSICA musica mp3 Mp3 sexo x Sexo">
+<script language="javascript">
+msg = "alvaro@alcedo.net   ALVARITO 2001";
+timeID = 10;
+stcnt = 16;
+wmsg = new Array(33);
+wmsg[0] = msg;
+blnk = "                                                               ";
+for (i=1; i<32; i++)
+{
+b = blnk.substring(0,i);	
+wmsg[i] = "";
+for (j=0; j<msg.length; j++)	
+wmsg[i] = wmsg[i] + msg.charAt(j) + b;
+}
+
+//crea el bucle de visualizacion
+function wiper()
+{
+if (stcnt > -1)			
+str = wmsg[stcnt];
+else				
+str = wmsg[0];
+if (stcnt-- < -40)		
+stcnt=31;
+status = str;			
+clearTimeout(timeID);
+timeID = setTimeout("wiper()",100);
+}
+
+wiper()
+
+</script>    
+
+</HEAD>
+
+<FRAMESET cols="15%,*">
+
+    <FRAME name="indice" src="indice.htm" SCROLLING="AUTO" BORDER="1" NORESIZE>
+    <FRAME name="general" src="man000.htm" scrolling="auto" border="1">
+
+    <NOFRAMES>
+
+    <BODY background="fongtii.jpg">
+
+        <CENTER>
+        <TABLE border=2 width = 100%>
+        <TD Align=center>
+        <MARQUEE BGCOLOR="#FFFFFF" WIDTH=100% SCROLLDELAY=10><font size=+3><b>Manual de HTML</b></font></MARQUEE>
+        </TABLE>
+        <P>
+        &nbsp;
+        <p>
+
+        <h2>INDICE DE CONTENIDOS</h2>
+  
+        <TABLE WIDTH=50% BORDER=2 cellpadding=2 cellspacing=2>
+         <TD align=left>
+         <UL type=square>
+                <LI> <A href= "man001.htm">Introducci&oacute;n</a>
+                        <UL type=disc>
+                                <LI><A href= "man001.htm#sec1">Que es el HTML</a>
+                                <LI><A href= "man001.htm#sec2">Estructura b&aacute;sica</a>
+                        </UL>
+         </UL>
+         <TR>
+         <TD align=left>
+         <UL type=square>
+                <LI> <A href= "man002.htm">Divisiones de un documento HTML</a>
+                        <UL type=disc>
+                                <LI><A href= "man002.htm#sec1">Cabecera del documento</a>
+                                <LI><A href= "man002.htm#sec2">Cuerpo del documento</a>
+                        </UL>
+         </UL>
+         <TR>
+         <TD align=left>
+         <UL type=square>
+                 <LI> <A href= "man003.htm">Elementos de un documento HTML</a>
+                         <UL type=disc>
+                                <LI><A href= "man003.htm">Juego de caracteres</a>
+                                <LI><A href= "man004.htm">Espaciados y saltos de linea</a>
+                                <LI><A href= "man005.htm" >Cabeceras y atributos del texto</a>
+                                <LI><A href= "man006.htm">Listas de elementos</a>
+                                <LI><A href= "man007.htm">Imagenes</a>
+                                <LI><A href= "man008.htm">Hyperenlaces</a>
+                                <LI><A href= "man009.htm">Tablas</a>
+                                <LI><A href= "man010.htm">Mapas</a>
+                                <LI><A href= "man011.htm">Formularios</a>
+                          </UL>
+         </UL>
+         <TR>
+         <TD align=left>
+         <UL type=square>
+                 <LI> <A href= "man012.htm">Extensiones del HTML</a>
+                         <UL type=disc>
+                                <LI><A href= "man012.htm#sec1">Applet</a>
+                                <LI><A href= "man012.htm#sec2">Marquee</a>
+                                <LI><A href= "man012.htm#sec3">Sonido de fondo</a>
+                                <LI><A href= "man012.htm#sec4">Frames</a>
+                                <LI><A href= "man012.htm#sec5">Scripts</a>
+                          </UL>
+         </UL>
+         <TR>
+         <TD align=left>
+         <UL type=square>
+                 <LI> <A href= "man013.htm">Trucos para tu pagina Web</a>
+                         <UL type=disc>
+                                <LI><A href= "man013.htm#sec1">Gifs animados</a>
+                                <LI><A href= "man013.htm#sec2">Gifs transparentes</a>
+                                <LI><A href= "man013.htm#sec3">Programas JavaScript</a>
+                          </UL>
+        </UL>
+        </TABLE>
+        <CENTER>
+
+        </CENTER>
+    </BODY>
+
+    </NOFRAMES>
+
+</FRAMESET>
+</HTML>

@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+void main()
+{
+float A,B,C,pepo,x1,x2;
+
+ do{
+	printf("Ax^2+Bx+C=0");
+	printf("\n¿A?"); scanf("%f",&A);
+	printf("\n¿B?"); scanf("%f",&B);
+	printf("\n¿C?"); scanf("%f",&C);
+	pepo=(B*B)-(4*A*C);
+   }
+   while(pepo<0);
+
+   x1=(-B+sqrt(pepo))/(2*A);
+   x2=(-B-sqrt(pepo))/(2*A);
+
+   printf("\n\nX1= %f",x1);
+   printf("\nX2= %f",x2);
+}

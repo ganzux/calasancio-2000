@@ -1,0 +1,26 @@
+/* Programa que calcula el area de un rectangulo introduciendo  base y altura */
+
+#include <stdio.h>
+void main()
+{
+
+	float base,altura,area;
+
+	printf("                           © AAMSC & AAGDG ®\n");
+	printf("  ---------------¬                          \n");
+	printf("  |              |			    \n");
+	printf("  |    área      |  altura                  \n");
+	printf("  |              |                          \n");
+	printf("  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯			    \n");
+	printf("       base                                 \n\n\n");
+
+
+	printf("Dame la base del rectangulo ");
+		scanf("%f",&base);
+	printf("Dame la altura del rectangulo ");
+		scanf("%f",&altura);
+
+			area=base*altura;
+
+	printf("El área de un rectangulo de base %f y altura %f es %f",base,altura,area);
+}

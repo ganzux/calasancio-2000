@@ -1,0 +1,16 @@
+#include <stdio.h>
+void main()
+{
+int n2;
+float n1;
+
+printf("Dame el dividendo: ");
+	scanf("%f",&n1);
+printf("Dame el divisor: ");
+	scanf("%d",&n2);
+
+	   n1/=n2;
+
+printf("%f/%d=%f",n1*n2,n2,n1);
+}
+

@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>Manual de HTML - F.A.Q.</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+<center>
+<A href="manfaq.htm"><IMG border=0 src="back.gif" ALT="Atras"></A>
+</center>
+<HR>
+
+<B><FONT size=+3><CENTER><U>Preguntas mas frecuentes sobre HTML</B></U></FONT></CENTER>
+<center><i>(Esta pagina forma parte del <A href="http://www.geocities.com/SiliconValley/2915/manual.htm" target=_parent>Manual de HTML</A>.)</i></center>
+<hr>
+<dl>
+<dt><b>Como poner un sonido de fondo en mi pagina ?</b>
+<dd>Para poner un sonido de fondo en una pagina Web se utiliza la directiva &lt;EMBED&gt;. Para que se escuche el fichero "cancion.mid" al cargar tu pagina Web incluye la siguiente instruccion :<br>
+<B>&lt;EMBED src=</B> &quot;cancion.mid&quot; <B>loop=</B> true <B>autostart=</B> true <B>volume=</B>50 <B>width=</B>50 <B>height=</B>15 <B>controls=</B>smallconsole<B>&gt;</B><br>
+Para mas información, consulta el apartado "Extensiones del HTML" del Manual.<p>
+
+<dt><b>Hay alguna forma de evitar que los Hyperenlaces de texto aparezcan subrayados ?</b>
+<dd>No, el navegador subraya automaticamente los links de texto, al igual que pone un borde a las imagenes. Sin embargo a las imagenes le podemos quitar este borde, cosa que no podemos hacer con los textos. La única forma de presentar un Hyperenlace de texto sin subrayar, es guardar el texto como imagen, y presentar dicha imagen.<p>
+
+<dt><b>Como se puede cambiar el color de los Hyperenlaces de Texto ?</b>
+<dd>Por defecto los hyperenlaces sin visitar se presentan en color azul y los ya visitados (o sea que estan en el cache) se presentan en purpura. Para variar estos colores se utilizan los parametros <b>vlink</b> y <b>link</b> en la directiva &lt;BODY&gt;. Consulta el apartado "Ecabezado y Cuerpo" del Manual.<p>
+
+<dt><b>Como puedo poner en mi pagina Web una imagen de otra pagina ?</b>
+<dd> Existen dos maneras. La primera es hacer referencia al "camino" completo de la imagen en la directiva &lt;IMG&gt;, es decir, si la imagen esta en la pagina <i>http://www.microsoft.com</i> y se llama "ie.gif" puedes escribir la directiva de la siguiente forma :<br>
+&lt;IMG src="http://www.microsoft.com/ie.gif"&gt;<br>
+Tambien puedes copiar la imagen a tu disco duro y utilizarla directamente, para ello pulsa sobre la imagen a copiar con el botón derecho del ratón y escoge la opción <i>"Guardar esta imagen como...."</i> del menu emergente.<p>
+
+<dt><b>Se pueden poner todas las columnas de una tabla con el mismo ancho ?</b>
+<dd> Si. El parametro <b>"width"</b> se puede utilizar con la directiva &lt;TD&gt; indicando el valor del ancho de la columna en puntos o en porcentaje. Si se indica el mismo valor para todas las columnas 
+el ancho de estas sera identico independientemente del contenido de cada una de ellas. Ejemplo :<br>
+&lt;TABLE&gt;<br>
+&lt;TD width=25%&gt;Texto de la Primera columna<br>
+&lt;TD width=25%&gt;Texto de la Segunda columna<br>
+&lt;TD width=25%&gt;Texto de la Tercera columna<br>
+&lt;TD width=25%&gt;Texto de la Cuarta columna<br>
+&lt;/TABLE&gt;<br>
+<p>
+<dt><b>Cuando intento enviar un formulario por e-mail se presenta el programa de correo con una pagina en blanco.</b>
+<dd>Esto se debe a que "Microsoft Explorer" no reconoce la opcion "action:mailto" en un formulario. Para que tu formulario se envie a tu direccion de 
+correo independientemente de el visor de paginas Web utilizado, has de usar un programa externo (CGI). Consulta la pagina de <a href="mailform.htm">MAILFORM</a> para mas información.
+<p>
+<dt><b>Como puedo incluir un video en mi pagina Web ?</b>
+<dd>La directiva &lt;EMBED&gt; permite "incrustar" un objeto en una pagina Web. La podemos usar para incluir un video en nuestra pagina Web. Los navegadores 
+actuales solo reconocen "directamente" el formato .AVI, si el fichero de video tiene otra extension (.mov, .mpg, etc...) el navegador no sera capaz de reproducirlo 
+directamente, por lo que necesitara "lanzar" un programa externo que visualize el video. No es recomendable incluir videos muy extensos en nuestra pagina Web 
+debido a que este no empezara a reproducirse hasta que se acabe de "leer" por el navegador. La directiva para incluir un video seria :<br>
+<b>&lt;EMBED src=</b>"fichero.avi" <b>autostart=</b>true<b>&gt;</b>
+<p>
+<dt><b>Como puedo poner un color de fondo en una tabla distinto al de la pagina?</b>
+<dd>Las directivas &lt;TABLE&gt;, &lt;TD&gt; y &lt;TH&gt; permiten usar el parametro <b>bgcolor = codigo de color</b> para especificar 
+el color de fondo de la TABLA, o el elemento de la tabla correspondiente. El <b>codigo de color</b> se indica de igual manera que en la directiva &lt;BODY&gt;. Ejemplos :<br>
+<b>&lt;TABLE border=</b>0 <b>bgcolor=</b>#FF0000<b>&gt;</b><br>
+<b>&lt;TD align=</b>center <b>bgcolor=</b>#809010<b>&gt;</b>
+<p>
+
+</dl>
+<HR>
+<center>
+<A href="manfaq.htm"><IMG border=0 src="back.gif" ALT="Atras"></A>
+</center>
+</BODY>
+</HTML>

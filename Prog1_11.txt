@@ -1,0 +1,16 @@
+/* programa que convierte grados sexagesimales introducidos por el usuario en radianes */
+
+#include <stdio.h>
+int main(void)
+{
+	float grados,radianes;
+
+		printf("Dame los grados: ");
+			scanf("%f",&grados);
+
+				radianes=grados*3.1415827/180;
+
+		printf("\n\n%f° son %f rad.",grados,radianes);
+
+}
+

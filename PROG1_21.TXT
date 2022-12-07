@@ -1,0 +1,20 @@
+#include <stdio.h>
+void main ()
+{
+    float v0,v,a,t;
+
+	printf("Velocidad: ");
+		scanf("%f",&v);
+
+	printf("Velocidad inicial: ");
+		scanf("%f",&v0);
+
+	printf("Aceleracion: ");
+		scanf("%f",&a);
+
+			   t=(v-v0)/a;
+
+
+	printf("T=%f",t);
+
+}

@@ -1,0 +1,23 @@
+/* Programa que calcula el area de un triangulo introduciendo su base altura */
+
+#include <stdio.h>
+int main(void)
+{
+	float base,altura,area;
+
+		printf("     /\\     \\	        \n");
+		printf("    /  \\    |          \n");
+		printf("   /    \\   > altura   \n");
+		printf("  / area \\  |	        \n");
+		printf(" /________\\ /	        \n");
+		printf("    base                \n\n\n");
+
+		printf("Dame la base: ");
+			scanf("%f",&base);
+		printf("Dame la altura: ");
+			scanf("%f",&altura);
+
+				area=base*altura/2;
+
+		printf("\n\nEl area de un triangulo de base %f y altura %f es %f",base,altura,area);
+}

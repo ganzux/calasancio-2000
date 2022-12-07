@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main(void)
+{
+	float s0,v,t,s;
+
+		printf("Espacio inicial: ");
+			scanf("%f",&s0);
+		printf("Tiempo: ");
+			scanf("%f",&t);
+		printf("Espacio: ");
+			scanf("%f",&s);
+
+		printf("\n S=Sini+V·T \n");
+		printf(" V=(S-Sini)/T \n");
+
+		v=(s-s0)/t;
+
+		printf("\nt=(%f-%f)/%f",s,s0,t);
+		printf("\nv=%f",v);
+}

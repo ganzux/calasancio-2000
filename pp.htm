@@ -1,0 +1,80 @@
+<html>
+<head>
+<bgsound src="caza.mid" loop="-1">
+<title>POWER POINT</title>
+<base target="new">
+<script>
+ function click() { if (event.button==2) {alert("¡¡NO EN MI PÁGINA!!") } }document.onmousedown=click
+</script>
+<STYLE TYPE="text/css">
+<!--
+BODY {OVERFLOW:scroll;OVERFLOW-X:hidden}
+.DEK {POSITION:absolute;VISIBILITY:hidden;Z-INDEX:200;}
+//-->
+</STYLE>
+</head>
+<body bgcolor="#000000" text="#FFFFFF" link="#008080" vlink="#00FF00" alink="#FF00FF" background="diablos.jpg" bgproperties="fixed">
+<DIV ID=dek CLASS=dek></DIV>
+<SCRIPT TYPE="text/javascript">
+<!--
+
+Xoffset=-60;
+Yoffset= 20;
+
+var nav,old,iex=(document.all),yyy=-1000;
+if(navigator.appName=="Netscape"){(document.layers)?nav=true:old=true;}
+
+if(!old){
+var skn=(nav)?document.dek:dek.style;
+if(nav)document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove=get_mouse;
+}
+
+function popup(msg,bak){
+var content="<TABLE  WIDTH=200 BORDER=1 BORDERCOLOR=black CELLPADDING=2 CELLSPACING=0 "+"BGCOLOR="+bak+"><TD ALIGN=center><FONT COLOR=white SIZE=2 face=arial>"+msg+"</FONT></TD></TABLE>";
+if(old){alert(msg);return;} 
+else{yyy=Yoffset;
+ if(nav){skn.document.write(content);skn.document.close();skn.visibility="visible"}
+ if(iex){document.all("dek").innerHTML=content;skn.visibility="visible"}
+ }
+}
+function get_mouse(e){
+        stringa=/MSIE 4.0/;
+        substringa=stringa.test(navigator.appVersion);
+
+        if(substringa==true){
+         var x=(nav)?e.pageX:event.x;skn.left=x+Xoffset;
+         var y=(nav)?e.pageY:event.y;skn.top=y+yyy;
+        }
+        else {
+         var x=(nav)?e.pageX:event.x+document.body.scrollLeft;skn.left=x+Xoffset;
+         var y=(nav)?e.pageY:event.y+document.body.scrollTop;skn.top=y+yyy;  
+        }
+}
+
+function kill(){
+if(!old){yyy=-1000;skn.visibility="hidden";}
+}
+
+//-->
+</SCRIPT>
+<!-- Include Stats -->
+<p><center><b><i><font color="#FFFFFF" size="3">
+<marquee width="523" height="30" style="font-family: Matisse ITC; font-size: 18 pt; font-style: italic; font-weight: bold; color: rgb(255,0,0)" border="0">POWER
+POINT</marquee>
+</font></i></b></center></p>
+<p align="center"><a href="power.doc"><font color="#008080">Curso de Power
+Point.&nbsp;</font></a></p>
+<p align="center"><a href="power.doc"><img border="0" src="pp.jpg" width="225" height="167" align="absmiddle"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="power.zip" ONMOUSEOVER="popup('San José de Calasanz en formato &lt;b&gt;zip&lt;/b&gt;&lt;br&gt;','#df0050')" ; ONMOUSEOUT="kill()"><img border="0" src="zip.gif" width="100" height="75"></a></p>
+<p align="center">&nbsp;</p>
+<p align="center"><a href="jose.ppt">Presentación de San José <font color="#008080"> de
+Calasanz: Con</font>oce al patrón de las escuelas Pías.</a></p>
+<p align="center"><a href="jose.zip" ONMOUSEOVER="popup('San José de Calasanz en formato <b>zip</b><br>','#df0050')";  ONMOUSEOUT="kill()"><img border="0" src="zip.gif" width="100" height="75"></a></p>
+<p align="center">&nbsp;</p>
+<p align="center"><a href="navidad.ppt">Presentación de Navidad: Una original
+idea para felicitar las fiestas por e-mail.</a></p>
+<p align="center"><a href="navidad.ppt" ONMOUSEOVER="popup('Felicitación de navidad en formato <b>ppt</b><br>','#df0050')";  ONMOUSEOUT="kill()"><img border="0" src="navidad.gif" align="absmiddle" width="200" height="150"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="navidad.zip" ONMOUSEOVER="popup('Felicitación de navidad en formato <b>zip</b><br>','#df0050')";  ONMOUSEOUT="kill()"><img border="0" src="zip.gif" width="100" height="75"></a></p>
+</body>
+</html>

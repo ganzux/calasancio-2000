@@ -1,0 +1,123 @@
+<HTML>
+<HEAD>
+<TITLE>Imagenes</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man006.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man008.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+        <HR>
+
+<CENTER><B><U><FONT size=+3>Im&aacute;genes</B></U></FONT></CENTER><P>
+
+	Hasta el momento hemos visto como se puede escribir texto en una pagina Web, asi como sus posibles formatos. Para incluir una imagen en nuestra p&aacute;gina Web utilizaremos la directiva <B>
+&lt;IMG&gt;</B>.  Hay dos formatos de imagenes que todos los navegadores modernos reconocen. 
+Son las im&aacute;genes <B><I>GIF</B></I> y <B><I>JPG</B></I>. Cualquier 
+otro tipo de fichero gr&aacute;fico o de imagen (BMP, PCX, CDR, etc...) no ser&aacute; mostrado 
+por el visor, a no ser que disponga de un programa externo que permita su 
+visualizaci&oacute;n.<P>
+
+	La directiva <B>&lt;IMG&gt;</B> tiene varios par&aacute;metros :<P>
+
+
+<DL>
+<DT><B>src =</B> "imagen"
+<DD>Indica el nombre del fichero gr&aacute;fico a mostrar.<p>
+<DT><B>alt =</B> "Texto"
+<DD>Mostrara el texto indicado en el caso de que el navegador utilizado para 
+ver la p&aacute;gina no sea capaz de visualizar la imagen.<P>
+<DT><B>lowsrc =</B>"imagen"
+<DD>Muestra una segunda imagen "superpuesta" sobre la primera una vez se carga la pagina. Este parametro no es reconocido 
+por la totalidad de los navegadores ya que esta en estudio su aplicacion, asi que en la mayoria de los casos sera ignorado mostrandose solo la primera imagen (<b>src</b>). En Netscape muestra la imagen indicada por <b>lowsrc</b> en primer lugar, y posteriormente muestra la imagen indicada por <b>src</b>. Si las imagenes son iguales 
+pero tienen distinta "resolucion" se conseguirá un efecto tipo "Fade". Si las imagenes son de distinto tamaño la imagen indicada en <b>src</b> se redimensionara al tamaño indicado por la imagen indicada en <b>lowsrc</b><p>
+<DT><B>align =</B> TOP / MIDDLE / BOTTOM
+<DD>Indica como se alinear&aacute; el texto que siga a la imagen. TOP alinea el texto con la parte superior de la imagen, MIDDLE con la parte central, y BOTTOM con la parte inferior.<P>
+<DT><B>border =</B> tama&ntilde;o
+<DD>Indica el tama&ntilde;o del "borde" de la imagen. A toda imagen se le asigna un borde que ser&aacute; visible cuando la imagen forme parte de un Hyperenlace.<P>
+<DT><B>height =</B> tama&ntilde;o
+<DD>Indica el alto de la imagen en puntos o en porcentaje. Se usa para variar el tama&ntilde;o de la imagen original.<P>
+<DT><B>width =</B> tama&ntilde;o
+<DD>Indica el ancho de la imagen en puntos o en porcentaje. Se usa para variar el tama&ntilde;o de la imagen original.<P>
+<DT><B>hspace =</B> margen
+<DD>Indica el numero de espacios horizontales, en puntos, que separar&aacute;n la imagen del texto que la siga y la anteceda.<P>
+<DT><B>vspace =</B> margen
+<DD>Indica el n&uacute;mero de puntos verticales que separaran la imagen del texto que le siga y la anteceda.<P>
+<DT><B>ismap / usemap</B>
+<DD>Indica que la imagen es un MAPA. Veremos estos parametros mas adelante en este manual.
+
+</DL>
+
+<CENTER>
+<TABLE border=2 cellspacing=2 cellpadding=2>
+<TH>Ejemplo<TH>Se vería como<tR>
+<TD><B>&lt;IMG</B> <B>src=</B>"caution.gif"<B> alt= </B>"Cuidado !!"<B> &gt;</B>
+<TD><Img src="caution.gif" alt="Cuidado!!">
+<TR>
+<TD> Si el visor no pudiese visualizar el gr&aacute;fico.....
+<TD><Img src="cuidado.gif" alt="Cuidado!!">
+<TR>
+</TABLE>
+</CENTER>
+<P>
+
+	La imagen a mostrar puede encontrase en el mismo lugar (URL) que la pagina Web. Si este no fuera el caso, el nombre de la imagen ha de contener la URL donde se encuentre la imagen.<P>
+
+<P>
+
+<I>
+Ejemplo</I><P>
+
+<P>
+
+<B>
+&lt;IMG</B> <B>
+src=</B> "http://www.microsoft.com/iexplorer.gif"<B>&gt;</B><P>
+
+Veamos varios ejemplos "jugando" con los tama&ntilde;os de la imagen, así como comprobando la alineación de los textos. 
+(Recuerde que en función del visor que vd. utilize pueden verse o no los efectos de cada parametro).<p>
+<CENTER>
+<TABLE border=2 cellspacing=2 cellpadding=2>
+<TH>Ejemplo<TH>Se vería como<tR>
+<TD><B>&lt;IMG</B> <B>src=</B>"caution.gif"<br> <B>width=</B>100 <B> &gt;</B>
+<TD><Img src="caution.gif" width = 100>
+<TR>
+<TD><B>&lt;IMG</B> <B>src=</B>"caution.gif"<BR> <B>height=</B>20 <B> &gt;</B>
+<TD><Img src="caution.gif" height = 20>
+<TR>
+<TD><B>&lt;IMG</B> <B>src=</B>"caution.gif"<BR> <B>align=</B>TOP<B>&gt;</B>Atencion !!!
+<TD><Img src="caution.gif" align=TOP>Atencion !!!
+<TR>
+<TD><B>&lt;IMG</B> <B>src=</B>"caution.gif" <BR><B>align=</B>MIDDLE<B>&gt;</B>Atencion !!!
+<TD><Img src="caution.gif" align=middle>Atencion !!!
+<TR>
+<TD><B>&lt;IMG</B> <B>src=</B>"caution.gif"<BR><B>align=</B>BOTTOM<B>&gt;</B>Atencion !!!
+<TD><Img src="caution.gif" align=bottom>Atencion !!!
+<TR>
+<TD>Tenga en cuenta<B>&lt;IMG</B> <B>src=</B>"caution.gif"<BR> <B>hspace=</B>20<B>&gt;</B>esta indicacion.
+<TD>Tenga en cuenta<Img src="caution.gif" hspace=20>esta indicacion
+<TR>
+<TD>Tenga en cuenta<B>&lt;IMG</B> <B>src=</B>"caution.gif"<BR> <B>vspace=</B>40<B>&gt;</B>esta indicacion.
+<TD>Tenga en cuenta<Img src="caution.gif" vspace=40>esta indicacion.
+<TR>
+</TABLE>
+</CENTER>
+<P>
+
+
+
+<HR>
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man006.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man008.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+</BODY>
+</HTML>

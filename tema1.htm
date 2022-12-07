@@ -1,0 +1,256 @@
+<html>
+
+<head>
+<title>LENGUAJE C</title>
+<script>
+ function click() { if (event.button==2) {alert("¡¡NO EN MI PÁGINA!!") } }document.onmousedown=click
+</script>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="animate.js">
+</script>
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" background="fondotitulo.gif" bgproperties="fixed" onload="dynAnimation()">
+
+<h2 align="center"><a href="leng.htm" ONMOUSEOVER="popup('LENGUAJES<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="lenguajes.gif" align="absmiddle" width="75" height="55"></a>
+</h2>
+
+<h2 align="center"><a href="c.htm"  ONMOUSEOVER="popup('LENGUAJE C<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="ce.gif" align="absmiddle" width="150" height="112"></a><a href="html.htm"  ONMOUSEOVER="popup('LENGUAJE HTML<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="html.gif" align="absmiddle" width="75" height="75"></a><a href="wml.htm"  ONMOUSEOVER="popup('LENGUAJE WML<br>','#df0050')"         ONMOUSEOUT="kill()" ;><img border="0" src="wml.gif" align="absmiddle" width="75" height="75"></a><a href="pascal.htm"  ONMOUSEOVER="popup('LENGUAJE PASCAL<br>','#df0050')";     ONMOUSEOUT="kill()"><img border="0" src="pascal.gif" align="absmiddle" width="75" height="75"></a>
+</h2>
+
+<p align="center">
+<a href="c.htm" onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;"     onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln"><img border="0" src="cc1.gif" align="absmiddle" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="cc2.gif" width="146" height="24"></a>
+<a href="tema1.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln"><img border="0" src="cc3.gif" align="absmiddle" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="cc4.gif" width="96" height="24"></a>
+<a href="tema2.htm" onmouseover="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;" onmouseout="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln"><img border="0" src="cc5.gif" align="absmiddle" id="fpAnimswapImgFP3" name="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="cc6.gif" width="96" height="24"></a>
+<a href="tema3.htm" onmouseover="document['fpAnimswapImgFP4'].imgRolln=document['fpAnimswapImgFP4'].src;document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].lowsrc;" onmouseout="document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].imgRolln"><img border="0" src="cc7.gif" align="absmiddle" id="fpAnimswapImgFP4" name="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="cc8.gif" width="96" height="24"></a>
+<big><big><big><big><big><big><big><big><big><big><big><big><marquee align="middle"
+behavior="alternate" border="0" style="font-family: Verdana, Marlett; color: #FF0000">LENGUAJE
+C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TEMA 1</marquee></big></big></big></big></big></big></big></big></big></big></big></big>
+</p>
+
+<p>&nbsp;</p>
+
+<h3 align="center"><font color="#FF0000"><em><strong><big><big>CONSIDERACIONES GENERALES</big></big></strong></em></font></h3>
+
+<h3 align="center"><font color="#008040">1. Todos las sentencias o instrucciones se
+escriben en minúsculas</font></h3>
+
+<h3 align="center"><font color="#008040">2. Es costumbre escribir las variables en
+minúsculas y las constantes en mayúsculas.</font></h3>
+
+<h3 align="center"><font color="#008040">3. Todos las instrucciones acaban en punto y coma
+(<strong><em>;</em></strong>)</font></h3>
+
+<p align="center">&nbsp;</p>
+
+<h3 align="center"><font color="#FF0000"><em><strong><big><big>ESTRUCTURA GENERAL DE UN
+PROGRAMA EN C
+</big></big></strong></em></font></h3>
+
+<h3 align="center"><font color="#FF8080"><em><strong>#include &lt;stdio.h&gt;</strong></em></font></h3>
+
+<h3 align="center"><font color="#FF8080"><em><strong>void main()</strong></em></font></h3>
+
+<h3 align="center"><font color="#FF8080"><em><strong>{</strong></em></font></h3>
+
+<h3 align="center"><font color="#008080"><em><strong>&nbsp; </strong></em>&nbsp; cuerpo
+del programa</font></h3>
+
+<h3 align="center"><font color="#FF8080"><em><strong>}</strong></em></font></h3>
+
+<p align="center">&nbsp;</p>
+
+<h3 align="center"><font color="#FF0000"><em><strong><big><big>VARIABLES</big></big></strong></em></font></h3>
+
+<dl>
+  <dd><h4 align="center"><font color="#008080"><big>Son las zonas de la memoria donde
+    guardamos valores; se identifican mediante letras y números y el carácter de subrayado.
+    Obligatoriamente han de empezar por una letra. Se deben poner nombres representativos
+    de lo
+    que en ellas queremos guardar. Antes de utilizar cualquier variable
+    hay que declararla
+    indicando de que tipo de variable, que depende del dato que en ella queremos almacenar. Los
+    principales tipos son:</big></font></h4>
+  </dd>
+</dl>
+
+<p align="center"><big><font color="#008080">ENTERO&nbsp;&nbsp;&nbsp; declarado por:</font>&nbsp;&nbsp;
+<font color="#FF8080"><em><strong>int edad;</strong></em></font><br>
+<font color="#008080">REAL&nbsp;&nbsp;&nbsp; declarado por:</font>&nbsp;&nbsp; <font
+color="#FF8080"><em><strong>float nota;</strong></em></font><br>
+<font color="#008080">CARÁCTER&nbsp;&nbsp;&nbsp; declarado por:</font>&nbsp;&nbsp; <font
+color="#FF8080"><em><strong>char 'grupo';</strong></em></font></big></p>
+
+<p align="center"><font color="#008080"><big>Una vez definida la variable, le podemos dar
+un valor de la forma:</big></font></p>
+
+<p align="center"><font color="#008080"><em><strong><big>variable=valor;</big></strong></em></font></p>
+
+<h3 align="center"><font color="#FF8080" face="Arial"><em><strong>edad=17;</strong></em></font></h3>
+
+<h3 align="center"><font color="#FF8080" face="Arial"><em><strong>nota=9.65;</strong></em></font></h3>
+
+<h3 align="center"><font color="#FF8080" face="Arial"><em><strong>grupo='A';</strong></em></font></h3>
+
+<h3 align="center"><font color="#008080">Podemos hacer que el valor de una variable pase a
+otra de la forma: &nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#FF8080"><em><strong>variable1=variable2</strong></em>;</font>&nbsp;<font
+color="#008080"> . Siempre que la variable de la izquierda pase al valor de la derecha, lo
+que había en la derecha se mantiene. Para los llamados &quot;contadores&quot;, lo hacemos
+de la siguiente forma: &nbsp;&nbsp; </font><font color="#FF8080"><em><strong>contador=contador+1;</strong></em></font></h3>
+
+<p>&nbsp;</p>
+
+<h3 align="center"><font color="#FF0000"><big><big><em><strong>ENTRADA DE DATOS DESDE EL
+TECLADO</strong></em></big></big></font></h3>
+
+<h3 align="center"><font color="#FFFF00">Se realiza mediante:</font>&nbsp; <em><strong><font
+color="#FF8080">scanf(&quot;</font><font color="#0000FF">cadena de formato</font><font
+color="#FF8080">&quot;, &amp;variable);</font>&nbsp; </strong></em></h3>
+
+<h3 align="center"><em><strong><font color="#FF8080">scanf(&quot;</font><font
+color="#0000FF">%d</font><font color="#FF8080">&quot;,&amp;edad);<br>
+scanf(&quot;</font><font color="#0000FF">%f</font><font color="#FF8080">&quot;,&amp;nota);<br>
+scanf(&quot;</font><font color="#0000FF">%c</font><font color="#FF8080">&quot;,&amp;grupo);</font></strong></em></h3>
+
+<p>&nbsp;</p>
+
+<h3 align="center"><big><em><strong><big><font color="#FF0000">ESCRITURA EN PANTALLA</font></big></strong></em></big></h3>
+
+<h3 align="center"><font color="#008080">Se realiza mediante la función</font><font
+color="#FF8080"> printf</font> <font color="#008080">que también se encuentra en</font> <font
+color="#FF8080"><em><strong>&lt;stdio.h&gt;</strong></em></font></h3>
+
+<p align="center">&nbsp;</p>
+
+<h3 align="center"><em><strong><big><big><font color="#FF0000">OPERADORES ARITMÉTICOS</font></big></big></strong></em></h3>
+<div align="center"><center>
+
+<table border="1" width="542" height="172">
+  <tr>
+    <td width="273" height="18" align="center"><p align="center"><font color="#FF0000"><em><strong>OPERACIÓN</strong></em></font></td>
+    <td width="110" height="18" align="center"><font color="#FFFF00"><em><strong>MATEMÁTICO</strong></em></font></td>
+    <td width="141" height="18" align="center"><font color="#FF0000"><em><strong>C</strong></em></font></td>
+  </tr>
+  <tr>
+    <td width="273" height="17" align="center"><font color="#FF0000"><em><strong>SUMA</strong></em></font></td>
+    <td width="110" height="17" align="center"><font color="#008080">+</font></td>
+    <td width="141" height="17" align="center"><font color="#8080FF"><em>+</em></font></td>
+  </tr>
+  <tr>
+    <td width="273" height="22" align="center"><p align="center"><font color="#FFFF00"><em><strong>RESTA</strong></em></font></td>
+    <td width="110" height="22" align="center"><font color="#008080">-</font></td>
+    <td width="141" height="22" align="center"><font color="#8080FF"><em>-</em></font></td>
+  </tr>
+  <tr>
+    <td width="273" height="34" align="center"><font color="#FFFF00"><em><strong>MULTIPLICACIÓN</strong></em></font></td>
+    <td width="110" height="34" align="center"><font color="#008080">X&nbsp; ·</font></td>
+    <td width="141" height="34" align="center"><font color="#8080FF"><em>*</em></font></td>
+  </tr>
+  <tr>
+    <td width="273" height="23" align="center"><p align="center"><font color="#FF0000"><em><strong>DIVISIÓN</strong></em></font></td>
+    <td width="110" height="23" align="center"><font color="#008080">:&nbsp;&nbsp;&nbsp; /</font></td>
+    <td width="141" height="23" align="center"><font color="#8080FF"><em>/</em></font></td>
+  </tr>
+  <tr>
+    <td width="273" height="15" align="center"><p align="center"><font color="#FF0000"><em><strong>RESTO
+    DE DIVISIÓN ENTERA</strong></em></font></td>
+    <td width="110" height="15" align="center"><font color="#008080">MÓDULO</font></td>
+    <td width="141" height="15" align="center"><font color="#8080FF"><em>%</em></font></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center">&nbsp;</p>
+
+<h3 align="center"><big><big><em><strong><font color="#FF0000">SECUENCIAS DE ESCAPE</font></strong></em></big></big></h3>
+
+<h3 align="center"><font color="#008080">Realizan determinadas operaciones cuando se
+incluyen en las cadenas de formato de la función</font> <em><strong><font color="#FF8080">printf;</font></strong></em>
+<font color="#008080">algunas de ellas son:</font></h3>
+
+<h3 align="center"><font color="#FFFF00"><em><strong>\n</strong></em></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font
+color="#B1B165"> </font><font color="#808080">pasa a nueva línea</font><br>
+<font color="#FFFF00">\<em><strong>t </strong></em></font>&nbsp;&nbsp;&nbsp;&nbsp;<font
+color="#808080">&nbsp; tabula el cursor hacia la derecha</font><br>
+<font color="#FFFF00"><em><strong>\b</strong></em>&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp; <font
+color="#808080">retrocede un espacio<br>
+</font><font color="#FFFF00"><strong><em>\a</em></strong>&nbsp;</font><font
+color="#808080">&nbsp;&nbsp;&nbsp;&nbsp; emite un pitido<br>
+</font><font color="#FFFF00"><strong>\<em>&quot; </em></strong>&nbsp;&nbsp;</font><font
+color="#808080">&nbsp;&nbsp;&nbsp; escribe el carácter &quot;<br>
+</font><font color="#FFFF00"><strong><em>\'&nbsp;&nbsp; </em></strong></font><font
+color="#808080">&nbsp;&nbsp;&nbsp; escribe el carácter '<br>
+</font><font color="#FFFF00"><em><strong>\\ </strong></em>&nbsp;</font><font
+color="#808080">&nbsp;&nbsp;&nbsp;&nbsp; escribe el carácter \</font></h3>
+
+<h3 align="center"><em><strong><font color="#FF8080">printf(&quot;</font><font
+color="#FF00FF">Hola</font> <font color="#FFFF00">\n</font><font color="#FF00FF"> Adiós</font><font
+color="#FF8080">&quot;); </font></strong></em></h3>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<h3 align="center"><big><big><em><strong><font color="#FF0000">COMENTARIOS</font></strong></em></big></big></h3>
+
+<h3 align="center"><font color="#008080">Los comentarios sirven para aclarar partes de un
+programa; el ordenador hace caso omiso de ellos, sólo sirven para que el usuario se aclare.</font></h3>
+
+<h3 align="center"><font color="#008080">Se realizan mediante la función:&nbsp;</font><font
+color="#FFFF00">&nbsp; </font><font color="#FF8080">/*</font> <font color="#FF0080">COMENTARIO</font>
+<font color="#FF8080">*/</font></h3>
+
+<p align="center">&nbsp;</p>
+
+<h3 align="center"><big><big><em><strong><font color="#FF0000">EJERCICIOS</font></strong></em></big></big></h3>
+<div align="center"><center>
+
+<table border="1" width="487" height="110">
+  <tr>
+    <td width="37" height="41" align="center" valign="middle"><a href="Prog1_1.txt">P. 1</a></td>
+    <td width="46" height="41" align="center" valign="middle"><a href="prog1_2.txt">P. 2</a></td>
+    <td width="42" height="41" align="center" valign="middle"><a href="Prog1_3.txt">P. 3</a></td>
+    <td width="41" height="41" align="center" valign="middle"><a href="Prog1_4.txt">P. 4</a></td>
+    <td width="45" height="41" align="center" valign="middle"><a href="Prog1_5.txt">P. 5</a></td>
+    <td width="50" height="41" align="center" valign="middle"><a href="Prog1_6.txt">P. 6</a></td>
+    <td width="44" height="41" align="center" valign="middle"><a href="Prog1_7.txt">P. 7</a></td>
+    <td width="45" height="41" align="center" valign="middle"><a href="Prog1_8.txt">P. 8</a></td>
+    <td width="49" height="41" align="center" valign="middle"><a href="Prog1_9.txt">P. 9</a></td>
+    <td width="39" height="41" align="center" valign="middle"><a href="Prog1_10.txt">P. 10</a></td>
+    <td width="49" height="41" align="center" valign="middle"><a href="Prog1_11.txt">P. 11</a></td>
+  </tr>
+  <tr>
+    <td width="37" height="42" align="center" valign="middle"><a href="Prog1_12.txt">P. 12</a></td>
+    <td width="46" height="42" align="center" valign="middle"><a href="prog1_13.txt">P. 13</a></td>
+    <td width="42" height="42" align="center" valign="middle"><a href="prog1_14.txt">P. 14</a></td>
+    <td width="41" height="42" align="center" valign="middle"><a href="prog1_15.txt">P. 15</a></td>
+    <td width="45" height="42" align="center" valign="middle"><a href="Prog1_16.txt">P. 16</a></td>
+    <td width="50" height="42" align="center" valign="middle"><a href="prog1_17.txt">P. 17</a></td>
+    <td width="44" height="42" align="center" valign="middle"><a href="prog1_18.txt">P. 18</a></td>
+    <td width="45" height="42" align="center" valign="middle"><a href="prog1_19.txt">P. 19</a></td>
+    <td width="49" height="42" align="center" valign="middle"><a href="prog1_20.txt">P. 20</a></td>
+    <td width="39" height="42" align="center" valign="middle"><a href="prog1_21.txt">P. 21</a></td>
+    <td width="49" height="42" align="center" valign="middle"><a href="prog1_22.txt">P. 22</a></td>
+  </tr>
+  <tr>
+    <td width="37" height="42" align="center" valign="middle"><a href="prog1_23.txt">P. 23</a></td>
+    <td width="46" height="42" align="center" valign="middle"><a href="prog1_24.txt">P. 24</a></td>
+    <td width="42" height="42" align="center" valign="middle"><a href="prog1_25.txt">P. 25</a></td>
+    <td width="41" height="42" align="center" valign="middle"><a href="prog1_26.txt">P. 26</a></td>
+    <td width="45" height="42" align="center" valign="middle"><a href="prog1_27.txt">P. 27</a></td>
+    <td width="50" height="42" align="center" valign="middle"><a href="prog1_28.txt">P. 28</a></td>
+    <td width="44" height="42" align="center" valign="middle"><a href="prog1_29.txt">P. 29</a></td>
+    <td width="45" height="42" align="center" valign="middle"><a href="prog1_30.txt">P. 30</a></td>
+    <td width="49" height="42" align="center" valign="middle"><a href="ecuacion.txt">P. 31</a></td>
+    <td width="39" height="42" align="center" valign="middle"></td>
+    <td width="49" height="42" align="center" valign="middle"></td>
+  </tr>
+</table>
+</center></div>
+</body>
+</html>

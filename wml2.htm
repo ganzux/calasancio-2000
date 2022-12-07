@@ -1,0 +1,177 @@
+<html>
+<head>
+<script>
+ function click() { if (event.button==2) {alert("¡¡NO EN MI PÁGINA!!") } }document.onmousedown=click
+</script>
+
+<title>WML</title>
+<base target="_self">
+<STYLE TYPE="text/css">
+<!--
+BODY {OVERFLOW:scroll;OVERFLOW-X:hidden}
+.DEK {POSITION:absolute;VISIBILITY:hidden;Z-INDEX:200;}
+//-->
+</STYLE>
+
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="animate.js">
+</script>
+
+</head>
+
+<body bgcolor="#00FF00" text="#000000" background="fondotitulo.gif" bgproperties="fixed" onload="dynAnimation()">
+<DIV ID=dek CLASS=dek></DIV>
+
+<SCRIPT TYPE="text/javascript">
+<!--
+
+Xoffset=-60;
+Yoffset= 20;
+
+var nav,old,iex=(document.all),yyy=-1000;
+if(navigator.appName=="Netscape"){(document.layers)?nav=true:old=true;}
+
+if(!old){
+var skn=(nav)?document.dek:dek.style;
+if(nav)document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove=get_mouse;
+}
+
+function popup(msg,bak){
+var content="<TABLE  WIDTH=200 BORDER=1 BORDERCOLOR=black CELLPADDING=2 CELLSPACING=0 "+"BGCOLOR="+bak+"><TD ALIGN=center><FONT COLOR=white SIZE=2 face=arial>"+msg+"</FONT></TD></TABLE>";
+if(old){alert(msg);return;} 
+else{yyy=Yoffset;
+ if(nav){skn.document.write(content);skn.document.close();skn.visibility="visible"}
+ if(iex){document.all("dek").innerHTML=content;skn.visibility="visible"}
+ }
+}
+function get_mouse(e){
+        stringa=/MSIE 4.0/;
+        substringa=stringa.test(navigator.appVersion);
+
+        if(substringa==true){
+         var x=(nav)?e.pageX:event.x;skn.left=x+Xoffset;
+         var y=(nav)?e.pageY:event.y;skn.top=y+yyy;
+        }
+        else {
+         var x=(nav)?e.pageX:event.x+document.body.scrollLeft;skn.left=x+Xoffset;
+         var y=(nav)?e.pageY:event.y+document.body.scrollTop;skn.top=y+yyy;  
+        }
+}
+
+function kill(){
+if(!old){yyy=-1000;skn.visibility="hidden";}
+}
+
+//-->
+</SCRIPT>
+<!-- Include Stats -->
+
+
+<h2 align="center"><a href="leng.htm" ONMOUSEOVER="popup('LENGUAJES<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="lenguajes.gif" align="absmiddle" width="75" height="55"></a>
+</h2>
+
+<h2 align="center"><a href="c.htm"  ONMOUSEOVER="popup('LENGUAJE C<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="ce.gif" align="absmiddle" width="75" height="75"></a><a href="html.htm"  ONMOUSEOVER="popup('LENGUAJE HTML<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="html.gif" align="absmiddle" width="75" height="75"></a><a href="wml.htm"  ONMOUSEOVER="popup('LENGUAJE WML<br>','#df0050')"         ONMOUSEOUT="kill()" ;><img border="0" src="wml.gif" align="absmiddle" width="150" height="112"></a><a href="pascal.htm"  ONMOUSEOVER="popup('LENGUAJE PASCAL<br>','#df0050')";     ONMOUSEOUT="kill()"><img border="0" src="pascal.gif" align="absmiddle" width="75" height="75"></a>
+</h2>
+
+
+<p align="center"><big><big><big><big><big><big><big><big><big><big><big><big><marquee align="middle"
+behavior="alternate" border="0" style="font-family: Verdana, Marlett; color: #FF0000" width="471" height="59">WML&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TEMA 2</marquee></big></big></big></big></big></big></big></big></big></big></big></big></p>
+
+<h3 align="center"><a href="wml.htm" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln"><img border="0" src="cc3.gif" align="absmiddle" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="cc4.gif" width="96" height="24"></a>
+<a href="wml2.htm" onmouseover="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;" onmouseout="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln"><img border="0" src="cc5.gif" align="absmiddle" id="fpAnimswapImgFP3" name="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="cc6.gif" width="96" height="24"></a></h3>
+<h3 align="center">Introducción al lenguaje WML</h3>
+<p align="center">&nbsp;</p>
+<h3>Índice</h3>
+<ol>
+  <li><font color="#008000">Características del WML</font>
+  <li><font color="#008000">El entorno de desarrollo</font>
+  <li><font color="#008000">Conceptos de <i>card</i> y <i>deck</i></font>
+  <li><font color="#008000">Mi primera página WML</font></li>
+</ol>
+<p>&nbsp;</p>
+<h3><font color="#008000">1. <a name="punto1">Características del WML</a></font></h3>
+<p>El lenguaje WML (<i>Wireless Markup Language</i>) constituye la base para la
+creación de contenidos visualizables desde un terminal WAP (un terminal dotado
+con un micro-navegador WAP). Está basado en el XML, por lo que aquellos que
+posean ya conocimientos de este lenguaje no tendrán dificultad en aprender WML.</p>
+<p>Las páginas WML sólo permiten introducir texto y gráficos, debido a las
+propias capacidades de los terminales móviles. Por otra parte, los
+micro-navegadores de los terminales también soportan un lenguaje de <i>script</i>,
+llamado WMLScript, que permite manipular datos y dotar de cierta interactividad
+a la página WML.</p>
+<p>Por otra parte, los gráficos que pueden ser introducidos en una página WML
+deberán tener un formato especial, denominado WBMP. Este formato sólo permite
+imágenes en blanco y negro.</p>
+<p>Las páginas WML podrán ser ubicadas en cualquier servidor <i>web</i>
+convencional, siempre que éste haya sido correctamente configurado para
+servirlas. Por tanto, antes de &quot;colgar&quot; cualquier página WML en
+nuestro espacio de <i>hosting</i> tendremos que consultar con el ISP que nos lo
+ofrece para saber si tienen preparada dicha configuración.</p>
+<p>&nbsp;</p>
+<h3><font color="#008000">2. <a name="punto2">El entorno de desarrollo</a></font></h3>
+<p>Para poder desarrollar páginas WAP sólo necesitamos un editor de texto
+convencional (como por ejemplo, el NotePad del Windows). Si buscamos una
+herramienta que nos facilite el trabajo, debemos escoger un editor que posea
+ciertas características, como marcación por color de las palabras clave del
+lenguaje, numeración de líneas, búsquedas avanzadas, ... Existen varios
+programas que cumplen estas condiciones.</p>
+<p>Sin embargo, para probar nuestras páginas no podemos utilizar nuestro
+navegador de Internet. Necesitamos un <i>software</i> específico que emule el
+comportamiento del micro-navegador de un terminal móvil (es decir, que simule
+ser un cliente WAP). Para la creación de imágenes WBMP también será
+necesaria una herramienta especial. A continuación listamos algunos entornos de
+desarrollo completos, que incluyen aplicaciones específicas para desarrollar y
+probar páginas WML, y las direcciones desde donde es posible descargarlos:</p>
+<p>Nokia WAP Toolkit: <a target="_blank" href="http://forum.nokia.com/">http://forum.nokia.com/</a></p>
+<p>UP.SDK de Phone.com: <a target="_blank" href="http://developer.phone.com/">http://developer.phone.com/</a></p>
+<p>&nbsp;</p>
+<h3><font color="#008000">3. <a name="punto3">Conceptos de <i>card</i></a> y <i>deck</i></font></h3>
+<p>En el diseño de páginas WML la unidad de desarrollo es el <i>card</i>
+(tarjeta). Una misma página puede contener varios <i>cards</i>. Sin embargo, en
+la pantalla del terminal WAP se mostrará siempre una sola <i>card</i>. El
+usuario podrá navegar de una <i>card</i> a otra, para visualizar los contenidos
+de la página.</p>
+<p>Un conjunto de <i>cards</i> constituirán un <i>deck</i>. El <i>deck</i> es
+la unidad mínima de transmisión entre el servidor y el terminal móvil. Cuando
+el terminal recibe el <i>deck</i> completo, mostrará en su pantalla el primer <i>card</i>.
+De este modo, la navegación se realiza siempre entre los diferentes <i>cards</i>
+que componen el <i>deck</i>, hasta que se carga un nuevo <i>deck</i>.</p>
+<p>&nbsp;</p>
+<h3><font color="#008000">4. <a name="punto4">Mi primera página WML</a></font></h3>
+<p>Toda página WML debe comenzar con la siguiente cabecera:</p>
+<blockquote>
+  &lt;?xml version=&quot;1.0&quot;?&gt;<br>
+  &lt;!DOCTYPE wml PUBLIC &quot;-//WAPFORUM//DTD WML 1.2//EN&quot; &quot;http://www.wapforum.org/DTD/wml12.dtd&quot;&gt;
+</blockquote>
+<p>A continuación debe figurar la etiqueta de comienzo de página WML, que es <strong class="courier">&lt;wml&gt;</strong>.
+El documento lo cerrará la etiqueta <strong class="courier">&lt;/wml&gt;</strong>,
+de modo similar a la pareja <strong class="courier">&lt;html&gt;</strong> ... <strong class="courier">&lt;/html&gt;</strong>
+de las páginas HTML.</p>
+<p>A continuación incluiremos el código del primer <i>card</i>, que será el
+primero que mostrará el micro-navegador del terminal móvil. Las cards vienen
+delimitadas por las etiquetas <strong class="courier">&lt;card&gt;</strong> ... <strong class="courier">&lt;/card&gt;</strong>.
+En su interior incluiremos ya el código de los párrafos, imágenes, tablas y
+enlaces que deseamos se muestren en ese <i>card</i>.</p>
+<blockquote>
+  &lt;wml&gt;<br>
+  &lt;card&gt;<br>
+  &lt;p aling=&quot;center&quot;&gt;¡Mi primera página WML!&lt;/p&gt;<br>
+  &lt;do type=&quot;accept&quot; label=&quot;Siguiente&quot;&gt;<br>
+  &lt;go href=&quot;#card2&quot;/&gt;<br>
+  &lt;/do&gt;<br>
+  &lt;/card&gt;
+</blockquote>
+<p>Como se observa, existe gran similitud con el lenguaje HTML en algunos
+elementos. El ejemplo anterior mostrará el mensaje &quot;¡Mi primera página
+WML!&quot; en la pantalla del terminal, e incluirá un botón de aceptación,
+con el nombre <b>Siguiente</b>, y que irá a la referencia <b>card2</b>.</p>
+<p>En la sintaxis del lenguaje WML aparece una nueva forma de cerrar etiquetas: <strong class="courier">&lt;
+... /&gt;</strong>. Quienes conozcan un poco de XML no se sorprenderán al ver
+esta codificación.</p>

@@ -1,0 +1,148 @@
+<HTML>
+<HEAD>
+<TITLE>Encabezado y Cuerpo</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man001.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man003.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+        <HR>
+
+<A name="sec1"></A>
+<B><U><FONT size=+3><CENTER>Cabecera del documento</B></U></FONT></CENTER><P>
+
+La directiva <B>&lt;HEAD&gt;&lt;/HEAD&gt;</B> delimita la cabecera del
+documento. Dentro de la cabecera es importante definir el t&iacute;tulo
+de la p&aacute;gina por medio de la directiva <B>&lt;TITLE&gt;&lt;/TITLE&gt;</B>.
+Este t&iacute;tulo ser&aacute; el que aparezca en la barra de nuestro visor
+de p&aacute;ginas Web.<P>
+
+<I>Ejemplo</I> :
+<DL>
+<DD><B>&lt;TITLE&gt;</B>La p&aacute;gina Web de AcMark<B>&lt;/TITLE&gt;</B>
+</DL>
+
+<P>
+Dentro de la cabecera de nuestro documento podemos incluir otras directivas
+adicionales. La directiva <B>&lt;META&gt;</B> indica al visor de Internet las
+palabras clave y contenido de nuestra p&aacute;gina Web. Muchos de los
+buscadores de p&aacute;ginas Web de Internet (Yahoo, Lycos, etc...) utilizan
+el contenido de esta directiva para incluir la p&aacute;gina en sus bases
+de datos. La directiva <B>&lt;META&gt;</B> lleva generalmente dos
+par&aacute;metros, <B>name</B> y <B>content</B>.<P>
+<P>
+<I>Ejemplos</I> :
+<DL>
+<DT><B>&lt;META name =</B> &quot;Pagina de Jose&quot;<B>content =</B> &quot;Mi pagina personal, Musica y Peliculas&quot;<B>&gt;</B>
+<DD>Indica al visor el nombre de la p&aacute;gina y sus contenidos principales.<p>
+<DT><B>&lt;META name =</B> &quot;keywords&quot;<B>content =</B> &quot;Jose musica peliculas links espa&ntilde;a"<B>&gt;</B>
+<DD>Indica al visor las palabras clave para los buscadores de Internet.
+</DL>
+
+<P>
+
+Otro uso de la directiva <B>&lt;META&gt;</B> es la de indicar
+documentos con "refresco autom&aacute;tico". Si se indica una <B><I>URL</B></I>
+se sustituir&aacute; el documento por el indicado una vez transcurridos el
+n&uacute;mero de segundos especificados. Si no se incluye ninguna
+<B><I>URL</B></I> se volver&aacute; a cargar en el visor el documento en
+uso transcurridos los segundos indicados. Esto es util para p&aacute;ginas
+que cambian de contenido con mucha frecuencia o para redireccionar a la
+persona que visita nuestra pagina Web a una nueva direcci&oacute;n donde
+se encuentra una versi&oacute;n actualizada de nuestra pagina Web.<P>
+<P>
+<I>Ejemplo </I>:
+<DL>
+<DT><B>&lt;META http-equiv=</B> "refresh"<B>content =</B> "15;URL=http://www.microsoft.com"<B>&gt;</B>
+<DD>Transcurridos 15 segundos se acceder&aacute; a la pagina Web de Microsoft.<P>
+</DL>
+<P>
+
+La directiva <B>&lt;BASE&gt;</B> indica la localizaci&oacute;n de los
+ficheros, gr&aacute;ficos, sonidos, etc... a los que se hace referencia en
+nuestra p&aacute;gina Web. Si no se incluye esta directiva el visor entiende
+que dichos elementos se encuentran en el mismo lugar donde se encuentra
+nuestra p&aacute;gina Web.<P>
+<P>
+<I>Ejemplo</I> :
+<DL>
+<DD><B>&lt;BASE href =</B> "http://www.jet.es/jose/"<B>&gt;</B>
+</DL>
+
+<P>
+<P>
+<P>
+<HR>
+<A name="sec2"></A>
+<CENTER><B><U><FONT size=+3>Cuerpo del documento</B></U></FONT></CENTER><P>
+
+La directiva <B>&lt;BODY&gt;&lt;/BODY&gt;</B> indica el inicio y final de
+nuestra pagina Web. Ser&aacute; entre el inicio y el final de esta directiva
+donde pongamos los contenidos de nuestra p&aacute;gina, textos,
+gr&aacute;ficos, enlaces, etc.... Esta directiva tiene una serie de
+par&aacute;metros opcionales que nos permiten indicar la "apariencia" global
+del documento :<P>
+
+<DL>
+<DT><B>background=</B> "nombre de fichero grafico"
+<DD>Indica el nombre de un fichero gr&aacute;fico que servir&aacute; como "fondo" de nuestra p&aacute;gina. Si la imagen no rellena todo el fondo del documento, esta sera reproducida tantas veces como sea necesario.<p>
+<DT><B>bgcolor =</B> "codigo de color"
+<DD>Indica un color para el fondo de nuestro documento. Se ignora si se ha usado el par&aacute;metro <B>background</B>.<p>
+<DT><B>text =</B> "codigo de color"
+<DD>Indica un color para el texto que incluyamos en nuestro documento. Por defecto es negro.<p>
+<DT><B>link =</B> "codigo de color"
+<DD>Indica el color de los textos que dan acceso a un Hyperenlace. Por defecto es azul.<p>
+<DT><B>vlink =</B> "codigo de color"
+<DD>Indica el color de los textos que dan acceso a un Hyperenlace que ya hemos visitado con nuestro visor. Por defecto es purpura.<p>
+</DL><p>
+
+El <B><I>codigo de color</B></I> es un numero compuesto por tres pares de
+cifras hexadecimales que indican la proporcion de los colores "primarios",
+<B><I>rojo</B>, <B>verde</B></I> y <B><I>azul</B></I>. El codigo de color
+se antecede del s&iacute;mbolo <B><I>#</B></I>.<P>
+<P>
+<I>Ejemplos :</I>	
+<TABLE cellspacing=10>
+<TD>
+<B><I>#000000</B></I><br>
+<B><I>#FF0000</B></I><br>
+<B><I>#00FF00</B></I><br>
+<B><I>#0000FF</B></I><br>
+<B><I>#FFFFFF</B></I><br>
+<TD>
+Color Negro<br>
+Color Rojo<br>
+Color Verde<br>
+Color Azul<br>
+Color Blanco<br>
+<TR>
+</TABLE>
+
+<P>
+El primer par de cifras indican la proporci&oacute;n de color Rojo, el
+segundo par de cifras la proporcion de color Verde y las dos ultimas la
+proporcion de color Azul. Cada par de cifras hexadecimales nos permiten
+un rango de 0 a 255. Combinando las proporciones de cada color primario
+obtendremos diferentes colores.<P>
+
+De cualquier forma la mayor&iacute;a de los editores de HTML nos permiten
+obtener el c&oacute;digo de color correspondiente escogiendo directamente el
+color de una paleta. <B>
+<p><p><p>
+
+<HR>
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man001.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man003.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+</BODY>
+</HTML>

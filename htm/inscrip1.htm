@@ -1,0 +1,156 @@
+<HTML>
+<HEAD>
+<TITLE>Formulario de inscripción</TITLE>
+
+<SCRIPT language = "JavaScript"> 
+
+<!--
+//////////////Variables que configuran el mensaje./////////////////////////
+ 
+//Este es el nombre del buzón que va a recibir el mensaje. 
+  var receptor     = "luisfd@mail.ddnet.es";
+  
+//Nombre del servidor de e-mail que va a recibir el mensaje.
+  var hostreceptor = "mail.ddnet.es"; 
+
+//Asunto a tratar.
+  var asunto       = "Solicitud de inscripción";
+  
+//Creamos un objeto que sirve para enviar el correo.  
+  envio            = new enviar(receptor,hostreceptor,asunto); 
+  
+//Si deseamos crear otros mensajes con destinatarios o asuntos diferentes
+//podemos crear una función que cambie los valores de estas variables
+// o bien podemos crear otro objeto "enviar" con unas variables nuevas.
+//Por ejemplo : envio2 = new enviar("<tu_buzón@tu_host<","<tu_mailhost<","<asunto deseado>");
+//y luego hacer : envio2.enviarmensaje(<nombre de un formulario existente>);
+
+///////////////Funciones y objetos definidos.//////////////////////////////
+
+//Objeto "enviar" : creado para enviar mensajes.
+  function enviar(receptor,hostreceptor,asunto) {
+    this.mensaje      = "";
+    this.emisor       = "";
+    this.receptor     = receptor;
+	this.hostreceptor = hostreceptor; 
+	this.asunto       = asunto;
+	this.generamensaje= generamensaje;
+	this.enviarmensaje= enviarmensaje; 
+  }
+
+//Rutina que genera el mensaje.
+//Esta rutina es la que se debe modificar para establecer como se ha va
+//a recibir el mensaje.Será función  del formulario que hallamos construido.
+    function generamensaje(formulario) {
+  
+//Upsss!!: ¡¡Cuidado!!   :El Explorer admite Value y value pero Netscape
+//sólo admite value.
+      this.mensaje     = "Nombre: " + formulario.Nombre.value + "\n\n";
+      this.mensaje     = this.mensaje + "Apellidos:" + formulario.Apellidos.value + "\n\n";
+      this.mensaje     = this.mensaje + "Comentarios:" + formulario.Comentarios.value + "\n\n"; 
+      this.mensaje     = this.mensaje + "E-mail :" + formulario.Email.value
+	}	 
+    
+//Rutina que realiza comprobaciones y que se encarga de llamar a la función
+//del Applet que envía el mensaje por el correo electrónico.
+//También habrá que modificar la parte de comprobaciones en función de
+//los datos que se desea que sean de escritura obligatoria.
+  function enviarmensaje(formulario) {  
+
+  window.status="Por favor espere un momento mientras  se envían sus datos....";
+          
+//Comprobamos si se han rellenado los campos necesarios.    
+    if (formulario.Nombre.value == ""){
+	  alert("Debe usted rellenar el campor de nombre");
+	  return; 
+    }
+    if (formulario.Apellidos.value == ""){
+      alert("Debe usted rellenar el campo de apellidos");
+	  return; 
+    }
+ 
+//En caso de que no se halla relenado la dirección de correo electrónico
+//preguntamos si se desea rellenarla o bien seguimos adelante. 
+   if (formulario.Email.value == ""){
+
+     if (window.confirm("Atención,no ha rellenado su dirección de e-mail.Si"+ 
+	     "no la rellena no será posible una respuesta por correo electrónico"+
+		 ".Pulse cancelar para rellenarla ahora ") == false) {
+//Volvemos al formulario colocando el cursor sobre la caja de texto de correo.
+       window.status="";  
+	   formulario.Email.focus();
+	   return;
+     } 
+	 else 
+	  
+//En caso de no rellenar el campo de la dirección e-mail no será posible
+//realizar una respuesta, y en el correo aparecerá como :
+//            Mail From : No_disponible@hostemisor
+       this.emisor = "No_disponible";
+     	
+	}  
+	
+	else {
+	  this.emisor = formulario.Email.value; 
+    }
+
+
+//En caso de que no exista ningún error enviamos los datos a través del 
+//correo electrónico.Para ello previamente generamos el mensaje.
+/////////////////////////////////////////////////////////////////////////
+//NOTA : A partir de aquí sólo necesitamos modificar el identificador  
+//"ident" empleado en la declaración del Applet,es decir en:
+//<APPLET ........   NAME="ident" ..........></APPLET> 
+
+//IMPORTANTE : Si se emplea ID="ident" en lugar de NAME="ident" trabajará
+//bien con el Explorer pero no con el Netscape. En cambio con NAME trabaja
+//bien con ambos.
+
+/////////////////////////////////////////////////////////////////////////
+    this.generamensaje(formulario);
+	document.ident.emisor        = this.emisor;
+	document.ident.receptor      = this.receptor;
+	document.ident.hostreceptor  = this.hostreceptor;
+	document.ident.mensaje       = this.mensaje;
+    document.ident.asunto        = this.asunto;
+    
+	document.ident.enviarcorreo();
+     
+    if (document.ident.recepcion == 1)
+	  alert("Mensaje enviado correctamente");
+	else
+	  alert ("Ha ocurrido un error al enviar su mensaje");  
+   window.status="";  
+   
+  }   
+
+// -->
+
+</SCRIPT> 
+
+</HEAD>
+
+<BODY BGCOLOR=#2200FF>
+
+<!--Cargamos el Applet que se encarga de envíar el correo -->
+<APPLET CODEBASE="http://www.iies.es/ciig/" CODE=inscrip.class NAME=ident WIDTH=10 HEIGHT=10></APPLET>
+
+<!-- Preparamos el formulario de inscripción -->
+<BR><BR>
+<FORM NAME="formulario">
+Nombre      :<INPUT TYPE="text" NAME="Nombre" SIZE="40" MAXLENGTH="80" ></INPUT><BR>
+Apellidos   :<INPUT TYPE="text" NAME="Apellidos" SIZE="40" MAXLENGTH="80" ></INPUT><BR>
+Comentarios :<BR><TEXTAREA NAME="Comentarios" ROWS="10" COLS="40"></TEXTAREA><BR>
+e-mail      :<INPUT TYPE ="text" NAME="Email" SIZE="40" MAXLENGTH="80"></INPUT><BR>
+<INPUT TYPE="button" NAME ="Enviar datos"  VALUE="Enviar Correo" WIDTH=100%
+onClick="window.status='Por favor espere un momento mientras  se envían sus datos....'; 
+envio.enviarmensaje(this.form);window.status=''"> 
+<INPUT TYPE="reset"   NAME ="Borrar selecciones"  VALUE="Borrar selecciones" WIDTH=100%>
+</FORM>
+
+<!-- En caso de querer añadir más elementos al formulario hay que modificar -->
+<!-- la función "generamensaje" de Javascript para que se añada la información -->
+<!-- al mensaje que se desea enviar -->
+
+</BODY>
+</HTML>

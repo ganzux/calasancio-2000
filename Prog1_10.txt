@@ -1,0 +1,15 @@
+/* Programa que calcula el volumen de la esfera introduciendo el radio el usuario */
+
+#include <stdio.h>
+int main(void)
+{
+	float radio,volumen;
+
+		printf("Dame el radio: ");
+			scanf("%f",&radio);
+
+				volumen=radio*3.1415*radio*4;
+
+		printf("\n\nEl volumen de una esfera de radio %f es %f",radio,volumen);
+}
+

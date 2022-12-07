@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int   vocales=0,consonantes=0,raros=0,x,y;
+char  caracter;
+printf("pulse F para finalizar\n");
+do{
+
+    if (caracter=='a' || caracter=='e' || caracter=='i' || caracter=='o' || caracter=='u' || caracter=='A' || caracter=='E' || caracter=='I' || caracter=='O' || caracter=='U')
+	  vocales++;
+    if (caracter=='b' || caracter=='c' || caracter=='d' || caracter=='f' || caracter=='g' || caracter=='h' ||caracter=='j' ||caracter=='k' ||caracter=='l' ||caracter=='m' ||caracter=='n' ||caracter=='ñ' ||caracter=='p' || caracter=='q' || caracter=='r' ||caracter=='s' ||caracter=='t' ||caracter=='v' ||caracter=='w' ||caracter=='x' ||caracter=='y' ||caracter=='z' || caracter=='B' || caracter=='C' || caracter=='D' || caracter=='G' ||caracter=='H' ||caracter=='J' ||caracter=='K' ||caracter=='L' ||caracter=='M' ||caracter=='N' ||caracter=='Ñ' || caracter=='P' || caracter=='Q' ||caracter=='R' ||caracter=='S' ||caracter=='T' ||caracter=='V' ||caracter=='W' ||caracter=='X' ||caracter=='Y' ||caracter=='Z')
+	  consonantes++;
+    else raros++;
+    caracter=getche();
+  }
+while(caracter!='F');
+
+printf("¿X?"); scanf("%d",&x);
+printf("¿Y?"); scanf("%d",&y);
+gotoxy(x,y); printf("\n\n\nVocales: %d",vocales);
+gotoxy(x,y+1);printf("\nConsonantes: %d",consonantes);
+
+}

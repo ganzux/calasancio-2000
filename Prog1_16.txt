@@ -1,0 +1,22 @@
+/* Programa que calcula el espacio en un M.R.U. introduciendo por el usuario el espacio inicial, la velocidad y el tiempo */
+
+#include <stdio.h>
+int main(void)
+{
+	float s0,v,t,s;
+
+		printf("Espacio inicial: ");
+			scanf("%f",&s0);
+		printf("Velocidad: ");
+			scanf("%f",&v);
+		printf("Tiempo: ");
+			scanf("%f",&t);
+
+		printf("\n S=Sini+V·T \n");
+
+		s=s0+(v*t);
+
+		printf("\nS=%f+%f·%f",s0,v,t);
+		printf("\nS=%f",s);
+}
+

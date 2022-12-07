@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+void main()
+{
+int cc,pepo=1;
+char pepolo;
+	   randomize();
+do{
+
+	cc=random(2);
+	switch(cc){
+	case 0: printf("\n%d: CARA",pepo); break;
+	case 1: printf("\n%d: CRUZ",pepo); break;
+		  }     pepo++;
+	pepolo=getche();
+  }
+while(pepolo!='f');
+}
+

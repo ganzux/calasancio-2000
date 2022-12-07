@@ -1,0 +1,268 @@
+<HTML>
+<HEAD>
+<TITLE>Formularios</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man010.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man012.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+        <HR>
+
+<B><FONT size=+3><CENTER><U>Formularios</B></U></FONT></CENTER><P>
+
+Los formularios nos permiten dentro de una p&aacute;gina Web solicitar informaci&oacute;n 
+al visitante y procesarla. En un formulario podremos solicitar diferentes 
+datos (campos) cada uno de los cuales quedar&aacute; asociado a una variable. Una 
+vez se hayan introducido los valores en los campos, el contenido de estos ser&aacute; 
+enviado a la direcci&oacute;n (URL) donde tengamos el programa que pueda procesar las 
+variables. Para poder realizar este &uacute;ltimo paso de procesar las variables 
+necesitaremos realizar un programa externo en algun lenguaje de programaci&oacute;n 
+como PERL, C++ o Visual Basic. A este programa externo se le suele llamar <B><I>CGI</B></I> 
+(Common Gateway Interface). La creaci&oacute;n de este tipo de programas ser&iacute;a 
+tema de otro manual diferente, por lo que aqu&iacute; veremos como se pueden enviar las 
+variables a nuestra direcci&oacute;n de correo electr&oacute;nico. <P>
+
+La declaraci&oacute;n del formulario se pone entre las directivas <B>&lt;FORM&gt;&lt;/FORM&gt;</B>. 
+En el interior de la declaraci&oacute;n se indican los elementos (variables) de entrada. 
+La directiva <B>&lt;FORM&gt;</B> tiene los par&aacute;metros <B>action</B> y <B>method</B>.<P>
+
+<DL>
+<DT><B>action =</B> "programa"
+<DD>Indica el programa que va a "tratar" a las variables que se envien con el formulario. En nuestro caso enviaremos las variables por correo electr&oacute;nico, con lo que el "programa" ser&aacute; <B>
+"mailto: direccion_de_correo"</B>.<P>
+<DT><B>method =</B> POST / GET
+<DD>Indica el m&eacute;todo seg&uacute;n el que se transferiran las variables. POST produce la modificaci&oacute;n del documento de destino (como en el caso de enviar por correo las variables). GET no produce cambios en el documento destino (como en el caso de una consulta a una base de datos, p.ej. una p&aacute;gina de b&uacute;squeda en Internet).<P>
+</DL>
+<P>
+
+<B><U>Campos de Entrada</B></U><P>
+
+Para la introducci&oacute;n de las variables se utiliza la directiva <B>&lt;INPUT&gt;</B>. 
+Esta directiva tiene el par&aacute;metro <B>type</B> que indica el tipo de variable a introducir 
+y <B>name</B> que indica el nombre que se le dar&aacute; al campo. 
+Cada tipo de variable tiene sus propios par&aacute;metros.<P>
+
+<DL>
+<DT><B>type= </B>text <B>name =</B> campo
+<DD>Indica que el campo a introducir ser&aacute; un texto. Sus par&aacute;metros son :<P>
+<DD><B>maxlenght =</B> numero
+<DD>Numero m&aacute;ximo de caracteres a introducir en el campo.
+<DD><B>size =</B> numero
+<DD>Tama&ntilde;o en caracteres que se mostrar&aacute; en pantalla.
+<DD><B>value =</B> "texto"
+<DD>Valor inicial del campo. Normalmente sera " ", o sea, vacio.<P>
+<DT><B>type = </B>password<B> name =</B> campo
+<DD>Indica que el campo sera una palabra de paso. Mostrar&aacute; asteriscos (*) en lugar de las letras escritas. Sus par&aacute;metros opcionales son los mismos que para  text.<P>
+<DT><B>type = </B>checkbox<B> name =</B> campo
+<DD>El campo se elegir&aacute; marcando una casilla. Se permite marcar varias casillas. Los valores de las casillas ser&aacute;n indicados por :<P>
+<DD><B>value =</B> "valor"
+<DD><B>checked</B>
+<DD>La casilla aparecera marcada por defecto.<P>
+<DT><B>type = </B>radio<B> name =</B> campo
+<DD>El campo se elegira marcando una casilla. Solo permite marcar una sola de las casillas. Los valores de las casillas seran indicados por :<P>
+<DD><B>value =</B> "valor"<P>
+<DT><B>type = </B>image<B> name =</B> campo
+<DD>El campo contendra el valor de las coordenadas del punto de la imagen pinchado. Debe indicarse la imagen con el par&aacute;metro :<P>
+<DD><B>src =</B> "fichero de imagen".<P>
+<DT><B>type = </B>hidden<B> name =</B> campo
+<DD>El usuario no puede modificar su valor, ya que el campo no es visible se manda siempre con el valor indicado por el par&aacute;metro :<P>
+<DD><B>value =</B> "valor"<P>
+<DT><B>type = submit</B>
+<DD>Representa un bot&oacute;n. Al pulsar este bot&oacute;n la informaci&oacute;n de todos los campos se env&iacute;a al programa indicado en <B>&lt;FORM&gt;</B>. Tiene el par&aacute;metro 
+<B>value =</B> "texto" que indica el texto que aparecer&aacute; en el boton.<P>
+<DT><B>type = reset</B>
+<DD>Representa un bot&oacute;n. Al pulsar este bot&oacute;n se borra el contenido de todos los campos. El par&aacute;metro <B>
+value =</B> "texto" indica el texto que aparecer&aacute; en el bot&oacute;n.<P>
+</DL>
+<P>
+<B><U>Campos de Seleccion</B></U><P>
+Este tipo de campos despliegan una lista de opciones, entre las que debemos escoger una o varias. Se utiliza para ellos la directiva <B>
+&lt;SELECT&gt; &lt;/SELECT&gt;</B> . Sus par&aacute;metros son :<P>
+<DL>
+<DT><B>name =</B> campo
+<DD>Nombre del campo<P>
+<DT><B>size =</B> num
+<DD>Numero de opciones visibles. Si se indica 1 se presenta como un men&uacute; desplegable, se se indica mas de uno se presenta como una lista con barra de desplazamiento.<P>
+<DT><B>multiple</B>
+<DD>Permite selecionar mas de un valor para el campo.
+</DL>
+<P>
+
+Las diferentes opciones de la lista se indican con la directiva <B>&lt;OPTION&gt;</B>. 
+Esta directiva puede incluir el parametro <B>selected</B> para indicar cual es la opcion 
+por defecto. En caso de que no se especifique, se tomara por defecto la primera opci&oacute;n 
+de la lista.<P>
+
+<B><U>Areas de texto.</B></U><P>
+
+Representa un campo de texto de m&uacute;ltiples lineas. Normalmente se utiliza para que se incluyan en el comentarios. La directiva usada es <B>
+&lt;TEXTAREA&gt; &lt;/TEXTAREA&gt;</B>, y sus par&aacute;metros :<P>
+<DL>
+<DT><B>name =</B> campo
+<DD>Nombre del campo.<P>
+<DT><B>cols =</B> num.
+<DD>Numero de columnas de texto visibles.<P>
+<DT><B>rows =</B> num.
+<DD>Numero de filas de texto visibles.<p>
+<DT><B>wrap =</B> VIRTUAL / PHYSICAL
+<DD>Justifica el texto autom&aacute;ticamente en el interior de la caja. 
+La opci&oacute;n PHYSICAL envia las lineas de texto separadas en 
+lineas f&iacute;sicas. La opci&oacute;n VIRTUAL envia todo el texto seguido.
+</DL>
+<P>
+
+Veamos a continuaci&oacute;n un ejemplo de formulario utilizando todas las formas de introduccion de datos.<P>
+
+<CENTER>
+<TABLE BORDER=1>
+<TD>
+<B>&lt;FORM action</B> <B>=</B> "mailto: luisfd@jet.es" <B>method =</B> post <B>&gt;</B><br>
+Tu Nombre:<B>&lt;INPUT type =</B> text <B>name = </B>nombre <B>size =</B> 30 <B>&gt;</B><br>
+Tu Clave:	<B>&lt;INPUT type =</B> password <B>name = </B>clave <B>size =</B> 8 <B>&gt;</B><br>
+<B>&lt;P&gt;</B><br>
+Archivos a Enviar:<br>
+<B>&lt;INPUT type =</B> checkbox <B>name = </B>archivo <B>value = </B>"Manual" <B>&gt;</B> Manual de Html<br>
+<B>&lt;INPUT type =</B> checkbox <B>name =</B> archivo <B>value =</B>"Mapthis"<B> &gt;</B> Programa Mapthis<br>
+<B>&lt;INPUT type =</B> checkbox <B>name = </B>archivo <B>value =</B>"Help"<B> &gt;</B> Archivo de Ayuda<br>
+<B>&lt;P&gt;</B><br>
+Tu Edad :<br>
+<B>&lt;INPUT type =</B> radio <B>name</B> <B>=</B> edad <B>value =</B> "-20" <B>&gt;</B> Menos de 20 a&ntilde;os<br>
+<B>&lt;INPUT type =</B> radio <B>name =</B> edad <B>value =</B> "20-40" <B>&gt;</B> Entre 20 y 40 a&ntilde;os<br>
+<B>&lt;INPUT type =</B> radio <B>name</B> <B>=</B> edad <B>value =</B> "+40" <B>&gt;</B> Mas de 40 a&ntilde;os<br>
+<B>&lt;P&gt;</B><br>
+<B>&lt;INPUT type =</B> hidden <B>name = </B>lugar <B>value = "</B>pagina personal"<B> &gt;</B><br>
+Como encontraste mi p&aacute;gina :<br>
+<B>&lt;SELECT</B> <B>name = </B>donde<B> &gt;</B><br>
+<B>&lt;OPTION&gt;</B>De casualidad<br>
+<B>&lt;OPTION&gt;</B>Por el buscador Ole<br>
+<B>&lt;OPTION&gt;</B>Por el buscador Yahoo<br>
+<B>&lt;OPTION&gt;</B>Me la comentaron<br>
+<B>&lt;/SELECT&gt;</B><br>
+<B>&lt;P&gt;</B><br>
+Tus Comentarios:<br>
+<B>&lt;BR&gt;</B><br>
+<B>&lt;TEXTAREA</B> <B>name = </B>comentario <B>rows =</B> 5 <B>cols =</B> 40<B> wrap =</B> virtual <B>&gt;&lt;/TEXTAREA&gt;</B><br>
+<B>&lt;P&gt;</B><br>
+<B>&lt;INPUT type =</B> submit <B>value =</B> "Enviar"<B> &gt;</B><br>
+<B>&lt;INPUT type =</B> reset <B>value =</B> "Borrar"<B> &gt;</B><br>
+<B>&lt;/FORM&gt;</B><br>
+<TR>
+</TABLE>
+
+<P>
+Ahora veamos el efecto producido en la p&aacute;gina Web :<P>
+<P>
+</CENTER>
+
+<CENTER>
+<TABLE border=2>
+<TD>
+<FORM action= "mailto: luisfd@jet.es" method = post >
+Tu Nombre:<INPUT type =text name = nombre size = 30 >
+Tu Clave:	<INPUT type = password name = clave size = 8 >
+<P>
+Archivos a Enviar:<br>
+<INPUT type = checkbox name = archivo value = "Manual" > Manual de Html
+<INPUT type = checkbox name = archivo value ="Mapthis"> Programa Mapthis
+<INPUT type = checkbox name = archivo value ="Help"> Archivo de Ayuda
+<P>
+Tu Edad :<br>
+<INPUT type = radio name = edad value = "-20" > Menos de 20 a&ntilde;os<br>
+<INPUT type = radio name = edad value = "20-40" > Entre 20 y 40 a&ntilde;os<br>
+<INPUT type = radio name = edad value = "+40" > Mas de 40 a&ntilde;os
+<P>
+<INPUT type = hidden name = lugar value = "pagina personal">
+Como encontraste mi p&aacute;gina :<br>
+<SELECT name = donde>
+<OPTION>De casualidad
+<OPTION>Por el buscador Ole
+<OPTION>Por el buscador Yahoo
+<OPTION>Me la comentaron
+</SELECT>
+<P>
+Tus Comentarios:<br>
+<TEXTAREA name = comentario rows = 5 cols = 40 wrap = virtual ></TEXTAREA>
+<P>
+<INPUT type =submit value = "Enviar">
+<INPUT type = reset value = "Borrar">
+</FORM>
+</TABLE>
+</CENTER>
+<P>
+
+
+Si rellenas este FORM y pulsas sobre el bot&oacute;n <B><I>Enviar</B></I>, (estando conectado a Internet), 
+se generar&aacute; un mensaje de correo a mi direccion de correo <I>luisfd@jet.es</I>. Si pulsas el boton <B><I>Borrar</B></I>
+se borraran los datos que hayas introducido en el Formulario.<BR>
+El texto que se recibir&iacute;a por correo electr&oacute;nico ser&iacute;a parecido a este :<P>
+
+<CENTER>
+<TABLE border=2>
+<TD>
+nombre=Pedro+Perez
+&amp;clave=12345678 &amp;archivo=Manual &amp;archivo=Mapthis &amp;edad=20-40 &amp;lugar=pagina+personal &amp;donde=Por+el+buscador+Ole &amp;comentario%94= Espero+que+me+mandes+los%0D%0Aficheros+antes+del+martes%0D%0A%0D%0AS aludos.%0D%0A
+<TR>
+</TABLE>
+</CENTER>
+
+<P>
+
+Podemos observar que en el correo se separan las variables con el s&iacute;mbolo <B>&amp;</B>, 
+los espacios se sustituyen por el signo <B>+</B> y se representan los codigos de 
+retorno de carro y avance de linea del campo de texto con los caracteres 
+<B><I>%0D</B></I> y <B><I>%0A</B></I> respectivamente.<P>
+
+Si en vez de enviar estas variables por correo electr&oacute;nico, fuesen enviadas a un programa (CGI), este programa podr&iacute;a tratarlas y dar como respuesta una nueva p&aacute;gina Web.<P>
+
+<hr>
+<b>IMPORTANTE : </b> La opcion <b>mailto:</b> en el parametro <b>action</b> de la directiva <b>FORM</b> solo funciona correctamente con Netscape. En Microsoft Explorer esta opcion da como resultado 
+un correo en blanco. Para enviar un formulario por e-mail sin importar el visor utilizado se ha de utilizar un programa externo que realize este proceso. 
+En la pagina <A href="mailform.htm"><b>MAILFORM</b></a> encontraras informacion de como implementar un programa externo para el envio de formularios via e-mail en tu pagina Web.
+<HR>
+<h1>Truco !!!</h1>
+Se puede utilizar un Formulario como "lanzador" de links, es decir, por medio de una lista desplegable permitir al usuario escoger un Link y acceder a el. Para ello se utiliza el parametro "OnClick". Ejemplo :<p>
+<CENTER>
+<TABLE BORDER=1>
+<TD>
+<B>&lt;FORM&gt;</B><br>
+<B>&lt;SELECT</B> <B>name = </B>"list"<B> &gt;</B><br>
+<B>&lt;OPTION SELECTED value=</b>&quot;http://www.alvarito.alvaro.as&quot;<b>&gt;</B>Mi Pagina Web<br>
+<B>&lt;OPTION value=</b>"http://www.microsoft.com"<b>&gt;</B>Microsoft<br>
+<B>&lt;OPTION value=</b>"http://www.ibm.com"<b>&gt;</B>Ibm<br>
+<B>&lt;OPTION value=</b>"http://www.novell.com"<b>&gt;</B>Novell<br>
+<B>&lt;OPTION value=</b>"http://www.hp.com"<b>&gt;</B>Hewlett Packard<br>
+<B>&lt;OPTION value=</b>"http://www.fujitsu.com"<b>&gt;</B>Fujitsu<br>
+<B>&lt;OPTION value=</b>"http://www.3com.com"<b>&gt;</B>3Com<br>
+<B>&lt;/SELECT&gt;</B><br>
+<b>&lt;INPUT TYPE=BUTTON value=</b>"Ir a..." <br><b>onClick=</b>"top.location.href=this.form.list.options[this.form.list.selectedIndex].value"<b>&gt;</b><br>
+<B>&lt;/FORM&gt;</B><br>
+</TABLE><p>
+Este seria el efecto producido :<p>
+<FORM>
+<SELECT NAME="list" size="1">
+<OPTION SELECTED VALUE="http://www.alvaro.alcedo.net">Mi pagina Web
+<OPTION VALUE="http://www.microsoft.com">Microsoft
+<OPTION VALUE="http://www.ibm.com">Ibm
+<OPTION VALUE="http://www.novell.com/">Novell
+<OPTION VALUE="http://www.hp.com/">Hewlett Packard
+<OPTION VALUE="http://www.fujitsu.com/">Fujitsu
+<OPTION VALUE="http://www.3com.com">3Com
+</SELECT>
+<INPUT TYPE=BUTTON VALUE="Ir a..." onClick="top.location.href=this.form.list.options[this.form.list.selectedIndex].value">
+</FORM>
+<HR>
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man010.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man012.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+</BODY>
+</HTML>

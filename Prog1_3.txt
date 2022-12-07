@@ -1,0 +1,19 @@
+/* programa que modifica el valor del primer numero entero introducido por el
+usuario con la suma de un segundo numero introducido por el usuario */
+
+
+#include <stdio.h>
+void main()
+{
+    int a,b;
+
+	printf("dime a ");
+	   scanf("%d",&a);
+	printf("dime b ");
+	   scanf("%d",&b);
+
+			  a=a+b;
+
+	printf("La suma de %d y %d es %d",a-b,b,a);
+
+}

@@ -1,0 +1,112 @@
+<HTML>
+<HEAD>
+<TITLE>Tablas</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man008.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man010.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+        <HR>
+
+<CENTER><FONT size=+3><B><U>Tablas</B></U></FONT></CENTER><P>
+
+Las tablas nos permiten representar cualquier elemento de nuestra p&aacute;gina (texto, listas, imagenes, etc...) en diferentes filas y columnas separadas entre si. Es una herramienta muy util para "ordenar" contenidos de distintas partes de nuestra p&aacute;gina. La tabla se define mediante la directiva <B>
+&lt;TABLE&gt;&lt;/TABLE&gt;.</B> Los par&aacute;metros opcionales de esta directiva son :<P>
+
+<DL>
+<DT><B>border =</B> num.
+<DD>Indica el ancho del borde de la tabla en puntos.<P>
+<DT><B>cellspacing =</B> num
+<DD>Indica el espacio en puntos que separa las celdas que estan dentro de la tabla.<P>
+<DT><B>cellpadding =</B> num
+<DD>Indica el espacio en puntos que separa el borde de cada celda y el contenido de esta.<P>
+<DT><B>width =</B> num &oacute; %
+<DD>Indica la anchura de la tabla en puntos o en porcentaje en funci&oacute;n del ancho de la ventana del visor. Si no se indica este par&aacute;metro, el ancho se adecuar&aacute; al tama&ntilde;o de los contenidos de las celdas.<P>
+<DT><B>height =</B> num &oacute; %
+<DD>Indica la altura de la tabla en puntos o en porcentaje en funci&oacute;n del alto de la ventana del visor. Si no se indica este par&aacute;metro, la altura se adecuar&aacute; a la altura de los contenidos de las celdas.<P>
+<DT><B>bgcolor =</B> codigo de color
+<DD>Especifica el color de fondo de toda la Tabla.<P>
+</DL>
+Para definir las celdas que componen la tabla se utilizan las directivas <B>&lt;TD&gt;</B> 
+y <B>&lt;TH&gt;</B>. <B>&lt;TD&gt;</B> indica una celda normal, y <B>&lt;TH&gt;</B> 
+indica una celda de "cabecera", es decir, el contenido ser&aacute; resaltado en negrita y 
+en un tama&ntilde;o ligeramente superior al normal. Los par&aacute;metros opcionales de 
+ambas directivas son :<P>
+
+<DL>
+<DT><B>align =</B> LEFT / CENTER / RIGHT / JUSTIFY
+<DD>Indica como se debe alinear el contenido de la celda, a la izquierda (LEFT), a la derecha (RIGHT), centrado (CENTER) o justificado (JUSTIFY).<P>
+<DT><B>valign =</B> TOP / MIDDLE / BOTTOM
+<DD>Indica la alineaci&oacute;n vertical del contenido de la celda, en la parte superior (TOP), en la inferior (BOTTOM), o en el centro (MIDDLE).<P>
+<DT><B>rowspan =</B> num
+<DD>Indica el n&uacute;mero de filas que ocupar&aacute; la celda. Por defecto ocupa una sola fila.<P>
+<DT><B>colspan =</B> num
+<DD>Indica el n&uacute;mero de columnas que ocupar&aacute; la celda. Por defecto ocupa una sola columna.<P>
+<DT><B>width =</B> num &oacute; %
+<DD>Indica la anchura de la columna en puntos o en porcentaje en funci&oacute;n del ancho de la ventana del visor. Si no se indica este par&aacute;metro, el ancho se adecuar&aacute; al tama&ntilde;o de los contenidos. Este parametro solo funciona en los navegadores modernos.<P>
+<DT><B>bgcolor =</B> codigo de color
+<DD>Especifica el color de fondo del elemento de la Tabla.<P>
+</DL>
+Para indicar que acaba una fila de celdas se utiliza la directiva <B>&lt;TR&gt;</B>. 
+A continuaci&oacute;n mostraremos un ejemplo de una tabla que contiene solo texto. 
+Como se indic&oacute; anteriormente el contenido de las celtas puede ser cualquier elemento 
+de HTML, un texto, una imagen, un Hyperenlace, una Lista, etc...<P>
+
+<CENTER>
+<TABLE border=2 cellspacing=2 cellpadding=2 width=80%>
+<TH> Ejemplo<TR>
+<TD>
+<DL>
+<DT><b>&lt;TABLE border =</B> 4 <B>cellspacing =</B> 4 <B>cellpadding =</B> 4<B> width =</B>80%<B>&gt;</B>
+<DD><B>&lt;TH align =</B> center<B>&gt;</B>Buscadores
+<DD><B>&lt;TH align =</B> center <B>colspan =</B> 2<B>&gt;</B>Otros Links
+<DD><B>&lt;TR&gt;</B>
+<DD><B>&lt;TD align =</B> LEFT<B>&gt;</B>Yahoo
+<DD><B>&lt;TD align =</B> LEFT<B>&gt;</B>Microsoft
+<DD><B>&lt;TD align =</B> LEFT<B>&gt;</B>IBM
+<DD><B>&lt;TR&gt;
+<DD>&lt;TD align =</B> LEFT<B>&gt;</B>Infoseek
+<DD><B>&lt;TD align =</B> LEFT<B>&gt;</B>Apple
+<DD><B>&lt;TD align =</B> LEFT<B>&gt;</B>Digital
+<DT><B>&lt;/TABLE&gt;</B>
+</DL>
+<TR>
+</TABLE>
+<TABLE border=2 cellspacing=2 cellpadding=2 width=80%>
+<TH>Se veria como<TR>
+</TABLE>
+<TABLE border=1 cellspacing=2 cellpadding=2 width=80%>
+           <TH  align=center>Buscadores
+           <TH  colspan=2 align=center>Otros Links
+           <TR>
+           <TD>Yahoo
+           <TD>Microsoft
+           <TD>IBM
+           <TR>
+           <TD>Infoseek
+           <TD>Apple
+           <TD>Digital</TABLE>
+<table>
+           <TR>
+</CENTER>
+<P>
+Las directivas <B>&lt;TD&gt;</B> y <B>&lt;TH&gt;</B>
+son cerradas seg&uacute;n el estandar de HTML, es decir que un elemento de tabla <B>&lt;TD&gt;</B>
+deberia cerrarse con un <B>&lt;/TD&gt;</B>
+, sin embargo los visores asumen que un elemento de la tabla, queda automaticamente "cerrado" cuando
+se "abre" el siguiente.
+<HR>
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man008.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man010.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+</BODY>

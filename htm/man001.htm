@@ -1,0 +1,162 @@
+<HTML>
+<HEAD>
+<TITLE>Introduccion</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="manintro.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man002.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+        <HR>
+
+<A NAME="sec1"></A>
+<CENTER>
+<B><U><FONT size=+3>Que es el HTML ?
+</B></U></FONT>
+</CENTER>
+<P>
+El <B><I>HTML</B></I> <I>(Hyper Text Markup Language)</I> es un sistema
+para estructurar documentos.
+Estos documentos pueden ser mostrados por los visores de paginas Web en
+Internet, como 
+<A href="http://www.netscape.com/" target="_blank">Netscape</A>, 
+<A href="http://www.ncsa.uiuc.edu/" target="_blank">Mosaic</A> o 
+<A href="http://www.microsoft.com/spain/" target="_blank">Microsoft Explorer</A>. 
+Por el momento no existe un estandar de <B><I>HTML</B></I> ya que tanto Netscape como Microsoft se empeñan en incluir directivas 
+que solo funcionan con sus respectivos navegadores. De cualquier manera existen diferentes
+revisiones o niveles de estandarizaci&oacute;n, el 1.0, el 2.0 y el 3.0,
+lo que produce que algunos visores no "comprendan" en su totalidad el
+contenido de un documento. En este manual se ha utilizado la revisi&oacute;n
+3.0 de HTML. Esto quiere decir que algunas de las &oacute;rdenes de HTML
+que aqu&iacute; se indican puede que no sean reconocidas por algunos visores
+de p&aacute;ginas Web. Netscape 2.x y Microsoft Explorer 3.x reconocen
+pr&aacute;cticamente todas las &oacute;rdenes HTML vistas en este manual.
+<P>
+B&aacute;sicamente, el HTML consta de una serie de &oacute;rdenes o
+directivas, que indican al visor que estemos utilizando, la forma de
+representar los elementos (texto, gr&aacute;ficos, etc...) que contenga
+el documento. En este manual nos referiremos a estas &oacute;rdenes con
+la palabra "directiva".<P>
+Las directivas de HTML pueden ser de dos tipos, cerradas o abiertas.
+Las directivas cerradas son aquellas que tienen una palabra clave que
+indica el principio de la directiva y otra que indica el final. Entre
+la directiva inicial y la final se pueden encontrar otras directivas.
+Las directivas abiertas constan de una sola palabra clave. Para diferenciar
+las directivas del resto del texto del documento se encierran entre los
+s&iacute;mbolos <B>&lt;</B> y <B>&gt;</B>.
+Las directivas cerradas incluyen el car&aacute;cter <B>/</B> antes de la
+palabra clave para indicar el final de la misma. Una directiva puede
+contener "par&aacute;metros". Estos par&aacute;metros se indican a
+continuaci&oacute;n de la palabra clave de la directiva.<P>
+<P>
+
+<I>Ejemplos :</I><p>
+<DL>
+<DT>Directiva cerrada<B>
+<DD>&lt;CENTER&gt;</B> Mi p&aacute;gina Web <B>
+&lt;/CENTER&gt;</B><P>
+<DT>Directiva abierta 
+<DD><B>&lt;HR&gt;</B><P>
+<DT>Directiva con par&aacute;metros
+<DD><B>&lt;BODY bgcolor="#FFFFFF"&gt;  &lt;/BODY&gt;</B>
+</DL>
+<P>
+<P>
+Los ficheros que contienen documentos HTML suelen tener la extensi&oacute;n
+<B><I>.html</B></I> o <I>.<B>htm</B></I>.
+ En este manual se han fijado los siguientes criterios a la hora de escribir
+la sintaxis de las directivas de HTML:<P>
+<P>
+1&#186;) Las directivas se indican en letra may&uacute;scula y en negrilla.<br>
+2&#186;) Los par&aacute;metros de las directivas se indican en letra min&uacute;scula y negrilla.<br>
+3&#186;) El resto de elementos se indican en letra normal.<br>
+4&#186;) Las palabras a resaltar en el texto se indican en cursiva y negrilla.<br>
+
+<P>
+<P>
+<P>
+<HR>
+
+<A name="sec2"></A>
+<CENTER>
+<B><U><FONT size=+3>Estructura b&aacute;sica de un documento HTML</B></U></FONT><P>
+</CENTER><P>
+Un documento escrito en HTML contendr&iacute;a b&aacute;sicamente las
+siguientes directivas :<P>
+
+<P>
+<CENTER>
+<TABLE>
+<TD>
+<PRE>
+<B>&lt;HTML&gt;</B>
+     <B>&lt;HEAD&gt;</B>
+          <B>&lt;TITLE&gt;</B>
+          <B>&lt;/TITLE&gt;</B>
+     <B>&lt;/HEAD&gt;</B>
+     <B>&lt;BODY&gt;</B>
+     <B>&lt;/BODY&gt;</B>
+<B>&lt;/HTML&gt;</B>
+</PRE>
+<TD>
+<PRE>
+     Indica el inicio del documento.
+     Inicio de la cabecera.
+     Inicio del título del documento.
+     Final del título del documento.
+     Final de la cabecera del documento.
+     Inicio del cuerpo del documento.
+     Final del cuerpo del documento.
+     Final del documento.
+</PRE>
+</TABLE>
+</CENTER>
+<P>
+
+El documento se hallar&aacute; situado en alg&uacute;n ordenador al que
+se pueda acceder a traves de Internet. Para indicar la situaci&oacute;n
+del documento en Internet se utiliza la <B><I>URL </B></I>
+<I>(Uniform Resource Locator)</I>. La <B><I>URL</B></I> es el camino
+que ha de seguir nuestro visor a traves de Internet para acceder a un
+determinado recurso, bien sea una p&aacute;gina Web, un fichero, un grupo
+de noticias, etc. Es decir, lo que el visor de p&aacute;ginas Web hace es
+acceder a un fichero situado en un ordenador que est&aacute; conectado a
+la red Internet. La estructura de una URL para una p&aacute;gina Web suele
+ser del tipo <B><I>http://dominio/directorio/fichero</B></I>.
+El dominio indica el nombre del ordenador al que accedemos, el directorio
+es el nombre del directorio de ese ordenador y fichero el nombre del
+fichero que contiene la p&aacute;gina Web escrita en HTML. Por ejemplo :<P>
+<P>
+<B><I>http://ares.six.udc.es/cine/corunha2.html</B></I><P>
+<P>
+Donde ....
+<br>
+<TABLE>
+<TD>
+<B><I>http://</I></B><br>
+<B><I>ares.six.udc.es</B></I><br>
+<B><I>/cine/</I></B><br>
+<B><I>corunha2.html</B></I><br>
+<TD>
+es el indicador de pagina Web<br>
+es el Dominio (nombre) del ordenador<br>
+es el Directorio dentro del ordenador<br>
+es el Fichero que contiene la p&aacute;gina Web<br>
+<TR>
+</Table>
+<P>
+<hr>
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="manintro.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man002.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+</BODY>
+</HTML>

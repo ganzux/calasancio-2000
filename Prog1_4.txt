@@ -1,0 +1,16 @@
+/* Programa que eleva al cuadrado  un numero entero introducido por el usuario */
+
+#include <stdio.h>
+void main()
+{
+
+   int numero,resultado;
+
+	printf("Escribe el numero del cual quieres saber el cubo ");
+		scanf("%d",&numero);
+
+			resultado=numero*numero*numero;
+
+	printf("%d³ = %d",numero,resultado);
+
+}

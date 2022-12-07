@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<TITLE>CGI para enviar formularios por e-mail</TITLE>
+</HEAD>
+<BODY background="fondox.gif">
+<center>
+<h1>CGI para enviar formularios por e-mail</h1>
+</center>
+<hr>
+<a href="http://www.coder.com/code/mailform/" target=_blank>MAILFORM</a> es un programa que permite que los formularios de tu pagina Web 
+sean enviados a tu direccion de correo electronico. La utilizacion de este programa es completamente gratuita, y para que sea operativo solo necesitas 
+registrarte en la pagina de <a href="http://www.coder.com/code/mailform/" target=_blank>MAILFORM</a> indicando tu nombre y direccion de e-mail.<br>
+Una vez registrado, recibiras un e-mail en el que se te indica tu "nombre de usuario". 
+A continuacion debes adecuar tus formularios para que el programa te los envie a tu direccion de e-mail.<p>
+1) La linea principal del Formulario ha de ser la siguiente :<p>
+<B>&lt;FORM action</B> <B>=</B> "http://www.coder.com/code/mailform/mailform.pl.cgi" <B>method =</B> post <B>&gt;</B><p>
+2) Inmediatamente a continuacion, has de escribir la linea que te identifique, para que el programa envie el formulario a tu direccion de correo. Esto lo haremos con una orden INPUT oculta :<p>
+<B>&lt;INPUT type =</B> hidden <B>name = </B>MAILFORM_ID <B>value = "</B>nombre_de_usuario"<B> &gt;</B><p>
+Logicamente se debe variar "nombre_de_usuario" por el nombre que MAILFORM nos haya enviado.<p>
+3) El resto del formulario se escribira segun las necesidades de cada uno. <p>
+<hr>
+<a href="http://www.coder.com/code/mailform/" target=_blank>MAILFORM</a> te permite usar unas determinadas "palabras clave" en tu formulario, con el objeto de mejorar su presentacion. La descripcion de las mismas las hallaras en la documentacion 
+que encontraras en su pagina Web. De todas ellas hay algunas que son casi de obligado uso :<p>
+
+<B>&lt;INPUT type =</B> hidden <B>name = </B>MAILFORM_SUBJECT <B>value = "</B>Libro de Visitas"<B> &gt;</B><p>
+Esta linea indica al programa el "Subject" que aparecera en el correo. Esto es muy util ya que podemos tener varios formularios distintos en nuestra pagina Web, un libro de visitas, una FAQ, una encuesta, etc... 
+Modificando el nombre de este "Subject" podemos saber al recibir el mail, a que corresponde cada uno.<p>
+<B>&lt;INPUT type =</B> hidden <B>name = </B>MAILFORM_URL <B>value = "</B>http://www.mipagina.es/"<B> &gt;</B><p>
+Esta linea informa al programa la pagina Web que ha de mostrarse una vez el formulario se haya enviado. Si no incluimos esta linea, se mostrara una pagina con el formulario enviado, lo que no queda muy "elegante".<p>
+Tu Direccion de correo? :<B>&lt;INPUT type =</B> text <B>name = </B>MAILFORM_FROM <B>size =</B> 30 <B>&gt;</B><p>
+Esta linea pide la direccion de correo de la persona que rellena el formulario, y pone dicha direccion como "remitente" del correo.<p>
+<hr>
+<center>
+<A HREF="man011.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+</center>
+</BODY>
+</HTML>

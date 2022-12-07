@@ -1,0 +1,95 @@
+<html>
+<head>
+<script>
+ function click() { if (event.button==2) {alert("¡¡NO EN MI PÁGINA!!") } }document.onmousedown=click
+</script>
+
+<title>PASCAL</title>
+<base target="_self">
+<STYLE TYPE="text/css">
+<!--
+BODY {OVERFLOW:scroll;OVERFLOW-X:hidden}
+.DEK {POSITION:absolute;VISIBILITY:hidden;Z-INDEX:200;}
+//-->
+</STYLE>
+
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="animate.js">
+</script>
+
+</head>
+
+<body bgcolor="#000000" text="#FFFF00" background="fondotitulo.gif" bgproperties="fixed" onload="dynAnimation()">
+<DIV ID=dek CLASS=dek></DIV>
+
+<SCRIPT TYPE="text/javascript">
+<!--
+
+Xoffset=-60;
+Yoffset= 20;
+
+var nav,old,iex=(document.all),yyy=-1000;
+if(navigator.appName=="Netscape"){(document.layers)?nav=true:old=true;}
+
+if(!old){
+var skn=(nav)?document.dek:dek.style;
+if(nav)document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove=get_mouse;
+}
+
+function popup(msg,bak){
+var content="<TABLE  WIDTH=200 BORDER=1 BORDERCOLOR=black CELLPADDING=2 CELLSPACING=0 "+"BGCOLOR="+bak+"><TD ALIGN=center><FONT COLOR=white SIZE=2 face=arial>"+msg+"</FONT></TD></TABLE>";
+if(old){alert(msg);return;} 
+else{yyy=Yoffset;
+ if(nav){skn.document.write(content);skn.document.close();skn.visibility="visible"}
+ if(iex){document.all("dek").innerHTML=content;skn.visibility="visible"}
+ }
+}
+function get_mouse(e){
+        stringa=/MSIE 4.0/;
+        substringa=stringa.test(navigator.appVersion);
+
+        if(substringa==true){
+         var x=(nav)?e.pageX:event.x;skn.left=x+Xoffset;
+         var y=(nav)?e.pageY:event.y;skn.top=y+yyy;
+        }
+        else {
+         var x=(nav)?e.pageX:event.x+document.body.scrollLeft;skn.left=x+Xoffset;
+         var y=(nav)?e.pageY:event.y+document.body.scrollTop;skn.top=y+yyy;  
+        }
+}
+
+function kill(){
+if(!old){yyy=-1000;skn.visibility="hidden";}
+}
+
+//-->
+</SCRIPT>
+<!-- Include Stats -->
+
+
+<h2 align="center"><a href="leng.htm" ONMOUSEOVER="popup('LENGUAJES<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="lenguajes.gif" align="absmiddle" width="75" height="55"></a>
+</h2>
+
+<h2 align="center"><a href="c.htm"  ONMOUSEOVER="popup('LENGUAJE C<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="ce.gif" align="absmiddle" width="75" height="75"></a><a href="html.htm"  ONMOUSEOVER="popup('LENGUAJE HTML<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="html.gif" align="absmiddle" width="75" height="75"></a><a href="wml.htm"  ONMOUSEOVER="popup('LENGUAJE WML<br>','#df0050')"         ONMOUSEOUT="kill()" ;><img border="0" src="wml.gif" align="absmiddle" width="75" height="75"></a><a href="pascal.htm"  ONMOUSEOVER="popup('LENGUAJE PASCAL<br>','#df0050')";     ONMOUSEOUT="kill()"><img border="0" src="pascal.gif" align="absmiddle" width="150" height="112"></a>
+</h2>
+
+
+<p align="center"><big><big><big><big><big><big><big><big><big><big><big><big><marquee align="middle"
+behavior="alternate" border="0" style="font-family: Verdana, Marlett; color: #FF0000" width="471" height="59">PASCAL</marquee></big></big></big></big></big></big></big></big></big></big></big></big></p>
+
+<h3 align="center"><font color="#FF0000" size="3"><em><strong>CURSO DE PASCAL
+DIVIDIDO EN 5 TEMAS</strong></em></font></h3>
+
+<p align="center"><font color="#000000">--CEDIDO POR <a ONMOUSEOVER="popup('Profesor de informática<br>','#df0050')";  ONMOUSEOUT="kill()"><u>FRANCISCO
+FERNÁNDEZ</u></a>,
+--</font></p>
+
+<p align="center"><a href="pascal1.doc" onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln"><img border="0" src="cc3.gif" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="cc4.gif" width="96" height="24"></a><a href="pascal2.doc" onmouseover="document['fpAnimswapImgFP2'].imgRolln=document['fpAnimswapImgFP2'].src;document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].lowsrc;" onmouseout="document['fpAnimswapImgFP2'].src=document['fpAnimswapImgFP2'].imgRolln"><img border="0" src="cc5.gif" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="cc6.gif" width="96" height="24"></a><a href="pascal3.doc" onmouseover="document['fpAnimswapImgFP3'].imgRolln=document['fpAnimswapImgFP3'].src;document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].lowsrc;" onmouseout="document['fpAnimswapImgFP3'].src=document['fpAnimswapImgFP3'].imgRolln"><img border="0" src="cc7.gif" id="fpAnimswapImgFP3" name="fpAnimswapImgFP3" dynamicanimation="fpAnimswapImgFP3" lowsrc="cc8.gif" width="96" height="24"></a><a href="pascal4.doc" onmouseover="document['fpAnimswapImgFP4'].imgRolln=document['fpAnimswapImgFP4'].src;document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].lowsrc;" onmouseout="document['fpAnimswapImgFP4'].src=document['fpAnimswapImgFP4'].imgRolln"><img border="0" src="cc9.gif" width="120" height="24" id="fpAnimswapImgFP4" name="fpAnimswapImgFP4" dynamicanimation="fpAnimswapImgFP4" lowsrc="cc10.gif"></a><a href="pascal5.doc" onmouseover="document['fpAnimswapImgFP5'].imgRolln=document['fpAnimswapImgFP5'].src;document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].lowsrc;" onmouseout="document['fpAnimswapImgFP5'].src=document['fpAnimswapImgFP5'].imgRolln"><img border="0" src="cc11.gif" width="120" height="24" id="fpAnimswapImgFP5" name="fpAnimswapImgFP5" dynamicanimation="fpAnimswapImgFP5" lowsrc="cc12.gif"></a></p>
+
+<p align="center"><a href="pascal.zip"><img border="0" src="zip1.gif" align="absmiddle" alt="CURSO DE PASCAL EN FORMATO ZIP" width="100" height="100"></a>&nbsp;</p>

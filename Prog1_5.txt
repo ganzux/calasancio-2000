@@ -1,0 +1,23 @@
+/* Programa que realiz la media de cinco numeros introducidos por el usuario */
+
+#include <stdio.h>
+void main()
+{
+     int n1,n2,n3,n4,n5,media;
+
+	printf("dime el primer numero ");
+		scanf("%d",&n1);
+	printf("dime el segundo numero ");
+		scanf("%d",&n2);
+	printf("dime el tercer numero ");
+		scanf("%d",&n3);
+	printf("dime el cuarto numero ");
+		scanf("%d",&n4);
+	printf("dime el quinto numero ");
+		scanf("%d",&n5);
+
+		media=(n1+n2+n3+n4+n5)/5;
+
+	printf("La media de %d y %d y %d y %d y %d es %d",n1,n2,n3,n4,n5,media);
+
+}

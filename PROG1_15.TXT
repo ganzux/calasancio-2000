@@ -1,0 +1,25 @@
+/* Programa que introduciendo tres variables A,B,C calcula operaciones: (A/B)+(C/A)-(B/C) */
+
+#include <stdio.h>
+int main(void)
+{
+	float a,b,c,operacion;
+
+		printf("\n             A     C     B  ");
+		printf("\n OPERACION: --- + --- - --- ");
+		printf("\n             B     A     C  ");
+
+		printf("\n Dame A: ");
+			scanf("%f",&a);
+		printf(" Dame B: ");
+			scanf("%f",&b);
+		printf(" Dame C: ");
+			scanf("%f",&c);
+
+				operacion=(a/b)+(c/a)-(b/c);
+
+printf("\nEl resultado de (%f/%f)+(%f/%f)-(%f/%f) es %f",a,b,c,a,b,c,operacion);
+
+
+}
+

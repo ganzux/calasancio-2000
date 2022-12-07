@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+void main()
+{
+int x12,pepolo=1;
+
+do{
+
+	x12=random(3);
+	switch(x12){
+	case 0: printf("\n%d: X",pepolo);      break;
+	case 1: printf("\n%d: %d",pepolo,x12); break;
+	case 2: printf("\n%d: %d",pepolo,x12); break;
+		   }
+	pepolo++;
+  }
+while(pepolo<15);
+}
+

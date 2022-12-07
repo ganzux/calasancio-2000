@@ -1,0 +1,132 @@
+<HTML>
+<HEAD>
+<TITLE>Espaciados</TITLE>
+</HEAD>
+
+<BODY background="fondox.gif">
+
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man003.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man005.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+
+        <HR>
+
+<CENTER>
+<FONT size=+3 <B><U>
+Espaciados y saltos de l&iacute;nea</B></U></FONT><P>
+
+</CENTER><P>
+
+En HTML solo se reconoce un espacio entre palabra y palabra, el resto de
+los espacios seran ignorados por el visor.<P>
+
+<P>
+<CENTER>
+<TABLE BORDER=1 cellspacing=4 cellpadding=4>
+<TH>Ejemplo<TH>Se vera como<TR>
+<TD Align=middle>
+<PRE>
+Esto     es    una      frase
+</PRE>
+<TD Align=middle>
+Esto es una frase
+</TABLE>
+</CENTER>
+<P>
+
+Asimismo tampoco se respetan las tabulaciones, retornos de carro
+etc... Para ello existen una serie de directivas que indican estos
+codigos. La directiva <B>&lt;PRE&gt;&lt;/PRE&gt;</B> obliga al visor
+a visualizar el texto tal y como ha sido escrito, respetando tabulaciones,
+espacios, retornos de carro, etc..<P>
+
+<CENTER>
+<TABLE BORDER=1 cellspacing=4 cellpadding=4>
+<TH>Ejemplo<TH>Se vera como<TR>
+<TD>
+<B>&lt;PRE&gt;</B>
+<PRE>
+Este texto      ha sido</pre>
+<P>
+     preformateado  .
+</PRE>
+<B>&lt;/PRE&gt;</B>
+<TD>
+<PRE>
+Este texto      ha sido</pre>
+<P>
+     preformateado  .
+</PRE>
+</TABLE>
+</CENTER>
+
+<p>
+Para indicar un salto de linea se utiliza la directiva <B>&lt;BR&gt;</B>
+y para un cambio de parrafo (deja una linea en blanco en medio) se utiliza
+la directiva <B>&lt;P&gt;</B>.<P>
+<P>
+<CENTER>
+<TABLE BORDER=1 cellspacing=4 cellpadding=4>
+<TH>Ejemplo<TH>Se vera como<TR>
+<TD>
+Este texto tiene<B>&lt;BR&gt;</B>saltos de linea y <B>&lt;P&gt;</B> de p&aacute;rrafo.
+<TD>
+Este texto tiene<br>saltos de linea y <p>de p&aacute;rrafo.
+<TR>
+</TABLE>
+</CENTER>
+<P>
+La directiva <B>&lt;P&gt;</B> puede usarse tambien como directiva "cerrada"  &lt;P&gt;&lt;/P&gt; indicando de esta manera los atributos de un parrafo en concreto. 
+Cuando se usa de esta manera tiene el parametro <b>align</b> que indica al visor la forma de "justificar" el parrafo. Los valores posibles de este parametro 
+son <b>LEFT, RIGHT y CENTER</b>, estando aun en estudio el valor <b>JUSTIFY</b>.
+<p>
+<CENTER>
+<TABLE BORDER=1 cellspacing=4 cellpadding=4>
+<TH>Ejemplo<TH>Se vera como<TR>
+<TD>
+<B>&lt;P Align=right&gt;</B>Este es un ejemplo de un parrafo de texto justificado a la derecha.<B>&lt;/P&gt;</B>
+<TD>
+<p align=right>Este es un ejemplo de parrafo de texto justificado a la derecha</p>
+<TR>
+<TD>
+<B>&lt;P Align=center&gt;</B>Este es un ejemplo de parrafo de texto centrado.<B>&lt;/P&gt;</B>
+<TD>
+<p align=center>Este es un ejemplo de parrafo de texto centrado</p>
+</TABLE>
+</CENTER>
+<p>
+La directiva <B>&lt;HR&gt;</B> muestra una linea horizontal de tama&ntilde;o determinable. Tiene los siguientes par&aacute;metros opcionales :
+
+<DL>
+<DT><B>align =</B> posicion
+<DD>Alinea la linea a la izquierda (left), a la derecha (right) o la centra (center).<P>
+<DT><B>noshade</B>
+<DD>No muestra sombra, evitando el efecto en tres dimensiones.<P>
+<DT><B>size =</B> numero
+<DD>Indica el grosor de la linea en pixels.<P>
+<DT><B>width =</B> num / %
+<DD>Indica el ancho de la linea en tanto por ciento en funci&oacute;n del ancho de la ventana del visor. Tambien se puede especificar un n&uacute;mero que indicar&iacute;a el ancho de la l&iacute;nea en pixels.<P>
+</DL>
+
+<I>Ejemplo</I> :<p>
+<B>&lt;HR align= </B>center<B> size= </B>20<B> width= </B>50%<B>&gt;</B><P>
+<HR align=center size=20 width = 50%>
+
+<P>
+La directiva <B>&lt;HR&gt;</B> sin ningun par&aacute;metro mostrar&iacute;a una linea horizontal que ocuparia todo el ancho de la p&aacute;gina.
+Estas líneas sencillas son las que ves en este manual para separar las diferentes secciones<P>
+<HR>
+        <TABLE ALIGN=center WIDTH=100% BORDER=0>
+               <TD align=left WIDTH=49%>
+                     <A HREF="man003.htm" ><IMG BORDER=0 SRC="back.gif" ALT="Atras"></A>
+               <TD align=center WIDTH=2%>
+               <TD align=right WIDTH=49%>
+                     <A HREF="man005.htm"><IMG border=0 src="forward.gif" ALT="Adelante"></A>
+        </TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main(void)
+{
+	float w,f,s;
+
+		printf("Valor del trabajo: ");
+			scanf("%f",&w);
+		printf("\nDesplazamiento del cuerpo: ");
+			scanf("%f",&s);
+
+				f=w/s;
+
+		printf("\n\n\n    W");
+		printf("\nF= ---   ");
+		printf("\n    S\n");
+		printf("\nf= %f",f);
+
+}
+

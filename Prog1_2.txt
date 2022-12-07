@@ -1,0 +1,20 @@
+/* Programa que realiza la suma de cuatro numeros introducidos por el usuario */
+
+#include <stdio.h>
+void main()
+{
+ float numero1,numero2,numero3,numero4,suma;
+
+	printf("¿numero1?");
+	   scanf("%f",&numero1);
+	printf("¿numero2?");
+	   scanf("%f",&numero2);
+	printf("¿numero3?");
+	   scanf("%f",&numero3);
+	printf("¿numero4?");
+	   scanf("%f",&numero4);
+
+	       suma=numero1+numero2+numero3+numero4;
+
+       printf("suma de %f de %f de %f y de %f es %f",numero1,numero2,numero3, numero4, suma);
+ }

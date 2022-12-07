@@ -1,0 +1,22 @@
+/* Programa que intercambia el de dos numeros enteros introducidos por el usuario */
+
+include <stdio.h>
+int main(void)
+{
+	float n1,n2,variable;
+
+		printf("Dame el primer numero: ");
+			scanf("%f",&n1);
+		printf("Dame el segundo numero: ");
+			scanf("%f",&n2);
+
+			variable=n1;
+			n1=n2;
+			n2=variable;
+
+		printf("\n\nLa primera variable contiene el numero %f",n1);
+		printf("\nLa segunda variable contiene el numero %f",n2);
+
+
+}
+

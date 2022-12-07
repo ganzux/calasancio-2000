@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int cont=0;
+char cara;
+
+do{
+    cara=getche();
+    cont++;
+  }
+
+while(cara!='f');
+      printf("\n\n\n\n\n\nHas introducido %d caracteres",cont-1);
+}
+

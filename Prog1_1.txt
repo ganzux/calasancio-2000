@@ -1,0 +1,19 @@
+/* Programa que realiza la resta de dos numeros enetros por el usuario. */
+
+
+#include <stdio.h>
+void main()
+{
+    int n1,n2,diferencia;
+
+	printf("dime n1 ");
+      scanf("%d",&n1);
+	printf("dime n2 ");
+      scanf("%d",&n2);
+
+	   diferencia=n1-n2;
+
+       printf("la diferencia entre %d y %d es %d",n1,n2,diferencia);
+}
+
+
