@@ -1,0 +1,130 @@
+<html>
+
+<head>
+<script>
+ function click() { if (event.button==2) {alert("¡¡NO EN MI PÁGINA!!") } }document.onmousedown=click
+</script>
+
+<title>Para crear páginas Web tienes dos opciones</title>
+<base target="_self">
+<STYLE TYPE="text/css">
+<!--
+BODY {OVERFLOW:scroll;OVERFLOW-X:hidden}
+.DEK {POSITION:absolute;VISIBILITY:hidden;Z-INDEX:200;}
+//-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#000000" text="#FFFF00" background="fondotitulo.gif" bgproperties="fixed">
+<DIV ID=dek CLASS=dek></DIV>
+
+<SCRIPT TYPE="text/javascript">
+<!--
+
+Xoffset=-60;
+Yoffset= 20;
+
+var nav,old,iex=(document.all),yyy=-1000;
+if(navigator.appName=="Netscape"){(document.layers)?nav=true:old=true;}
+
+if(!old){
+var skn=(nav)?document.dek:dek.style;
+if(nav)document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove=get_mouse;
+}
+
+function popup(msg,bak){
+var content="<TABLE  WIDTH=200 BORDER=1 BORDERCOLOR=black CELLPADDING=2 CELLSPACING=0 "+"BGCOLOR="+bak+"><TD ALIGN=center><FONT COLOR=white SIZE=2 face=arial>"+msg+"</FONT></TD></TABLE>";
+if(old){alert(msg);return;} 
+else{yyy=Yoffset;
+ if(nav){skn.document.write(content);skn.document.close();skn.visibility="visible"}
+ if(iex){document.all("dek").innerHTML=content;skn.visibility="visible"}
+ }
+}
+function get_mouse(e){
+        stringa=/MSIE 4.0/;
+        substringa=stringa.test(navigator.appVersion);
+
+        if(substringa==true){
+         var x=(nav)?e.pageX:event.x;skn.left=x+Xoffset;
+         var y=(nav)?e.pageY:event.y;skn.top=y+yyy;
+        }
+        else {
+         var x=(nav)?e.pageX:event.x+document.body.scrollLeft;skn.left=x+Xoffset;
+         var y=(nav)?e.pageY:event.y+document.body.scrollTop;skn.top=y+yyy;  
+        }
+}
+
+function kill(){
+if(!old){yyy=-1000;skn.visibility="hidden";}
+}
+
+//-->
+</SCRIPT>
+<!-- Include Stats -->
+
+
+<h2 align="center"><a href="leng.htm" ONMOUSEOVER="popup('LENGUAJES<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="lenguajes.gif" align="absmiddle" width="75" height="55"></a>
+</h2>
+
+<h2 align="center"><a href="c.htm"  ONMOUSEOVER="popup('LENGUAJE C<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="ce.gif" align="absmiddle" width="75" height="75"></a><a href="html.htm"  ONMOUSEOVER="popup('LENGUAJE HTML<br>','#df0050')";         ONMOUSEOUT="kill()"><img border="0" src="html.gif" align="absmiddle" width="150" height="112"></a><a href="wml.htm"  ONMOUSEOVER="popup('LENGUAJE WML<br>','#df0050')"         ONMOUSEOUT="kill()" ;><img border="0" src="wml.gif" align="absmiddle" width="75" height="75"></a><a href="pascal.htm"  ONMOUSEOVER="popup('LENGUAJE PASCAL<br>','#df0050')";     ONMOUSEOUT="kill()"><img border="0" src="pascal.gif" align="absmiddle" width="75" height="75"></a>
+</h2>
+
+
+<p align="center"><big><big><big><big><big><big><big><big><big><big><big><big><marquee align="middle"
+behavior="alternate" border="0" style="font-family: Verdana, Marlett; color: #FF0000" width="471" height="59">HTML</marquee></big></big></big></big></big></big></big></big></big></big></big></big></p>
+
+<p class="MsoNormal" align="center">&nbsp;</p>
+<p class="MsoNormal" align="center"><span style="mso-bidi-font-size: 10.0pt; mso-ansi-language: ES-TRAD" lang="ES-TRAD"><font color="#FF0000" size="3"><b>Hypertext
+Markup Language (Lenguaje de Marcas de Hipertexto)</b></font><b><font size="2" color="#FF0000"><o:p>
+</o:p>
+</font></b></span></p>
+<p class="MsoNormal" style="text-indent: 35.4pt" align="center"><span style="mso-bidi-font-size: 10.0pt; mso-ansi-language: ES-TRAD" lang="ES-TRAD"><font size="2" color="#0000FF">Es
+un sistema que se utiliza para estructurar documentos pudiendo ser visualizados
+en cualquier navegador de red. Es un refinamiento del lenguaje SGML (Structured
+Generalized Markup Language). No es un lenguaje de programación en sí, sólo
+nos describe cómo vamos a ver el documento.<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" style="text-indent: 35.4pt" align="center"><font color="#0000FF"><span style="mso-bidi-font-size: 10.0pt; mso-ansi-language: ES-TRAD" lang="ES-TRAD"><font size="2">Las
+herramientas básicas para HTML son un editor de textos simple al igual que
+programas de diseño o retoque gráfico como el Paint Shop Pro<span style="mso-spacerun: yes; mso-bidi-font-size: 10.0pt; mso-ansi-language: ES-TRAD">&nbsp;
+</span>o el GIF Construction Set y un navegador de web.</font></span><span lang="ES-TRAD" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;mso-ansi-language:
+ES-TRAD"><o:p>
+</o:p>
+</span></font></p>
+<p class="MsoNormal" style="text-indent: 35.4pt" align="center"><span lang="ES-TRAD" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;mso-ansi-language:
+ES-TRAD">&nbsp;<o:p>
+</o:p>
+</span></p>
+<h1 align="center"><span lang="ES-TRAD"><font size="3"><b style="mso-bidi-font-weight: normal"><font color="#FF0000">HISTORIA</font></b><b style="mso-bidi-font-weight: normal; background-color: #FF0000"><o:p></o:p>
+</b></font></span></h1>
+<p class="MsoBodyTextIndent" align="center"><font size="2" color="#0000FF"><span lang="ES-TRAD"><u>Versión
+1.0</u>: apareció en mayo del 91. El organismo creador fue el CERN. Sólo se
+podían poner enlaces a otras páginas, nada de gráficos.</span></font></p>
+<p class="MsoBodyTextIndent" align="center"><font size="2" color="#0000FF"><span lang="ES-TRAD"><u>Versión
+2.0</u>: se implantó en 1995 y apareció como consecuencia del navegador Mosaic.
+También se añadieron etiquetas, cabeceras, tablas, listas y formularios.</span></font></p>
+<p class="MsoBodyTextIndent" align="center"><font size="2" color="#0000FF"><span lang="ES-TRAD"><u>Versión
+3.0</u>: apareció en mayo del 96 y sus características fueron tablas con
+presentaciones estructuradas de elementos, poder variar el tamaño de la letra,
+distintos colores, la posibilidad de poner subíndices y superíndices y la
+inclusión de los APPLETS de Java y de lenguajes SCRIPT.</span></font></p>
+<p class="MsoBodyTextIndent" align="center"><font size="2" color="#0000FF"><span lang="ES-TRAD"><u>Versión
+4.0</u>: apareció en julio del 97. Se le dio el nombre de Cougar y apareció
+para terminar una guerra de estandarización entre Microsoft y Netscape. La
+principal novedad es la inclusión del estándar UNICODE que sustituye al LATIN-1
+(éste último visualiza 256 caracteres). Unicode permite representar 65536
+caracteres distintos.<span style="mso-spacerun: yes">&nbsp;</span></span></font></p>
+<p class="MsoBodyTextIndent" align="center"></p>
+<p class="MsoBodyTextIndent" align="center"><span style="mso-spacerun: yes" lang="ES-TRAD"><font color="#00FF00"><a href="htm/manual.htm" target="_new"><font size="4">CURSO
+DE HTML PARA VERLO AHORA...</font></a><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;</font></font><font color="#FF0000" size="4">&nbsp;
+</font><font color="#00FF00" size="4">Puntuación:
+</font><font color="#FF0000" size="4"><img border="0" src="9.jpg" align="absmiddle" lowsrc="9" alt="9" width="51" height="21"></font></span></p>
+<p class="MsoBodyTextIndent" align="center">&nbsp;</p>
+<p class="MsoBodyTextIndent" align="center"><span style="mso-spacerun: yes" lang="ES-TRAD"><font color="#0000FF" size="4">CURSO
+DE HTML PARA BAJAR</font><font color="#FF0000" size="4"><a href="htm/manual.htm" target="_new"></a>&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#00FF00"><font size="4">&nbsp;
+Puntuación: </font></font><font color="#FF0000" size="4"><img border="0" src="5.jpg" align="absmiddle" lowsrc="5" alt="5" width="51" height="21"></font></span></p>
+<p class="MsoBodyTextIndent" align="center"><a href="ht.doc"><img border="0" src="ht.jpg" width="181" height="133" align="absmiddle"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="ht.zip"><img border="0" src="zip.gif" align="absmiddle" width="100" height="75"></a></p>

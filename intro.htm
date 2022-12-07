@@ -1,0 +1,452 @@
+<html>
+
+<head>
+<title></title>
+<base target="_self">
+<bgsound src="exorcista.mid" loop="-1">
+
+<script>
+ function click() { if (event.button==2) {alert("¡¡NO EN MI PÁGINA!!") } }document.onmousedown=click
+</script>
+<STYLE TYPE="text/css">
+<!--
+BODY {OVERFLOW:scroll;OVERFLOW-X:hidden}
+.DEK {POSITION:absolute;VISIBILITY:hidden;Z-INDEX:200;}
+//-->
+</STYLE>
+<style>
+a {color:#000000}
+</style>
+</head>
+
+<BODY BGCOLOR="#000000" TEXT="#FFFFFF" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFF00">
+
+<DIV ID=dek CLASS=dek></DIV>
+
+<SCRIPT TYPE="text/javascript">
+<!--
+
+Xoffset=-60;
+Yoffset= 20;
+
+var nav,old,iex=(document.all),yyy=-1000;
+if(navigator.appName=="Netscape"){(document.layers)?nav=true:old=true;}
+
+if(!old){
+var skn=(nav)?document.dek:dek.style;
+if(nav)document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove=get_mouse;
+}
+
+function popup(msg,bak){
+var content="<TABLE  WIDTH=200 BORDER=1 BORDERCOLOR=black CELLPADDING=2 CELLSPACING=0 "+"BGCOLOR="+bak+"><TD ALIGN=center><FONT COLOR=white SIZE=2 face=arial>"+msg+"</FONT></TD></TABLE>";
+if(old){alert(msg);return;} 
+else{yyy=Yoffset;
+ if(nav){skn.document.write(content);skn.document.close();skn.visibility="visible"}
+ if(iex){document.all("dek").innerHTML=content;skn.visibility="visible"}
+ }
+}
+function get_mouse(e){
+        stringa=/MSIE 4.0/;
+        substringa=stringa.test(navigator.appVersion);
+
+        if(substringa==true){
+         var x=(nav)?e.pageX:event.x;skn.left=x+Xoffset;
+         var y=(nav)?e.pageY:event.y;skn.top=y+yyy;
+        }
+        else {
+         var x=(nav)?e.pageX:event.x+document.body.scrollLeft;skn.left=x+Xoffset;
+         var y=(nav)?e.pageY:event.y+document.body.scrollTop;skn.top=y+yyy;  
+        }
+}
+
+function kill(){
+if(!old){yyy=-1000;skn.visibility="hidden";}
+}
+
+//-->
+</SCRIPT>
+<!-- Include Stats -->
+
+
+
+<script>
+
+
+
+function initArray() {
+
+
+
+  this.length = initArray.arguments.length
+
+
+
+  for (var i = 0; i < this.length; i++)
+
+
+
+    this[i+1] = initArray.arguments[i]
+
+
+
+}
+
+
+
+
+
+
+
+var hexChars = "0123456789ABCDEF";
+
+
+
+
+
+
+
+function Dec2Hex (Dec) {
+
+
+
+  var a = Dec % 16;
+
+
+
+var b = (Dec - a)/16;
+
+
+
+  hex = "" + hexChars.charAt(b) + hexChars.charAt(a);
+
+
+
+  return hex;
+
+
+
+}
+
+
+
+
+
+
+
+function bgChanger (begin, end, steps) {
+
+
+
+  steps = steps -1 ;
+
+
+
+
+
+
+
+  redA     = begin.charAt(0) + begin.charAt(1);
+
+
+
+  red_valA = parseInt(redA,'16');
+
+
+
+  redB     = end.charAt(0) + end.charAt(1);
+
+
+
+  red_valB = parseInt(redB,'16');
+
+
+
+  red_int  = ((red_valB - red_valA) / steps) * -1;
+
+
+
+  grnA     = begin.charAt(2) + begin.charAt(3);
+
+
+
+  grn_valA = parseInt(grnA,'16');
+
+
+
+grnB     = end.charAt(2) + end.charAt(3);
+
+
+
+  grn_valB = parseInt(grnB,'16');
+
+
+
+  grn_int  = ((grn_valB - grn_valA) / steps) * -1;
+
+
+
+  bluA     = begin.charAt(4) + begin.charAt(5);
+
+
+
+  blu_valA = parseInt(bluA,'16');
+
+
+
+  bluB     = end.charAt(4) + end.charAt(5);
+
+
+
+  blu_valB = parseInt(bluB,'16');
+
+
+
+  blu_int  = ((blu_valB - blu_valA) / steps) * -1;
+
+
+
+
+
+
+
+  step = 2;
+
+
+
+  red = red_valA;
+
+
+
+  grn = grn_valA;
+
+
+
+  blu = blu_valA;
+
+
+
+document.bgColor = begin;
+
+
+
+
+
+
+
+  while ( steps >= step ) {
+
+
+
+    red -= red_int;
+
+
+
+    red_round = Math.round(red);
+
+
+
+    red_hex = Dec2Hex(red);
+
+
+
+
+
+
+
+    grn -= grn_int;
+
+
+
+    grn_round = Math.round(grn);
+
+
+
+    grn_hex = Dec2Hex(grn);
+
+
+
+
+
+
+
+    blu -= blu_int;
+
+
+
+blu_round = Math.round(blu);
+
+
+
+    blu_hex = Dec2Hex(blu);
+
+
+
+
+
+
+
+    document.bgColor = red_hex + grn_hex + blu_hex;
+
+
+
+//    document.write("<br>bgcolor = " + red_hex + grn_hex + blu_hex);
+
+
+
+
+
+
+
+    step++;
+
+
+
+  }
+
+
+
+  document.bgColor = end;
+
+
+
+}
+
+
+
+
+
+</script>
+
+
+
+<script>
+
+
+
+<!-- 
+
+
+
+// black to black (pause)
+
+
+
+  bgChanger("000000","000000",25);
+
+
+
+// black to red
+
+
+
+  bgChanger("000000","FF0000",25);
+
+
+
+// red to black
+
+
+
+  bgChanger("FF0000","000000",25);
+
+
+
+// black to purple 
+
+
+
+  bgChanger("000000","AA00EE",25);
+
+
+
+//purple to blue
+
+
+
+ bgChanger("AA00EE","0000FF",25);
+
+
+
+// blue to black
+
+
+
+  bgChanger("0000FF","000000",25);
+
+
+
+// black to gold
+
+
+
+  bgChanger("000000","D9D919",25);
+
+
+
+// gold to green
+
+ 
+
+ bgChanger("D9D919","238E23",25);
+
+
+
+//green to red
+
+
+
+ bgChanger("238E23","FF0000",25);
+
+
+
+//red to purple
+
+
+
+ bgChanger("FF0000","AA00EE",25);
+
+
+
+//purple to wht (pause)
+
+
+
+ bgChanger("AA00EE","000000",25);
+
+
+
+// -->
+
+
+
+</script>
+
+<p align="center"><b><font color="#FF0000" size="3">Ésta página es un trabajo del
+curso 2000/2001 realizado por los alumnos del colegio Calasancio de Madrid de la
+asignatura de informática correspondiente al curso completo.</font></b> </p>
+
+<p align="center"><img border="0" src="cole.gif" ONMOUSEOVER="popup('Colegio Calasancio por...  <b>ITO</b><br>','#df0050')" ONMOUSEOUT="kill()" ;>
+
+<p align="center"><font color="#FF0000" size="2"><b>En ella vamos a tratar sobre
+Internet, los ordenadores, los lenguajes de programación, las nuevas
+tecnologías, la comunicaciones...</b></font> </p>
+
+<p align="center"><font size="2"><b><font face="Monotype Corsiva" color="#FF0000">Te recuerdo que la
+web no está acabada del todo, por ello ruego perdones los pequeños
+ <a ONMOUSEOVER="popup('Errores; agujeros de seguridad<br>','#df0050')"; ONMOUSEOUT="kill()"><font face="Monotype Corsiva" color="#0000FF" size="4">&quot;bugs&quot;</font>
+</a>que pueda contener...</font>
+</b></font>
+ </p>
+
+<p align="center"><img border="0" src="ito.gif" ONMOUSEOVER="popup('<b>ITO</b> (Alvar-ITO)  <b> :-)<br>','#df0050')" ONMOUSEOUT="kill()" ;>
+
+<p align="center">&nbsp;</p>
+<p align="center"><font color="blue" size="3"><b>Estructuración de la página:</b></font></p>
+<p align="center"><font color="blue" size="2"><b>A la izquierda de la ventana
+está el índice principal; al pinchar sobre los temas, aparecerán en la parte
+de la derecha (en la que estás leyendo). Si el tema que has seleccionado tienes
+subtemas, se colocarán en la parte superior de la parte de la derecha.</b></font></p>
+<p align="center">&nbsp;
+</body>
+</html>
